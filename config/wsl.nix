@@ -10,7 +10,7 @@
     wslConf.boot.command = "dbus-launch true";
   };
 
-  environment.systemPackages = [ (import ./win32yank.nix { inherit pkgs; }) ];
+  environment.systemPackages = [ (import ./pkgs/win32yank.nix { inherit pkgs; }) ];
 
   networking.hostName = "nixos";
   system.stateVersion = "23.11";
