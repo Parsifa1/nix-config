@@ -58,6 +58,8 @@ in
       http.proxy = "localhost:7891";
     };
   };
+  
+  programs.zoxide.enable = true;
 
   programs.fish = {
     enable = true;
@@ -66,9 +68,6 @@ in
 
       #set starship
       starship init fish | source
-
-      #set zoxide
-      zoxide init fish | source
 
       function set_panetitle
         set -gx panetitle "❄️ Nix"
