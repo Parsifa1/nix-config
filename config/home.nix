@@ -56,9 +56,9 @@ in
     userName = "parsifa1";
     userEmail = "li.aldric@gmail.com";
     package = pkgs.gitFull;
-    config.credential.helper = "libsecret";
     extraConfig = {
       http.proxy = "localhost:7891";
+      credential.helper = "libsecret";
     };
   };
 
