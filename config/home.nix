@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ pkgs, nur, ... }:
 let
   unstable-packages = with pkgs.unstable; [
     fastfetch
@@ -59,7 +59,7 @@ in
       http.proxy = "localhost:7891";
       credential = {
         credentialStore = "secretservice";
-        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager-core";
+        helper = "${nur.repos.utybo.git-credential-manager}/bin/git-credential-manager-core";
       };
     };
   };
