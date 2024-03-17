@@ -63,7 +63,13 @@ in
     enable = true;
     interactiveShellInit = ''
       set -U fish_greeting
+
+      #set starship
       starship init fish | source
+
+      #set zoxide
+      zoxide init fish | source
+
       function set_panetitle
         set -gx panetitle "❄️ Nix"
         echo -n (printf "\033]1337;SetUserVar=panetitle=%s\007" (echo -n $panetitle | base64))
