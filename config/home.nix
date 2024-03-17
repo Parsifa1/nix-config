@@ -19,7 +19,6 @@ let
     lazygit
     dust
     duf
-    git-credential-manager
     atuin
   ];
 
@@ -59,7 +58,7 @@ in
     package = pkgs.gitFull;
     extraConfig = {
       http.proxy = "localhost:7891";
-      credential.helper = "libsecret";
+      credential.helper = "store";
     };
   };
 
