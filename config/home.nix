@@ -20,6 +20,7 @@ let
     dust
     duf
     atuin
+    git-credential-manager
   ];
 
   stable-packages = with pkgs; [
@@ -42,6 +43,10 @@ in
   home.homeDirectory = "/home/parsifa1";
   home.packages = stable-packages ++ unstable-packages;
 
+  programs.atuin = {
+    enable = true;
+  };
+
   programs.starship = {
     enable = true;
     settings = {
@@ -59,6 +64,8 @@ in
     extraConfig = {
       http.proxy = "localhost:7891";
       credential.helper = "store";
+      core.editor = "nvim";
+      credential.credentialStore = "cache";
     };
   };
 
