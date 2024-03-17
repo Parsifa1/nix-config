@@ -43,6 +43,8 @@ in
   home.homeDirectory = "/home/parsifa1";
   home.packages = stable-packages ++ unstable-packages;
 
+  # programs.gnupg.agent.enable = true;
+
   programs.atuin = {
     enable = true;
   };
@@ -74,7 +76,6 @@ in
     enableFishIntegration = true;
   };
 
-  # programs.gnupg.agent.enable = true;
 
   programs.fish = {
     enable = true;
