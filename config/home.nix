@@ -55,12 +55,10 @@ in
     enable = true;
     userName = "parsifa1";
     userEmail = "li.aldric@gmail.com";
+    package = pkgs.gitFull;
+    config.credential.helper = "libsecret";
     extraConfig = {
       http.proxy = "localhost:7891";
-      credential = {
-        credentialStore = "secretservice";
-        helper = "${nur.repos.utybo.git-credential-manager}/bin/git-credential-manager-core";
-      };
     };
   };
 
