@@ -20,6 +20,7 @@ let
     dust
     duf
     git-credential-manager
+    atuin
   ];
 
   stable-packages = with pkgs; [
