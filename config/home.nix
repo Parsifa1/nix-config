@@ -19,6 +19,7 @@ let
     lazygit
     dust
     duf
+    git-credential-manager
   ];
 
   stable-packages = with pkgs; [
