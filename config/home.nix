@@ -58,9 +58,11 @@ in
       http.proxy = "localhost:7891";
     };
   };
-  
-  programs.zoxide.enable = true;
 
+  programs.zoxide = {
+    enable = true;
+    enableFishIntegration = true;
+  };
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
