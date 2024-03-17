@@ -57,6 +57,10 @@ in
     userEmail = "li.aldric@gmail.com";
     extraConfig = {
       http.proxy = "localhost:7891";
+      credential = {
+        credentialStore = "secretservice";
+        helper = "${pkgs.git-credential-manager}/bin/git-credential-manager-core";
+      };
     };
   };
 
