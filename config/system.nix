@@ -21,8 +21,8 @@
     wget
     curl
     gcc
+    rustup
     gnumake
-    cargo
     nodejs
     openssh
     rocmPackages.llvm.clang

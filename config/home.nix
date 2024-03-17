@@ -1,4 +1,4 @@
-{ pkgs, nur, ... }:
+{ pkgs, ... }:
 let
   unstable-packages = with pkgs.unstable; [
     fastfetch
@@ -34,6 +34,7 @@ let
     ruff-lsp
     marksman
     nodePackages.prettier
+    rust-analyzer
     # language formmater
     nixfmt
   ];

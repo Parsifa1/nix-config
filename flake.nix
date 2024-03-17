@@ -36,7 +36,6 @@
         overlays = [
           nur.overlay
           (_final: prev: {
-            # this allows us to reference pkgs.unstable
             unstable = import nixpkgs-unstable {
               inherit (prev) system;
               inherit config;
@@ -78,6 +77,13 @@
             home-manager.users.parsifa1 = import ./config/home.nix;
             home-manager.extraSpecialArgs = specialArgs;
             programs.nix-ld.dev.enable = true;
+            boot.loader.systemd-boot.configurationLimit = 10;
+            nix.gc = {
+              automatic = true;
+              dates = "weekly";
+              options = "--delete-older-than 1w";
+            };
+            nix.settings.auto-optimise-store = true;
           }
         ];
       };
