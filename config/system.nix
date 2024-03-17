@@ -28,6 +28,7 @@
     openssh
     rocmPackages.llvm.clang
     python3
+    nix-ld
   ];
 
   nix.settings.experimental-features = [
@@ -54,4 +55,6 @@
   };
 
   services.pcscd.enable = true;
+
+  programs.nix-ld.dev.enable = true;
 }
