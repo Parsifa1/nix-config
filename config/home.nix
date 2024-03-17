@@ -9,7 +9,6 @@ let
     fd
     which
     tree
-    gnupg
     nix-output-monitor
     btop
     starship
@@ -74,6 +73,9 @@ in
     enable = true;
     enableFishIntegration = true;
   };
+
+  # programs.gnupg.agent.enable = true;
+
   programs.fish = {
     enable = true;
     interactiveShellInit = ''

@@ -20,6 +20,7 @@
     vim
     wget
     curl
+    gnupg
     gcc
     rustup
     gnumake
@@ -47,9 +48,10 @@
     enable = true;
     ports = [ 14514 ];
     settings = {
-      X11Forwarding = true;
-      PermitRootLogin = "no"; # disable root login
-      PasswordAuthentication = false; # disable password login
+      ClientAliveInterval = 60;
+      ClientAliveCountMax = 3;
     };
   };
+
+  services.pcscd.enable = true;
 }
