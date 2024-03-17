@@ -32,7 +32,7 @@ let
     ruff
     ruff-lsp
     marksman
-    prettier
+    nodePackages.prettier
     # language formmater
     nixfmt
   ];
