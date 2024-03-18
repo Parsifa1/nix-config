@@ -55,7 +55,7 @@ in {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
     packages = mason-packages ++ unstable-packages;
-    home.sessionVariables = {
+    sessionVariables = {
       EDITOR = "nvim";
     };
   };
