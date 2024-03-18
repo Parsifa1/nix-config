@@ -18,6 +18,7 @@ let
     lazygit
     dust
     duf
+    direnv
     atuin
     git-credential-manager
   ];
