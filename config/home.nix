@@ -28,27 +28,26 @@
   ];
 
   mason-packages = with pkgs; [
+    tree-sitter
     # language servers
-    nodePackages.typescript-language-server
-    yaml-language-server
-    lua-language-server
-    clang-tools
-    nil
-    ruff
-    ruff-lsp
-    marksman
-    nodePackages.prettier
-    rust-analyzer
     nodePackages."@astrojs/language-server"
     python311Packages.autopep8
+    clang-tools
     pkgs.nodePackages.vscode-langservers-extracted
+    lua-language-server
+    marksman
+    nil
+    nodePackages.prettier
     vscode-extensions.ms-pyright.pyright
-    tailwindcss-language-server
-    alejandra.defaultPackage.${system}
-    taplo
-    # language formmater
-    nixfmt
+    ruff
+    ruff-lsp
+    rust-analyzer
     stylua
+    tailwindcss-language-server
+    taplo
+    nodePackages.typescript-language-server
+    yaml-language-server
+    alejandra.defaultPackage.${system}
   ];
 in {
   home = {
