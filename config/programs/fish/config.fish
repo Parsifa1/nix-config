@@ -10,6 +10,8 @@ export FZF_DEFAULT_OPTS="--height 40% --layout=reverse --color=bg+:,bg:,gutter:-
 export EDITOR="nvim"
 export DISPLAY=":0"
 export WAYLAND_DISPLAY=wayland-0
+export PATH="$HOME/.cargo/bin:$PATH"
+
 
 if test -d "/mnt/c/Windows/System32/"
     export PATH="$PATH:/mnt/c/Windows/System32/"
