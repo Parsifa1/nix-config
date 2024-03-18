@@ -49,16 +49,27 @@
     noProxy = "localhost,127.0.0.1";
   };
 
-  services.openssh = {
-    enable = true;
-    ports = [14514];
-    settings = {
-      ClientAliveInterval = 60;
-      ClientAliveCountMax = 3;
+  services = {
+    openssh = {
+      enable = true;
+      ports = [14514];
+      settings = {
+        ClientAliveInterval = 60;
+        ClientAliveCountMax = 3;
+      };
+      extraConfig = ''
+        AcceptEnv TERM_PROGRAM_VERSION WEZTERM_REMOTE_PANE TERM COLORTERM TERM_PROGRAM WSLENV
+      '';
     };
-    extraConfig = ''
-      AcceptEnv TERM_PROGRAM_VERSION WEZTERM_REMOTE_PANE TERM COLORTERM TERM_PROGRAM WSLENV
-    '';
+
+    gpg-agent = {
+      settings = {
+        max-cache-ttl = 604800000;
+        default-cache-ttl = 604800000;
+        allow-preset-passphrase = true;
+        no-allow-external-cache = true;
+      };
+    };
   };
 
   systemd.services = {
@@ -73,7 +84,6 @@
 
   services.pcscd.enable = true;
   services.xserver.enable = true;
-  # services.xserver.desktopManager.gnome.enable = true;
   programs.nix-ld.dev.enable = true;
   programs.gnupg.agent.enable = true;
 }
