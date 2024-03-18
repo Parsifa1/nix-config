@@ -66,6 +66,7 @@ in
       credential.helper = "store";
       core.editor = "nvim";
       credential.credentialStore = "cache";
+      commit.gpgsign = true;
     };
   };
 
