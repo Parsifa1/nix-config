@@ -24,6 +24,7 @@
     duf
     direnv
     atuin
+    typst
     git-credential-manager
   ];
 
