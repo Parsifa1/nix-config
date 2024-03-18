@@ -130,7 +130,7 @@ in
     };
   };
 
-  programs.yazi = ./yazi.nix;
+  programs.yazi = import ./yazi.nix;
 
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
