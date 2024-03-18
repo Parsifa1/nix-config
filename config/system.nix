@@ -21,6 +21,7 @@
     wget
     curl
     gnupg
+    pinentry-gnome3
     gcc
     rustup
     gnumake
@@ -28,6 +29,7 @@
     openssh
     rocmPackages.llvm.clang
     python3
+    gnome.gnome-calculator
     nix-ld
   ];
 
@@ -52,10 +54,16 @@
       ClientAliveInterval = 60;
       ClientAliveCountMax = 3;
     };
+    extraConfig = ''
+      AcceptEnv "TERM_PROGRAM_VERSION WEZTERM_REMOTE_PANE TERM COLORTERM TERM_PROGRAM WSLENV";
+    '';
   };
 
   services.pcscd.enable = true;
+  services.xserver.enable = true;
+
+  services.xserver.desktopManager.gnome.enable = true;
+
   programs.nix-ld.dev.enable = true;
   programs.gnupg.agent.enable = true;
-  
 }

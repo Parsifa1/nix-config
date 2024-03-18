@@ -62,6 +62,7 @@ in
     userEmail = "li.aldric@gmail.com";
     package = pkgs.gitFull;
     extraConfig = {
+      user.signingkey = "99B21766F86301CA";
       http.proxy = "localhost:7891";
       credential.helper = "store";
       core.editor = "nvim";
@@ -79,6 +80,9 @@ in
     enable = true;
     interactiveShellInit = ''
       set -U fish_greeting
+
+      export DISPLAY=":0"
+      export WAYLAND_DISPLAY=wayland-0    #fix wayland
 
       #set starship
       starship init fish | source
