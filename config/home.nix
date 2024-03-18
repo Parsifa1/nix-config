@@ -1,4 +1,9 @@
-{ pkgs, ... }:
+{
+  pkgs,
+  alejandra,
+  system,
+  ...
+}:
 let
   unstable-packages = with pkgs.unstable; [
     fastfetch
@@ -40,6 +45,7 @@ let
     pkgs.nodePackages.vscode-langservers-extracted
     vscode-extensions.ms-pyright.pyright
     tailwindcss-language-server
+    alejandra.defaultPackage.${system}
     taplo
     # language formmater
     nixfmt
