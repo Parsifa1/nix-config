@@ -40,7 +40,7 @@ let
     vscode-extensions.ms-pyright.pyright
     tailwindcss-language-server
     taplo
-    language formmater
+    # language formmater
     nixfmt
     stylua
   ];
