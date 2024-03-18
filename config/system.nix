@@ -63,6 +63,18 @@
     };
   };
 
+  programs = {
+    gnupg.agent = {
+      enable = true;
+      settings = {
+        max-cache-ttl = 604800000;
+        default-cache-ttl = 604800000;
+        allow-preset-passphrase = true;
+        no-allow-external-cache = true;
+      };
+    };
+  };
+
   systemd.services = {
     "serial-getty@ttyS0".enable = false;
     "serial-getty@hvc0".enable = false;
@@ -76,5 +88,4 @@
   services.pcscd.enable = true;
   services.xserver.enable = true;
   programs.nix-ld.dev.enable = true;
-  programs.gnupg.agent.enable = true;
 }
