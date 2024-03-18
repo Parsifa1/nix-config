@@ -43,8 +43,6 @@ in
   home.homeDirectory = "/home/parsifa1";
   home.packages = stable-packages ++ unstable-packages;
 
-  # programs.gnupg.agent.enable = true;
-
   programs.atuin = {
     enable = true;
   };
@@ -76,7 +74,6 @@ in
     enableFishIntegration = true;
   };
 
-
   programs.fish = {
     enable = true;
     interactiveShellInit = ''
@@ -84,6 +81,10 @@ in
 
       #set starship
       starship init fish | source
+
+      if test -d "/mnt/c/Windows/System32/"
+        export PATH="$PATH:/mnt/c/Windows/System32/"
+      end
 
       function set_panetitle
         set -gx panetitle "❄️ Nix"

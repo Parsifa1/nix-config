@@ -55,6 +55,7 @@
   };
 
   services.pcscd.enable = true;
-
   programs.nix-ld.dev.enable = true;
+  programs.gnupg.agent.enable = true;
+  
 }

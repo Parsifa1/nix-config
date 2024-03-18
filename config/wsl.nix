@@ -1,6 +1,5 @@
 { pkgs, ... }:
 {
-  # 主要区别就是这个 wsl 模块
   wsl = {
     enable = true;
     defaultUser = "parsifa1";
