@@ -51,12 +51,22 @@
     stylua
   ];
 in {
-  home.username = "parsifa1";
-  home.homeDirectory = "/home/parsifa1";
-  home.packages = mason-packages ++ unstable-packages;
+  home = {
+    username = "parsifa1";
+    homeDirectory = "/home/parsifa1";
+    packages = mason-packages ++ unstable-packages;
+    home.sessionVariables = {
+      EDITOR = "nvim";
+    };
+  };
 
   programs.atuin = {
     enable = true;
+    enableFishIntegration = true;
+    settings = {
+      style = "compact";
+      filter_mode = "directory";
+    };
   };
 
   programs.starship = {

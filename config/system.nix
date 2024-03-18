@@ -40,7 +40,6 @@
     "nix-command"
     "flakes"
   ];
-  environment.variables.EDITOR = "nvim";
 
   networking.proxy = {
     allProxy = "http://127.0.0.1:7891";
@@ -62,13 +61,15 @@
     '';
   };
 
-  systemd.services."serial-getty@ttyS0".enable = false;
-  systemd.services."serial-getty@hvc0".enable = false;
-  systemd.services."getty@tty1".enable = false;
-  systemd.services."autovt@".enable = false;
-  systemd.services.firewall.enable = false;
-  systemd.services.systemd-resolved.enable = false;
-  systemd.services.systemd-udevd.enable = false;
+  systemd.services = {
+    "serial-getty@ttyS0".enable = false;
+    "serial-getty@hvc0".enable = false;
+    "getty@tty1".enable = false;
+    "autovt@".enable = false;
+    firewall.enable = false;
+    systemd-resolved.enable = false;
+    systemd-udevd.enable = false;
+  };
 
   services.pcscd.enable = true;
   services.xserver.enable = true;
