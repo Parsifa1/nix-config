@@ -89,7 +89,6 @@ in
       set -U fish_greeting
 
       clear
-
       dbus-launch true
 
       export DISPLAY=":0"
