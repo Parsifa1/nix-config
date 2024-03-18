@@ -34,13 +34,13 @@ let
     marksman
     nodePackages.prettier
     rust-analyzer
-    # nodePackages."@astrojs/language-server"
-    # python311Packages.autopep8
-    # pkgs.nodePackages.vscode-langservers-extracted
-    # vscode-extensions.ms-pyright.pyright
-    # tailwindcss-language-server
-    # taplo
-    # language formmater
+    nodePackages."@astrojs/language-server"
+    python311Packages.autopep8
+    pkgs.nodePackages.vscode-langservers-extracted
+    vscode-extensions.ms-pyright.pyright
+    tailwindcss-language-server
+    taplo
+    language formmater
     nixfmt
     stylua
   ];
