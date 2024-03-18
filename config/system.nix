@@ -63,6 +63,7 @@
     };
 
     gpg-agent = {
+      enable = true;
       settings = {
         max-cache-ttl = 604800000;
         default-cache-ttl = 604800000;
