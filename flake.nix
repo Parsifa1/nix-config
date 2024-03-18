@@ -62,7 +62,9 @@
     {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
-        specialArgs = argDefaults;
+        specialArgs = argDefaults // {
+          inherit system;
+        };
         modules = [
           #其他配置文件
           ./config/wsl.nix
