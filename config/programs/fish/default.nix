@@ -1,12 +1,6 @@
 {...}: {
   programs.fish = {
     enable = true;
-    # functions = {
-    #   set_panetitle = ''
-    #     set -gx panetitle "❄️ nix"
-    #     echo -n (printf "\033]1337;SetUserVar=panetitle=%s\007" (echo -n $panetitle | base64))
-    #   '';
-    # };
     interactiveShellInit = builtins.readFile ./config.fish;
     shellAliases = {
       v = "nvim";
