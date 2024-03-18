@@ -55,9 +55,6 @@ in {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
     packages = mason-packages ++ unstable-packages;
-    sessionVariables = {
-      EDITOR = "nvim";
-    };
   };
 
   programs.atuin = {
@@ -100,6 +97,9 @@ in {
 
   programs.fish = {
     enable = true;
+    sessionVariables = {
+      EDITOR = "nvim";
+    };
     functions = {
       set_panetitle = ''
         set -gx panetitle "❄️ Nix"
