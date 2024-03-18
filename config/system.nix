@@ -59,11 +59,17 @@
     '';
   };
 
+  systemd.services."serial-getty@ttyS0".enable = false;
+  systemd.services."serial-getty@hvc0".enable = false;
+  systemd.services."getty@tty1".enable = false;
+  systemd.services."autovt@".enable = false;
+  systemd.services.firewall.enable = false;
+  systemd.services.systemd-resolved.enable = false;
+  systemd.services.systemd-udevd.enable = false;
+
   services.pcscd.enable = true;
   services.xserver.enable = true;
-
-  # services.xserver.desktopManager.gnome.enable = true;
-
+  services.xserver.desktopManager.gnome.enable = true;
   programs.nix-ld.dev.enable = true;
   programs.gnupg.agent.enable = true;
 }

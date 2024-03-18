@@ -6,7 +6,6 @@
     # 创建软件的桌面快捷方式
     startMenuLaunchers = true;
     nativeSystemd = true;
-    wslConf.boot.command = "dbus-launch true";
   };
 
   environment.systemPackages = [ (import ./pkgs/win32yank.nix { inherit pkgs; }) ];
