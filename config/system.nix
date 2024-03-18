@@ -34,6 +34,7 @@
     python311
     gnome.gnome-calculator
     nix-ld
+    nodePackages_latest.pnpm
   ];
 
   nix.settings.experimental-features = [
