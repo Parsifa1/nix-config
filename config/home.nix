@@ -22,7 +22,7 @@ let
     git-credential-manager
   ];
 
-  stable-packages = with pkgs; [
+  mason-packages = with pkgs; [
     # language servers
     nodePackages.typescript-language-server
     yaml-language-server
@@ -48,7 +48,7 @@ in
 {
   home.username = "parsifa1";
   home.homeDirectory = "/home/parsifa1";
-  home.packages = stable-packages ++ unstable-packages;
+  home.packages = mason-packages ++ unstable-packages;
 
   programs.atuin = {
     enable = true;
@@ -129,6 +129,8 @@ in
       zf = "z \$(fd --type d --hidden . 2>/dev/null | fzf)";
     };
   };
+
+  programs.yazi = ./yazi.nix;
 
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
