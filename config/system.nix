@@ -28,7 +28,7 @@
     nodejs
     openssh
     rocmPackages.llvm.clang
-    python3
+    python311
     gnome.gnome-calculator
     nix-ld
   ];
