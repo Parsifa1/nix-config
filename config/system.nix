@@ -61,16 +61,6 @@
         AcceptEnv TERM_PROGRAM_VERSION WEZTERM_REMOTE_PANE TERM COLORTERM TERM_PROGRAM WSLENV
       '';
     };
-
-    gpg-agent = {
-      enable = true;
-      settings = {
-        max-cache-ttl = 604800000;
-        default-cache-ttl = 604800000;
-        allow-preset-passphrase = true;
-        no-allow-external-cache = true;
-      };
-    };
   };
 
   systemd.services = {
