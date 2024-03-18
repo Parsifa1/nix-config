@@ -3,8 +3,7 @@
   alejandra,
   system,
   ...
-}:
-let
+}: let
   unstable-packages = with pkgs.unstable; [
     fastfetch
     ripgrep
@@ -51,8 +50,7 @@ let
     nixfmt
     stylua
   ];
-in
-{
+in {
   home.username = "parsifa1";
   home.homeDirectory = "/home/parsifa1";
   home.packages = mason-packages ++ unstable-packages;

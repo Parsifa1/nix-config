@@ -25,10 +25,8 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs =
-    inputs:
-    with inputs;
-    let
+  outputs = inputs:
+    with inputs; let
       nixpkgsWithOverlays = with inputs; rec {
         config = {
           allowUnfree = true;
@@ -46,7 +44,7 @@
       argDefaults = {
         pkg-neovim = import nixpkgs {
           system = "x86_64-linux";
-          overlays = [ inputs.neovim-nightly-overlay.overlay ];
+          overlays = [inputs.neovim-nightly-overlay.overlay];
         };
         inherit
           inputs
@@ -58,13 +56,14 @@
           inherit nixpkgs nixpkgs-unstable;
         };
       };
-    in
-    {
+    in {
       nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
         system = "x86_64-linux";
-        specialArgs = argDefaults // {
-          inherit system;
-        };
+        specialArgs =
+          argDefaults
+          // {
+            inherit system;
+          };
         modules = [
           #其他配置文件
           ./config/wsl.nix
