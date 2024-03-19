@@ -10,6 +10,12 @@ export EDITOR="nvim"
 export DISPLAY=":0"
 export WAYLAND_DISPLAY=wayland-0
 export PATH="$HOME/.cargo/bin:$PATH"
+#pnpm
+set -gx PNPM_HOME "/home/parsifa1/.local/share/pnpm"
+if not string match -q -- $PNPM_HOME $PATH
+  set -gx PATH "$PNPM_HOME" $PATH
+end
+
 
 
 if test -d "/mnt/c/Windows/System32/"
