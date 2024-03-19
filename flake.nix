@@ -4,6 +4,7 @@
     nur.url = "github:nix-community/NUR";
     nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    tinymist.url = "github:parsifa1/tinymist";
 
     nix-ld = {
       url = "github:Mic92/nix-ld";
@@ -27,6 +28,11 @@
 
     alejandra = {
       url = "github:kamadorueda/alejandra/";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    cloudtide = {
+      url = "./pkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

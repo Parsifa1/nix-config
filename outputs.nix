@@ -2,32 +2,22 @@
 with inputs; let
   nixpkgsWithOverlays = with inputs; {
     overlays = [
+      #nur overlay
       nur.overlay
+      #unstable overlays
       (_final: prev: {
         unstable = import nixpkgs-unstable {
           inherit (prev) system;
-          config = {
-            allowUnfree = true;
-          };
+          config = {allowUnfree = true;};
         };
       })
+      # my nur overlays
+      (final: prev: {cloudtide = inputs.cloudtide.packages."${prev.system}";})
     ];
   };
-
   argDefaults = {
-    # pkg-neovim = import nixpkgs {
-    #   system = "x86_64-linux";
-    #   overlays = [inputs.neovim-nightly-overlay.overlay];
-    # };
-    inherit
-      inputs
-      self
-      nix-index-database
-      alejandra
-      ;
-    channels = {
-      inherit nixpkgs nixpkgs-unstable;
-    };
+    inherit inputs self nix-index-database alejandra;
+    channels = {inherit nixpkgs nixpkgs-unstable;};
   };
 in {
   nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {

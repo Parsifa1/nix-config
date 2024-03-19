@@ -1,4 +1,4 @@
-{pkgs ? import <nixpkgs>}: let
+{pkgs}: let
   pname = "win32yank";
   version = "0.1.1";
   bin = "win32yank.exe";
