@@ -1,17 +1,13 @@
 {
+  inputs,
   pkgs,
-  pkg-neovim,
   ...
 }: {
   programs.fish.enable = true;
   users.users.parsifa1 = {
     isNormalUser = true;
     shell = pkgs.fish;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-    ];
-    packages = [pkg-neovim.neovim-nightly];
+    extraGroups = ["networkmanager" "wheel"];
     openssh.authorizedKeys.keys = [
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoYJIrhUQGPbm2xzV9Rd6H6vfGeGC2Okr4yHdIxyLJgZTvbY6F9/HUKuIOo/EpZkNs+YXrxw6WVbMFMRhdgYLHbaWxlWmd5VqA+2msLw/Xj1KtObCJp3bwYqvIv6O6tzCc7KuQf+kY3MZLKCxMRV6Mv6AzdeD4rsc78V9XKN4VOT+meHXGfP8/Di42FRNratyQQKiKZh+Pcz8wW+kYq4n+8PkYLkIzpboAfvp2Kmbv8ElkspCKEpmlIXsDX+3Ara3zsY+5j7rfuh0U2c+/g9m33EwhtQ6YTGB6UDjQRoa4bu/e3V6LJb77QuSZK4E6oGAiTgASP12Ns5oQkTTtwF36JYOrAYpGoiCsoAo1zDPHS1gDIJVq+AoUZ2WF1qW0s/rGOMEw3EoBvz5UQ1LmqaJ3uo4lnEkGyVYpeu4aMizDtL1DvRMJNhgyB2v37OoNiiva3sxCINBAlc0n4CebFUvYWd5xhS6EHfcKbQ/wL9udUKTMuZoR3DBIm5depm3F+ks= parsifal@LAPTOP-ALDRIC"
     ];
@@ -21,6 +17,7 @@
     fish
     git
     vim
+    inputs.neovim-nightly.packages."${pkgs.system}".neovim
     wget
     curl
     gnupg
@@ -70,8 +67,8 @@
       settings = {
         max-cache-ttl = 604800000;
         default-cache-ttl = 604800000;
-        allow-preset-passphrase = true;
-        no-allow-external-cache = true;
+        allow-preset-passphrase = "";
+        no-allow-external-cache = "";
       };
     };
   };

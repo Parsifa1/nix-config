@@ -13,11 +13,12 @@ with inputs; let
       })
     ];
   };
+
   argDefaults = {
-    pkg-neovim = import nixpkgs {
-      system = "x86_64-linux";
-      overlays = [inputs.neovim-nightly-overlay.overlay];
-    };
+    # pkg-neovim = import nixpkgs {
+    #   system = "x86_64-linux";
+    #   overlays = [inputs.neovim-nightly-overlay.overlay];
+    # };
     inherit
       inputs
       self
@@ -34,8 +35,8 @@ in {
     specialArgs = argDefaults // {inherit system;};
     modules = [
       #其他配置文件
-      ./config/wsl.nix
-      ./config/system.nix
+      ./nix/wsl.nix
+      ./nix/system.nix
       #一些模块
       nixos-wsl.nixosModules.wsl
       nix-ld.nixosModules.nix-ld
@@ -45,7 +46,7 @@ in {
         nixpkgs = nixpkgsWithOverlays;
         home-manager.useGlobalPkgs = true;
         home-manager.useUserPackages = true;
-        home-manager.users.parsifa1 = import ./config/home.nix;
+        home-manager.users.parsifa1 = import ./nix/home.nix;
         home-manager.extraSpecialArgs = specialArgs;
         nix.settings.auto-optimise-store = true;
         nix.gc = {
