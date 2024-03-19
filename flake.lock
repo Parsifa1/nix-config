@@ -30,14 +30,17 @@
         "vsc": "vsc"
       },
       "locked": {
-        "lastModified": 1,
-        "narHash": "sha256-bwwHc4JGzkuGbLHsO/3of3a81ifjZPLYaky59S4z3Kw=",
-        "path": "/nix/store/ggwgyc4bl61j79sizfxzm8cf49nx3kfr-source/pkgs",
-        "type": "path"
+        "lastModified": 1710888811,
+        "narHash": "sha256-d0WCfkl8CiZgQVnqiDBzdrT07aPZi5gYgI2dmdM3/Ao=",
+        "owner": "Parsifa1",
+        "repo": "nur-packages",
+        "rev": "4e3dc7946901cc512a77ac9e4f30f5dd3515ef3f",
+        "type": "github"
       },
       "original": {
-        "path": "/nix/store/ggwgyc4bl61j79sizfxzm8cf49nx3kfr-source/pkgs",
-        "type": "path"
+        "owner": "Parsifa1",
+        "repo": "nur-packages",
+        "type": "github"
       }
     },
     "fenix": {
