@@ -30,16 +30,16 @@
         "vsc": "vsc"
       },
       "locked": {
-        "lastModified": 1710888811,
-        "narHash": "sha256-d0WCfkl8CiZgQVnqiDBzdrT07aPZi5gYgI2dmdM3/Ao=",
-        "owner": "Parsifa1",
-        "repo": "nur-packages",
-        "rev": "4e3dc7946901cc512a77ac9e4f30f5dd3515ef3f",
+        "lastModified": 1710889000,
+        "narHash": "sha256-pJ1HXvZEUtpwqEfwAP+s6jUfzzXc/aGO+EcZpv17yxc=",
+        "owner": "parsifa1",
+        "repo": "nur",
+        "rev": "8dbb26b654e304348e67cd4a510005b9733326a7",
         "type": "github"
       },
       "original": {
-        "owner": "Parsifa1",
-        "repo": "nur-packages",
+        "owner": "parsifa1",
+        "repo": "nur",
         "type": "github"
       }
     },
