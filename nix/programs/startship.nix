@@ -5,6 +5,7 @@
       aws.disabled = true;
       gcloud.disabled = true;
       hostname.disabled = true;
+      username.disabled = true;
     };
   };
 }

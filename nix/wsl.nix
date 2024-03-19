@@ -6,7 +6,7 @@
     nativeSystemd = true;
   };
 
-  environment.systemPackages = [(import ../pkgs/win32yank.nix {inherit pkgs;})];
+  environment.systemPackages = [pkgs.cloudtide.win32yank];
 
   networking.hostName = "nixos";
   system.stateVersion = "23.11";

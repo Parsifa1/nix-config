@@ -49,6 +49,8 @@
     taplo
     nodePackages.typescript-language-server
     yaml-language-server
+    # cloudtide.tinymist
+    # cloudtide.delance
     alejandra.defaultPackage.${system}
   ];
 in {
