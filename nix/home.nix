@@ -26,6 +26,7 @@
     atuin
     typst
     git-credential-manager
+    nh
   ];
 
   mason-packages = with pkgs; [

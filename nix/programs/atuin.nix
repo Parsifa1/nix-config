@@ -4,7 +4,6 @@
     enableFishIntegration = true;
     settings = {
       style = "compact";
-      filter_mode = "directory";
     };
   };
 }
