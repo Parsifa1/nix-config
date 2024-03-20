@@ -30,16 +30,16 @@
         "vsc": "vsc"
       },
       "locked": {
-        "lastModified": 1710889000,
-        "narHash": "sha256-pJ1HXvZEUtpwqEfwAP+s6jUfzzXc/aGO+EcZpv17yxc=",
+        "lastModified": 1710921314,
+        "narHash": "sha256-jSFIlG/uaND41aIgbnldO6xGfnMHOvIa5kfZTNXOuCo=",
         "owner": "parsifa1",
-        "repo": "nur",
-        "rev": "8dbb26b654e304348e67cd4a510005b9733326a7",
+        "repo": "nixpkgs",
+        "rev": "d98edf159f6fb2ee948d45534f9ab7ffdf884220",
         "type": "github"
       },
       "original": {
         "owner": "parsifa1",
-        "repo": "nur",
+        "repo": "nixpkgs",
         "type": "github"
       }
     },
