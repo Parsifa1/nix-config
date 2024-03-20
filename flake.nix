@@ -32,7 +32,7 @@
     };
 
     cloudtide = {
-      url = "git+file:../nur";
+      url = "github:parsifa1/nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
