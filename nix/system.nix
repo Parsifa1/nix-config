@@ -28,6 +28,7 @@
     rocmPackages.llvm.clang
     python311
     gnome.gnome-calculator
+    musl
     nix-ld
     nodePackages_latest.pnpm
   ];
