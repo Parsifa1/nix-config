@@ -22,17 +22,17 @@
     };
 
     home-manager = {
-      url = "github:nix-community/home-manager/";
+      url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     alejandra = {
-      url = "github:kamadorueda/alejandra/";
+      url = "github:kamadorueda/alejandra";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
     cloudtide = {
-      url = "github:parsifa1/nixpkgs";
+      url = "github:parsifa/nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
