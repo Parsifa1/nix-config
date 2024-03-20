@@ -30,6 +30,7 @@
     gnome.gnome-calculator
     nix-ld
     nodePackages_latest.pnpm
+    nix-init
   ];
 
   nix.settings.experimental-features = ["nix-command" "flakes"];

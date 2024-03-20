@@ -31,7 +31,6 @@
 
   mason-packages = with pkgs; [
     tree-sitter
-    python311Packages.pynvim
     # language servers
     nodePackages."@astrojs/language-server"
     python311Packages.autopep8
@@ -50,7 +49,7 @@
     taplo
     nodePackages.typescript-language-server
     yaml-language-server
-    # cloudtide.tinymist
+    cloudtide.tinymist
     # cloudtide.delance
     alejandra.defaultPackage.${system}
   ];

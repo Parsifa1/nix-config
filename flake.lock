@@ -30,10 +30,10 @@
         "vsc": "vsc"
       },
       "locked": {
-        "dirtyRev": "fdec98facde074972d5220d392159b76edaeff0b-dirty",
-        "dirtyShortRev": "fdec98f-dirty",
-        "lastModified": 1710941731,
-        "narHash": "sha256-2jnGXRzBWhLtGj7+gau6Br/P3uraBoaaMwZ9vXs5UxY=",
+        "dirtyRev": "7b0be7097277b5982a40aa881187d840873896b9-dirty",
+        "dirtyShortRev": "7b0be70-dirty",
+        "lastModified": 1710952532,
+        "narHash": "sha256-F6cTv8TXt2+XhlCkrY1aEH8lknth+tozwKsBb1pJ8fw=",
         "type": "git",
         "url": "file:/home/parsifa1/nur"
       },
