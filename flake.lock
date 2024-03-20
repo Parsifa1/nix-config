@@ -30,16 +30,17 @@
         "vsc": "vsc"
       },
       "locked": {
-        "dirtyRev": "671167c699f4a6e12933b997b0e3747a34995d4a-dirty",
-        "dirtyShortRev": "671167c-dirty",
-        "lastModified": 1710930940,
+        "lastModified": 1710938330,
         "narHash": "sha256-GlSPBszXP1wGuvegdn42Ssbrk94evRVvm7tq5ZCAuzc=",
-        "type": "git",
-        "url": "file:../nur"
+        "owner": "parsifa1",
+        "repo": "nixpkgs",
+        "rev": "478be724d0a17dbd059627c475b688b064aa7f0a",
+        "type": "github"
       },
       "original": {
-        "type": "git",
-        "url": "file:../nur"
+        "owner": "parsifa1",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "fenix": {
