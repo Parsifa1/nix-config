@@ -30,17 +30,16 @@
         "vsc": "vsc"
       },
       "locked": {
-        "lastModified": 1710938330,
-        "narHash": "sha256-GlSPBszXP1wGuvegdn42Ssbrk94evRVvm7tq5ZCAuzc=",
-        "owner": "parsifa1",
-        "repo": "nixpkgs",
-        "rev": "478be724d0a17dbd059627c475b688b064aa7f0a",
-        "type": "github"
+        "dirtyRev": "fdec98facde074972d5220d392159b76edaeff0b-dirty",
+        "dirtyShortRev": "fdec98f-dirty",
+        "lastModified": 1710941731,
+        "narHash": "sha256-2jnGXRzBWhLtGj7+gau6Br/P3uraBoaaMwZ9vXs5UxY=",
+        "type": "git",
+        "url": "file:/home/parsifa1/nur"
       },
       "original": {
-        "owner": "parsifa1",
-        "repo": "nixpkgs",
-        "type": "github"
+        "type": "git",
+        "url": "file:/home/parsifa1/nur"
       }
     },
     "fenix": {

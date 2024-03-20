@@ -31,6 +31,7 @@
 
   mason-packages = with pkgs; [
     tree-sitter
+    python311Packages.pynvim
     # language servers
     nodePackages."@astrojs/language-server"
     python311Packages.autopep8
