@@ -1,20 +1,6 @@
 {inputs, ...}:
 with inputs; let
-  nixpkgsWithOverlays = with inputs; {
-    overlays = [
-      #nur overlay
-      nur.overlay
-      #unstable overlays
-      (_final: prev: {
-        unstable = import nixpkgs-unstable {
-          inherit (prev) system;
-          config = {allowUnfree = true;};
-        };
-      })
-      # my nur overlays
-      (final: prev: {cloudtide = inputs.cloudtide.packages."${prev.system}";})
-    ];
-  };
+  nixpkgsWithOverlays = import ./overlay.nix {inherit inputs;};
   argDefaults = {
     inherit inputs self nix-index-database alejandra;
     channels = {inherit nixpkgs nixpkgs-unstable;};

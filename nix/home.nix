@@ -1,9 +1,4 @@
-{
-  pkgs,
-  alejandra,
-  system,
-  ...
-}: let
+{pkgs, ...}: let
   unstable-packages = with pkgs.unstable; [
     fastfetch
     ripgrep
@@ -44,10 +39,10 @@
     taplo
     nodePackages.typescript-language-server
     yaml-language-server
-    cloudtide.tinymist
-    cloudtide.typstyle
+    pkgs.cloudtide.tinymist
+    pkgs.cloudtide.typstyle
     # cloudtide.delance
-    alejandra.defaultPackage.${system}
+    pkgs.alejandra
   ];
 in {
   home = {
