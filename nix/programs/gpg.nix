@@ -1,6 +1,0 @@
-{...}: {
-  programs = {
-    gpg.settings = {
-    };
-  };
-}

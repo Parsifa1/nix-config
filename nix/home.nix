@@ -15,19 +15,13 @@
     tree
     nix-output-monitor
     btop
-    starship
-    yazi
     unzip
-    zoxide
     lazygit
     dust
     duf
-    direnv
-    atuin
     typst
     git-credential-manager
     nh
-    emacs29-pgtk
   ];
 
   mason-packages = with pkgs; [
@@ -62,7 +56,7 @@ in {
     packages = mason-packages ++ unstable-packages;
   };
 
-  imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs)));
+  imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs))) ++ [./config.nix];
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
 }

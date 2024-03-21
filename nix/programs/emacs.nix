@@ -1,8 +1,7 @@
 {pkgs, ...}: {
-  emacs = {
+  programs.emacs = {
     enable = true;
-    package = pkgs.emacs-git.override {withGTK3 = true;};
-
+    package = pkgs.emacs29-pgtk;
     extraPackages = epkgs: [
       pkgs.librime
       pkgs.noto-fonts-color-emoji
