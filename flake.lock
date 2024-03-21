@@ -30,11 +30,11 @@
         "vsc": "vsc"
       },
       "locked": {
-        "lastModified": 1711007737,
-        "narHash": "sha256-f//JDrOPYcr2q2gir4StwhC8M0hkoiAnWuzaJO4HeiI=",
+        "lastModified": 1711026095,
+        "narHash": "sha256-QS5uT+FZPLctTeEBwjTvGDxr1t9hLVIcPrDcIvlK56Q=",
         "owner": "parsifa1",
         "repo": "nixpkgs",
-        "rev": "9ef39a313ba561d618fdf6f1fe4b6b5375d4dca2",
+        "rev": "5e6bb274ecaedc87dcf46dd91c5831ab93cd6844",
         "type": "github"
       },
       "original": {

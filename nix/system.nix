@@ -40,7 +40,25 @@
     nix-ld
     nodePackages_latest.pnpm
     nix-init
+    whitesur-gtk-theme
+    dconf
+    gnome.gnome-tweaks
+    bibata-cursors
   ];
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      lxgw-wenkai
+    ];
+    fontconfig = {
+      defaultFonts = {
+        serif = ["LXGW WenKai"];
+        sansSerif = ["LXGW WenKai"];
+        monospace = ["LXGW WenKai"];
+      };
+    };
+  };
 
   nix.settings.experimental-features = ["nix-command" "flakes"];
 

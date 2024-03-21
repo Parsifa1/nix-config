@@ -27,6 +27,7 @@
     typst
     git-credential-manager
     nh
+    emacs29-pgtk
   ];
 
   mason-packages = with pkgs; [
@@ -51,6 +52,7 @@
     yaml-language-server
     cloudtide.tinymist
     cloudtide.typstyle
+    cloudtide.iosevkacloudtide
     # cloudtide.delance
     alejandra.defaultPackage.${system}
   ];
@@ -60,6 +62,12 @@ in {
     homeDirectory = "/home/parsifa1";
     packages = mason-packages ++ unstable-packages;
   };
+
+  gtk = {
+    enable = true;
+    theme = {name = "WhiteSur-Dark";};
+  };
+
   imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs)));
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
