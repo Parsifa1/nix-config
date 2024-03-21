@@ -52,7 +52,6 @@
     yaml-language-server
     cloudtide.tinymist
     cloudtide.typstyle
-    cloudtide.iosevkacloudtide
     # cloudtide.delance
     alejandra.defaultPackage.${system}
   ];

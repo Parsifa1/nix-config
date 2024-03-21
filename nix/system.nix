@@ -44,6 +44,7 @@
     dconf
     gnome.gnome-tweaks
     bibata-cursors
+    cloudtide.IosevkaCloudtide
   ];
 
   fonts = {
