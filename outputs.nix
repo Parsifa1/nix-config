@@ -2,8 +2,8 @@
 with inputs; let
   nixpkgsWithOverlays = import ./overlay.nix {inherit inputs;};
   argDefaults = {
-    inherit inputs self nix-index-database alejandra;
-    channels = {inherit nixpkgs nixpkgs-unstable;};
+    inherit inputs self nix-index-database;
+    channels = {inherit nixpkgs;};
   };
 in {
   nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
