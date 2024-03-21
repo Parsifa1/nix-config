@@ -50,6 +50,7 @@
     nodePackages.typescript-language-server
     yaml-language-server
     cloudtide.tinymist
+    cloudtide.typstyle
     # cloudtide.delance
     alejandra.defaultPackage.${system}
   ];
