@@ -23,7 +23,6 @@
   environment.systemPackages = with pkgs; [
     fish
     git
-    vim
     inputs.neovim-nightly.packages."${pkgs.system}".neovim
     wget
     curl
