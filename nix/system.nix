@@ -40,23 +40,25 @@
     nix-ld
     nodePackages_latest.pnpm
     nix-init
+    # gdk theme
     whitesur-gtk-theme
     dconf
     gnome.gnome-tweaks
     bibata-cursors
-    cloudtide.IosevkaCloudtide
   ];
 
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
       lxgw-wenkai
+      cloudtide.IosevkaCloudtide
+      ibm-plex
     ];
     fontconfig = {
       defaultFonts = {
         serif = ["LXGW WenKai"];
         sansSerif = ["LXGW WenKai"];
-        monospace = ["LXGW WenKai"];
+        monospace = ["IosevkaCloudtide"];
       };
     };
   };

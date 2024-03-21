@@ -62,11 +62,6 @@ in {
     packages = mason-packages ++ unstable-packages;
   };
 
-  gtk = {
-    enable = true;
-    theme = {name = "WhiteSur-Dark";};
-  };
-
   imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs)));
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
