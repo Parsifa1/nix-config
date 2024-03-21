@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.fish.enable = true;
   users.users.parsifa1 = {
     isNormalUser = true;
@@ -23,7 +19,7 @@
   environment.systemPackages = with pkgs; [
     fish
     git
-    inputs.neovim-nightly.packages."${pkgs.system}".neovim
+    neovim
     wget
     curl
     gnupg
