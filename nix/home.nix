@@ -1,6 +1,7 @@
 {pkgs, ...}: let
   unstable-packages = with pkgs.unstable; [
     fastfetch
+    hyfetch
     ripgrep
     eza
     bat
