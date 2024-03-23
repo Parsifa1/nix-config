@@ -34,6 +34,7 @@
     gnome.gnome-calculator
     nix-ld
     nodePackages_latest.pnpm
+    websocat
     nix-init
     # gdk theme
     whitesur-gtk-theme

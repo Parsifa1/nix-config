@@ -40,10 +40,11 @@
     taplo
     nodePackages.typescript-language-server
     yaml-language-server
-    pkgs.cloudtide.tinymist
-    pkgs.cloudtide.typstyle
+    cloudtide.tinymist
+    cloudtide.typstyle
     # cloudtide.delance
-    pkgs.alejandra
+    alejandra
+    typst-preview
   ];
 in {
   home = {
@@ -52,7 +53,12 @@ in {
     packages = mason-packages ++ unstable-packages;
   };
 
-  imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs))) ++ [./config.nix];
+  gtk = {
+    enable = true;
+    theme = {name = "WhiteSur-Dark";};
+  };
+
+  imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs)));
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
 }
