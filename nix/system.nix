@@ -37,10 +37,8 @@
     websocat
     nix-init
     # gdk theme
-    whitesur-gtk-theme
     dconf
-    gnome.gnome-tweaks
-    bibata-cursors
+    # gnome.gnome-tweaks
   ];
 
   fonts = {

@@ -55,7 +55,14 @@ in {
 
   gtk = {
     enable = true;
-    theme = {name = "WhiteSur-Dark";};
+    theme = {
+      name = "WhiteSur-Dark";
+      package = pkgs.whitesur-gtk-theme;
+    };
+    cursorTheme = {
+      name = "Bibata-Modern-Classic";
+      package = pkgs.bibata-cursors;
+    };
   };
 
   imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs)));
