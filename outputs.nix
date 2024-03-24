@@ -20,20 +20,22 @@ in {
       # 杂项配置
       {
         nixpkgs = nixpkgsWithOverlays;
+        nix = {
+          settings = {
+            auto-optimise-store = true;
+            use-xdg-base-directories = true;
+          };
+          gc = {
+            automatic = true;
+            dates = "weekly";
+            options = "--delete-older-than 1w";
+          };
+        };
         home-manager = {
           useGlobalPkgs = true;
           useUserPackages = true;
           users.parsifa1 = import ./nix/home.nix;
           extraSpecialArgs = specialArgs;
-        };
-        nix.settings = {
-          auto-optimise-store = true;
-          use-xdg-base-directories = true;
-        };
-        nix.gc = {
-          automatic = true;
-          dates = "weekly";
-          options = "--delete-older-than 1w";
         };
       }
     ];
