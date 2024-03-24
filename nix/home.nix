@@ -21,37 +21,39 @@
     nh
   ];
 
-  mason-packages = with pkgs; [
+  neovim-packages = with pkgs; [
     tree-sitter
     # language servers
-    nodePackages."@astrojs/language-server"
-    python311Packages.autopep8
-    clang-tools
-    pkgs.nodePackages.vscode-langservers-extracted
     lua-language-server
-    marksman
-    nil
-    nodePackages.prettier
-    vscode-extensions.ms-pyright.pyright
-    ruff
-    ruff-lsp
+    clang-tools #cpp
     rust-analyzer
-    stylua
-    tailwindcss-language-server
-    taplo
-    nodePackages.typescript-language-server
+    marksman #markdown
     yaml-language-server
-    cloudtide.tinymist
-    cloudtide.typstyle
-    # cloudtide.delance
+    cloudtide.tinymist #typst
+    nodePackages.vscode-langservers-extracted #html, json
+    nodePackages.typescript-language-server
+    nodePackages."@astrojs/language-server"
+    taplo #toml
+    ruff-lsp #python
+    tailwindcss-language-server
+    nil
+
+    # formatter
+    python311Packages.autopep8
     alejandra
+    cloudtide.typstyle
+    ruff
+    stylua
+    nodePackages.prettier
+
+    # others
     typst-preview
   ];
 in {
   home = {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
-    packages = mason-packages ++ unstable-packages;
+    packages = neovim-packages ++ unstable-packages;
   };
 
   gtk = {
