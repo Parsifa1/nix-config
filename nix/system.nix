@@ -36,9 +36,7 @@
     nodePackages_latest.pnpm
     websocat
     nix-init
-    # gdk theme
     dconf
-    # gnome.gnome-tweaks
   ];
 
   fonts = {
