@@ -20,11 +20,16 @@ in {
       # 杂项配置
       {
         nixpkgs = nixpkgsWithOverlays;
-        home-manager.useGlobalPkgs = true;
-        home-manager.useUserPackages = true;
-        home-manager.users.parsifa1 = import ./nix/home.nix;
-        home-manager.extraSpecialArgs = specialArgs;
-        nix.settings.auto-optimise-store = true;
+        home-manager = {
+          useGlobalPkgs = true;
+          useUserPackages = true;
+          users.parsifa1 = import ./nix/home.nix;
+          extraSpecialArgs = specialArgs;
+        };
+        nix.settings = {
+          auto-optimise-store = true;
+          use-xdg-base-directories = true;
+        };
         nix.gc = {
           automatic = true;
           dates = "weekly";
