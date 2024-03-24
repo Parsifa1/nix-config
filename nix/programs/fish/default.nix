@@ -14,7 +14,7 @@
     enable = true;
     functions = {
       set_panetitle = ''
-        set -gx panetitle "❄️ nix"
+        set -gx panetitle "❄️ Nix"
         echo -n (printf "\033]1337;SetUserVar=panetitle=%s\007" (echo -n $panetitle | base64))
       '';
     };
