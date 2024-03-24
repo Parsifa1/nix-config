@@ -42,8 +42,8 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
+      cloudtide.fonts
       lxgw-wenkai
-      cloudtide.IosevkaCloudtide
       ibm-plex
     ];
     fontconfig = {
