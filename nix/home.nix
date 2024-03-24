@@ -17,6 +17,7 @@
     duf
     typst
     git-credential-manager
+    yarn
     nh
   ];
 
