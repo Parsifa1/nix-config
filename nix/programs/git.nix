@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.git = {
     enable = true;
-    userName = "parsifa1";
+    userName = "Parsifa1";
     userEmail = "li.aldric@gmail.com";
     package = pkgs.gitFull;
     extraConfig = {
