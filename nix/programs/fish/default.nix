@@ -2,12 +2,13 @@
   home.sessionVariables = {
     FZF_DEFAULT_COMMAND = "fd -H -I --exclude={.git,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs} --type f";
     FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";
+    PATH = "$HOME/.cargo/bin:$PATH";
+    PNPM_HOME = "/home/parsifa1/.local/share/pnpm";
+    FLAKE = "/home/parsifa1/nixos/";
+    WAYLAND_DISPLAY = "wayland-0";
     EDITOR = "nvim";
     DISPLAY = ":0";
     DIRENV_LOG_FORMAT = ""; # close direnv log
-    FLAKE = "/home/parsifa1/nixos/";
-    WAYLAND_DISPLAY = "wayland-0";
-    PATH = "$HOME/.cargo/bin:$PATH";
   };
 
   programs.fish = {
@@ -22,6 +23,7 @@
     shellAliases = {
       v = "nvim";
       vi = "nvim";
+      lg = "lazygit";
       fa = "fastfetch";
       cls = "clear";
       py = "python";
