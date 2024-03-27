@@ -15,5 +15,8 @@
       }))
     ];
   };
-  home.packages = with pkgs; [rime-data emacsPackages.telega];
+  home.packages = with pkgs; [rime-data pkg-config];
+  home.sessionVariables = {
+    TD_PATH = pkgs.tdlib;
+  };
 }
