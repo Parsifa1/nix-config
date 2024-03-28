@@ -9,6 +9,7 @@
     EDITOR = "nvim";
     DISPLAY = ":0";
     DIRENV_LOG_FORMAT = ""; # close direnv log
+    TERM = "WezTerm";
   };
 
   programs.fish = {
