@@ -73,10 +73,8 @@
     };
   };
   networking.proxy = {
-    allProxy = "http://127.0.0.1:7891";
     httpProxy = "http://127.0.0.1:7891";
     httpsProxy = "http://127.0.0.1:7891";
-    ftpProxy = "http://127.0.0.1:7891";
     noProxy = "localhost,127.0.0.1";
   };
 
