@@ -72,16 +72,21 @@
       extraConfig = "AcceptEnv TERM_PROGRAM_VERSION WEZTERM_REMOTE_PANE TERM COLORTERM TERM_PROGRAM WSLENV";
     };
   };
+  networking.proxy = {
+    allProxy = "http://127.0.0.1:7891";
+    httpProxy = "http://127.0.0.1:7891";
+    httpsProxy = "http://127.0.0.1:7891";
+    ftpProxy = "http://127.0.0.1:7891";
+    noProxy = "localhost,127.0.0.1";
+  };
 
-  programs = {
-    gnupg.agent = {
-      enable = true;
-      settings = {
-        max-cache-ttl = 604800000;
-        default-cache-ttl = 604800000;
-        allow-preset-passphrase = "";
-        no-allow-external-cache = "";
-      };
+  programs.gnupg.agent = {
+    enable = true;
+    settings = {
+      max-cache-ttl = 604800000;
+      default-cache-ttl = 604800000;
+      allow-preset-passphrase = "";
+      no-allow-external-cache = "";
     };
   };
 
