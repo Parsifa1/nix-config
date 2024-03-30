@@ -14,7 +14,6 @@
     which
     tree
     btop
-    unzip
     dust
     duf
     typst
