@@ -1,7 +1,7 @@
 {pkgs, ...}: {
   programs.fish.enable = true;
   users.mutableUsers = false;
-  security.sudo.wheelNeedsPassword = true;
+  security.sudo.wheelNeedsPassword = false;
 
   users.users.parsifa1 = {
     isNormalUser = true;
@@ -36,7 +36,6 @@
     rocmPackages.llvm.clang
     python311
     gnome.gnome-calculator
-    nix-ld
     nodePackages_latest.pnpm
     websocat
     nix-init
@@ -104,6 +103,5 @@
 
   services.pcscd.enable = true;
   services.xserver.enable = true;
-  programs.nix-ld.dev.enable = true;
   virtualisation.docker.enable = true;
 }

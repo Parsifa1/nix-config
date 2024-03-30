@@ -30,11 +30,11 @@
         "vsc": "vsc"
       },
       "locked": {
-        "lastModified": 1711698772,
-        "narHash": "sha256-Ffa9zFM3BIHPcfk/SlrntqORqCQW00VzJFsM2uf1Kp8=",
+        "lastModified": 1711825575,
+        "narHash": "sha256-A3HIrC9vhH1SpOMlxVirhSzoD0rI3hzZrFxI26WFkcA=",
         "owner": "parsifa1",
         "repo": "nixpkgs",
-        "rev": "8a98f9d83f180e3f11653afb8a86a185a9b1f0f9",
+        "rev": "98f847b5ca29a252fb9e99c5756d0ab437922432",
         "type": "github"
       },
       "original": {
@@ -333,26 +333,6 @@
         "type": "github"
       }
     },
-    "nix-ld": {
-      "inputs": {
-        "nixpkgs": [
-          "nixpkgs"
-        ]
-      },
-      "locked": {
-        "lastModified": 1701153607,
-        "narHash": "sha256-h+odOVyiGmEERMECoFOj5P7FPiMR8IPRzroFA4sKivg=",
-        "owner": "Mic92",
-        "repo": "nix-ld",
-        "rev": "bf5aa84a713c31d95b4307e442e966d6c7fd7ae7",
-        "type": "github"
-      },
-      "original": {
-        "owner": "Mic92",
-        "repo": "nix-ld",
-        "type": "github"
-      }
-    },
     "nixos-wsl": {
       "inputs": {
         "flake-compat": "flake-compat_3",
@@ -429,7 +409,6 @@
         "home-manager": "home-manager",
         "neovim-nightly": "neovim-nightly",
         "nix-index-database": "nix-index-database",
-        "nix-ld": "nix-ld",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",
         "nur": "nur"

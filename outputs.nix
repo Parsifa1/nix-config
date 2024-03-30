@@ -15,7 +15,6 @@ in {
       ./nix/system.nix
       #一些模块
       nixos-wsl.nixosModules.wsl
-      nix-ld.nixosModules.nix-ld
       home-manager.nixosModules.home-manager
       # 杂项配置
       {

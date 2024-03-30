@@ -5,20 +5,21 @@
     ripgrep
     eza
     bat
+    yarn
+    nh
+    helix
     delta
     fzf
     fd
     which
     tree
-    nix-output-monitor
     btop
     unzip
     dust
     duf
     typst
     git-credential-manager
-    yarn
-    nh
+    nix-output-monitor
   ];
 
   neovim-packages = with pkgs; [

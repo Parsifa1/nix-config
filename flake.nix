@@ -4,11 +4,6 @@
     nur.url = "github:nix-community/NUR";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
 
-    nix-ld = {
-      url = "github:Mic92/nix-ld";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
