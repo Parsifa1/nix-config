@@ -29,7 +29,7 @@
     rust-analyzer
     marksman #markdown
     yaml-language-server
-    cloudtide.tinymist
+    tinymist
     nodePackages.vscode-langservers-extracted #html, json
     nodePackages.typescript-language-server
     nodePackages."@astrojs/language-server"
