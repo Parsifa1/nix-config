@@ -72,11 +72,11 @@
       extraConfig = "AcceptEnv TERM_PROGRAM_VERSION WEZTERM_REMOTE_PANE TERM COLORTERM TERM_PROGRAM WSLENV";
     };
   };
-  networking.proxy = {
-    httpProxy = "http://127.0.0.1:7891";
-    httpsProxy = "http://127.0.0.1:7891";
-    noProxy = "localhost,127.0.0.1";
-  };
+  # networking.proxy = {
+  #   httpProxy = "http://127.0.0.1:7891";
+  #   httpsProxy = "http://127.0.0.1:7891";
+  #   noProxy = "localhost,127.0.0.1";
+  # };
 
   programs.gnupg.agent = {
     enable = true;
@@ -96,6 +96,10 @@
     systemd-resolved.enable = false;
     systemd-udevd.enable = false;
     firewall.enable = false;
+    nix-daemon.environment = {
+      https_proxy = "socks5h://localhost:7890";
+      http_proxy = "socks5h://localhost:7890";
+    };
   };
 
   services.pcscd.enable = true;

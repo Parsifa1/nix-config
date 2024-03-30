@@ -10,7 +10,8 @@
       core.editor = "nvim";
       credential.credentialStore = "cache";
       commit.gpgsign = true;
-      # http.sslVerify = false;
+      http.proxy = "http://127.0.0.1:7891";
+      https.proxy = "http://127.0.0.1:7891";
     };
   };
 }

@@ -5,6 +5,7 @@
     ripgrep
     eza
     bat
+    delta
     fzf
     fd
     which
@@ -12,7 +13,6 @@
     nix-output-monitor
     btop
     unzip
-    lazygit
     dust
     duf
     typst
@@ -45,6 +45,7 @@
     ruff
     stylua
     nodePackages.prettier
+    ktlint
 
     # others
     typst-preview
