@@ -45,7 +45,6 @@
     ruff
     stylua
     nodePackages.prettier
-    ktlint
 
     # others
     typst-preview
