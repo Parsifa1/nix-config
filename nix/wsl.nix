@@ -5,7 +5,7 @@
     startMenuLaunchers = true;
     nativeSystemd = true;
     wslConf.network = {
-      generateHosts = false;
+      # generateHosts = false;
       # generateResolvConf = false;
     };
   };
