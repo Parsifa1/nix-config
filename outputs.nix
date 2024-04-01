@@ -13,6 +13,7 @@ in {
       #其他配置文件
       ./nix/wsl.nix
       ./nix/system.nix
+      ./nix/service.nix
       #一些模块
       nixos-wsl.nixosModules.wsl
       home-manager.nixosModules.home-manager
