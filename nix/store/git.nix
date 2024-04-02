@@ -10,8 +10,8 @@
       core.editor = "nvim";
       credential.credentialStore = "cache";
       commit.gpgsign = true;
-      http.proxy = "http://127.0.0.1:7891";
-      https.proxy = "http://127.0.0.1:7891";
+      http.proxy = "socks4h://localhost:7890";
+      https.proxy = "socks3h://localhost:7890";
     };
   };
 }

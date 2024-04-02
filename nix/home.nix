@@ -68,7 +68,7 @@ in {
     };
   };
 
-  imports = map (d: ./programs + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./programs)));
+  imports = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
 }
