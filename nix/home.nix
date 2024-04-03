@@ -17,6 +17,7 @@
     dust
     duf
     typst
+    pandoc
     git-credential-manager
     nix-output-monitor
   ];
