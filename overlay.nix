@@ -1,11 +1,9 @@
 {inputs, ...}: {
   overlays = with inputs; [
-    #nur overlay
-    nur.overlay
     # my nur overlays
     cloudtide.overlay
-    # nix formatter
-    alejandra.overlay
+    #nur overlay
+    nur.overlay
     # neovim
     neovim-nightly.overlay
     #unstable overlays
