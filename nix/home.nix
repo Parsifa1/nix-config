@@ -1,8 +1,4 @@
-{
-  inputs,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   unstable-packages = with pkgs.unstable; [
     fastfetch
     hyfetch
