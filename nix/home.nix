@@ -1,4 +1,8 @@
-{pkgs, ...}: let
+{
+  inputs,
+  pkgs,
+  ...
+}: let
   unstable-packages = with pkgs.unstable; [
     fastfetch
     hyfetch
@@ -30,7 +34,7 @@
     rust-analyzer
     marksman #markdown
     yaml-language-server
-    tinymist
+    cloudtide.tinymist
     nodePackages.vscode-langservers-extracted #html, json
     nodePackages.typescript-language-server
     nodePackages."@astrojs/language-server"

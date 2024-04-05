@@ -7,7 +7,7 @@
     # nix formatter
     alejandra.overlay
     # neovim
-    (_final: prev: {neovim = inputs.neovim-nightly.packages."${prev.system}".neovim;})
+    neovim-nightly.overlay
     #unstable overlays
     (_final: prev: {
       unstable = import nixpkgs {
