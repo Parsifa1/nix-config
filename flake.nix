@@ -19,11 +19,6 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    alejandra = {
-      url = "github:kamadorueda/alejandra";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-
     cloudtide = {
       url = "github:parsifa1/nixpkgs";
       inputs.nixpkgs.follows = "nixpkgs";
