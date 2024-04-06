@@ -14,7 +14,6 @@
   nix.settings = {
     trusted-users = ["parsifa1"];
     substituters = [
-      "https://mirrors.ustc.edu.cn/nix-channels/store"
       "https://cache.nixos.org"
       "https://nix-community.cachix.org"
     ];
