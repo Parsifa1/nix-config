@@ -20,7 +20,11 @@
         echo -n (printf "\033]1337;SetUserVar=panetitle=%s\007" (echo -n $panetitle | base64))
       '';
     };
-    shellInitLast = "set_panetitle ";
+    shellInitLast = ''
+      rm /run/user/1000/wayland-0.lock && rm /run/user/1000/wayland-0
+      ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000/
+      set_panetitle
+    '';
     shellAliases = {
       v = "nvim";
       vi = "nvim";
