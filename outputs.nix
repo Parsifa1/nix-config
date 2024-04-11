@@ -20,12 +20,7 @@ in {
       # 杂项配置
       {
         nixpkgs = nixpkgsWithOverlays;
-        home-manager = {
-          useGlobalPkgs = true;
-          useUserPackages = true;
-          users.parsifa1 = import ./nix/home.nix;
-          extraSpecialArgs = specialArgs;
-        };
+        home-manager.extraSpecialArgs = specialArgs;
       }
     ];
   };
