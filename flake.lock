@@ -8,11 +8,11 @@
         "vsc": "vsc"
       },
       "locked": {
-        "lastModified": 1713177533,
-        "narHash": "sha256-r/b62gjL0/x5apI5UW+ic5NYckq6scrOEGKaDe/pH5Y=",
+        "lastModified": 1713178173,
+        "narHash": "sha256-VppDIBdoGvBbk/w32zAzL35pHS2CbAT1pNNYQIcfUqI=",
         "owner": "parsifa1",
         "repo": "nixpkgs",
-        "rev": "91033766f79155233e47ec5d25ac0e4ed40f3f4d",
+        "rev": "39693794fdcae5da1a68609be196bcfc0994b128",
         "type": "github"
       },
       "original": {
