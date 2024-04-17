@@ -5,7 +5,7 @@
     startMenuLaunchers = true;
     nativeSystemd = true;
   };
-
+  programs.nix-ld.enable = true;
   environment.systemPackages = [pkgs.cloudtide.win32yank];
 
   networking.hostName = "nixos";

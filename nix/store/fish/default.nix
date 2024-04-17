@@ -11,19 +11,11 @@
     DIRENV_LOG_FORMAT = ""; # close direnv log
     TERM = "WezTerm";
   };
-
   programs.fish = {
     enable = true;
-    functions = {
-      set_panetitle = ''
-        set -gx panetitle "❄️ Nix"
-        echo -n (printf "\033]1337;SetUserVar=panetitle=%s\007" (echo -n $panetitle | base64))
-      '';
-    };
     shellInitLast = ''
       rm /run/user/1000/wayland-0.lock && rm /run/user/1000/wayland-0
       ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000/
-      set_panetitle
     '';
     shellAliases = {
       v = "nvim";
@@ -35,6 +27,7 @@
       ls = "exa --icons -F";
       vf = "set -l file (fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'); and test -n \"\$file\"; and vi \"\$file\"";
       zf = "z \$(fd --type d --hidden . 2>/dev/null | fzf)";
+      nvidia-smi = "NIX_LD_LIBRARY_PATH=/usr/lib/wsl/lib/ /usr/lib/wsl/lib/nvidia-smi";
     };
     interactiveShellInit = builtins.readFile ./config.fish;
   };
