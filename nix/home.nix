@@ -23,6 +23,7 @@
     pandoc
     git-credential-manager
     nix-output-monitor
+    nerd-font-patcher
   ];
 
   neovim-packages = with pkgs; [
@@ -43,7 +44,6 @@
     nil
 
     # formatter
-    python311Packages.autopep8
     alejandra
     cloudtide.typstyle
     ruff
