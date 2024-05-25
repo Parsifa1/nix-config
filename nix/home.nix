@@ -46,7 +46,7 @@
 
     # formatter
     alejandra
-    cloudtide.typstyle
+    typstyle
     ruff
     stylua
     nodePackages.prettier
