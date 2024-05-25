@@ -43,7 +43,6 @@
     gnupg
     pinentry-gnome3
     gcc
-    rustup
     cmake
     gnumake
     nodejs

@@ -20,6 +20,7 @@
     dust
     duf
     typst
+    rustup
     pandoc
     git-credential-manager
     nix-output-monitor
@@ -31,10 +32,10 @@
     # language servers
     lua-language-server
     clang-tools #cpp
-    rust-analyzer
+    # rust-analyzer
     marksman #markdown
     yaml-language-server
-    cloudtide.tinymist
+    tinymist
     nodePackages.vscode-langservers-extracted #html, json
     nodePackages.typescript-language-server
     nodePackages."@astrojs/language-server"

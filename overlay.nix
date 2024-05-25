@@ -5,7 +5,7 @@
     #nur overlay
     nur.overlay
     # neovim
-    neovim-nightly.overlay
+    neovim-nightly.overlays.default
     #unstable overlays
     (_final: prev: {
       unstable = import nixpkgs {
