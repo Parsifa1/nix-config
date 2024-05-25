@@ -17,13 +17,13 @@
     "serial-getty@hvc0".enable = false;
     "getty@tty1".enable = false;
     "autovt@".enable = false;
-    systemd-resolved.enable = false;
-    systemd-udevd.enable = false;
-    firewall.enable = false;
     nix-daemon.environment = {
       https_proxy = "socks5h://localhost:7890";
       http_proxy = "socks5h://localhost:7890";
     };
+    systemd-resolved.enable = false;
+    systemd-udevd.enable = false;
+    firewall.enable = false;
     network-mirrored = {
       description = "network-mirrored";
       enable = true;
