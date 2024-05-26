@@ -1,8 +1,4 @@
-{
-  lib,
-  pkgs,
-  ...
-}: let
+{pkgs, ...}: let
   unstable-packages = with pkgs.unstable; [
     fastfetch
     ripgrep
@@ -59,11 +55,6 @@ in {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
     packages = neovim-packages ++ unstable-packages;
-    sessionVariables = {
-      # for nvidia-smi
-      NIX_LD_LIBRARY_PATH = lib.mkDefault (lib.makeLibraryPath [pkgs.stdenv.cc.cc]);
-      NIX_LD = lib.mkDefault "${pkgs.glibc}/lib/ld-linux-x86-64.so.2";
-    };
   };
 
   gtk = {
@@ -79,6 +70,7 @@ in {
   };
 
   imports = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
+
   programs.home-manager.enable = true;
   home.stateVersion = "23.11";
 }
