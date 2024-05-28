@@ -50,7 +50,7 @@
     gnumake
     nodejs
     openssh
-    rocmPackages.llvm.clang
+    # clang_17
     python311
     gnome.gnome-calculator
     nodePackages_latest.pnpm
