@@ -7,7 +7,7 @@
     nur.overlay
 
     # neovim
-    # neovim-nightly.overlays.default
+    neovim-nightly.overlays.default
 
     #unstable overlays
     (_final: prev: {
