@@ -1,5 +1,10 @@
 {inputs, ...}: {
   overlays = with inputs; [
+    #unstable overlays
+    (self: super: {
+      nixpkgs.config.allowUnfree = true;
+    })
+
     # my nur overlays
     cloudtide.overlay
 
@@ -8,13 +13,5 @@
 
     # neovim
     neovim-nightly.overlays.default
-
-    #unstable overlays
-    (_final: prev: {
-      unstable = import nixpkgs {
-        inherit (prev) system;
-        config = {allowUnfree = true;};
-      };
-    })
   ];
 }

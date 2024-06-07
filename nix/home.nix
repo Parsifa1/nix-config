@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  unstable-packages = with pkgs.unstable; [
+  packages = with pkgs; [
     fastfetch
     ripgrep
     eza
@@ -54,7 +54,7 @@ in {
   home = {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
-    packages = neovim-packages ++ unstable-packages;
+    packages = neovim-packages ++ packages;
   };
 
   gtk = {
