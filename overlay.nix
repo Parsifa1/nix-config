@@ -13,5 +13,8 @@
 
     # neovim
     neovim-nightly.overlays.default
+
+    #rust
+    fenix.overlays.default
   ];
 }

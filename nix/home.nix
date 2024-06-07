@@ -16,7 +16,6 @@
     dust
     duf
     typst
-    rustup
     pandoc
     git-credential-manager
     nix-output-monitor
