@@ -9,6 +9,6 @@
       "rust-src"
       "rustfmt"
     ])
-    rust-analyzer
+    rust-analyzer-nightly
   ];
 }
