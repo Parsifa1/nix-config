@@ -26,7 +26,6 @@
     tree-sitter
     # language servers
     lua-language-server
-    clang-tools_18 #cpp
     marksman #markdown
     yaml-language-server
     tinymist

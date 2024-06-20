@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [texliveMedium texlivePackages.dvipng];
+  # home.packages = with pkgs; [texliveMedium texlivePackages.dvipng];
 }
