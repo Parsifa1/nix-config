@@ -41,6 +41,7 @@
     fish
     git
     neovim
+    luajitPackages.luarocks-nix
     wget
     curl
     gnupg
@@ -50,7 +51,7 @@
     gnumake
     nodejs
     openssh
-    clang-tools_18 #cpp
+    clang-tools_18 #clang
     python311
     gnome.gnome-calculator
     nodePackages_latest.pnpm
