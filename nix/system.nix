@@ -41,7 +41,7 @@
     fish
     git
     neovim
-    luajitPackages.luarocks-nix
+    luajitPackages.luarocks
     wget
     curl
     gnupg
