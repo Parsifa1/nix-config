@@ -40,7 +40,6 @@
   environment.systemPackages = with pkgs; [
     fish
     git
-    neovim
     luajitPackages.luarocks
     wget
     curl
@@ -57,6 +56,7 @@
     nodePackages_latest.pnpm
     websocat
     unzip
+    wezterm
     nix-init
     dconf
   ];
