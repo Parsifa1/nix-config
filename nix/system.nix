@@ -56,6 +56,7 @@
     gnome.gnome-calculator
     nodePackages_latest.pnpm
     websocat
+    unzip
     nix-init
     dconf
   ];
