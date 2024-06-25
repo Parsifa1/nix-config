@@ -4,5 +4,5 @@
     package = pkgs.neovim;
     extraLuaPackages = ps: [ps.magick];
   };
-  home.packages = with pkgs; [imagemagick];
+  home.packages = with pkgs; [imagemagick luajitPackages.luarocks];
 }

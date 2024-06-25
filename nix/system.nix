@@ -40,7 +40,6 @@
   environment.systemPackages = with pkgs; [
     fish
     git
-    luajitPackages.luarocks
     wget
     curl
     gnupg
