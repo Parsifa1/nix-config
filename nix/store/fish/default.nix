@@ -21,6 +21,7 @@
       v = "nvim";
       vi = "nvim";
       lg = "lazygit";
+      ya = "yazi";
       fa = "fastfetch";
       cls = "clear";
       py = "python";
