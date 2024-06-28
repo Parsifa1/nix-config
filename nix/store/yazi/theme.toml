@@ -115,12 +115,11 @@ footer = { fg = "#45475a", bg = "#cdd6f4" }
 
 # : }}}
 
-
 # : File-specific styles {{{
 
 [filetype]
 
-rules = [
+prepend_rules = [
 	# Images
 	{ mime = "image/*", fg = "#94e2d5" },
 
@@ -144,8 +143,8 @@ rules = [
 
 
 [icon]
+append_rules = [
 
-rules = [
 	{ name = ".git/", text = "" },
 	{ name = "Desktop/", text = "" },
 	{ name = "Documents/", text = "" },
@@ -289,7 +288,6 @@ rules = [
 	{ name = "*.cp", text = "" },
 	{ name = "*.cpio", text = "" },
 	{ name = "*.cpp", text = "" },
-	{ name = "*.cs", text = "" },
 	{ name = "*.csh", text = "" },
 	{ name = "*.css", text = "" },
 	{ name = "*.csv", text = "" },
@@ -421,7 +419,6 @@ rules = [
 	{ name = "*.pyc", text = "" },
 	{ name = "*.pyd", text = "" },
 	{ name = "*.pyo", text = "" },
-	{ name = "*.r", text = "ﳒ" },
 	{ name = "*.ra", text = "" },
 	{ name = "*.rake", text = "" },
 	{ name = "*.rar", text = "" },
@@ -491,4 +488,5 @@ rules = [
 	# default
 	{ name = "*", text = "" },
 	{ name = "*/", text = "" },
+
 ]

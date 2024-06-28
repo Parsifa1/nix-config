@@ -16,5 +16,8 @@
 
     #rust
     fenix.overlays.default
+
+    #yazi
+    # yazi.overlays.default
   ];
 }
