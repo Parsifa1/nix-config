@@ -51,6 +51,7 @@
     openssh
     clang-tools_18 #clang
     python311
+    uv
     gnome.gnome-calculator
     nodePackages_latest.pnpm
     websocat
