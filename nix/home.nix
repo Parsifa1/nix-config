@@ -21,37 +21,11 @@
     nix-output-monitor
     nerd-font-patcher
   ];
-
-  neovim-packages = with pkgs; [
-    tree-sitter
-    # language servers
-    lua-language-server
-    marksman #markdown
-    yaml-language-server
-    tinymist
-    nodePackages.vscode-langservers-extracted #html, json
-    nodePackages.typescript-language-server
-    nodePackages."@astrojs/language-server"
-    taplo #toml
-    ruff-lsp #python
-    tailwindcss-language-server
-    nil
-
-    # formatter
-    alejandra
-    typstyle
-    ruff
-    stylua
-    nodePackages.prettier
-
-    # others
-    typst-preview
-  ];
 in {
   home = {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
-    packages = neovim-packages ++ packages;
+    packages = packages;
   };
 
   gtk = {
@@ -69,5 +43,5 @@ in {
   imports = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
 
   programs.home-manager.enable = true;
-  home.stateVersion = "23.11";
+  home.stateVersion = "24.05";
 }

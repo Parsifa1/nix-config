@@ -38,8 +38,6 @@
   };
 
   environment.systemPackages = with pkgs; [
-    fish
-    git
     wget
     curl
     gnupg
@@ -47,13 +45,9 @@
     gcc
     cmake
     gnumake
-    nodejs
     openssh
-    clang-tools_18 #clang
-    python311
     uv
     gnome.gnome-calculator
-    nodePackages_latest.pnpm
     websocat
     unzip
     wezterm
