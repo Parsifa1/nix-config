@@ -18,6 +18,6 @@
     fenix.overlays.default
 
     #yazi
-    # yazi.overlays.default
+    yazi.overlays.default
   ];
 }
