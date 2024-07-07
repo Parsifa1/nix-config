@@ -47,7 +47,7 @@
     gnumake
     openssh
     uv
-    gnome.gnome-calculator
+    gnome-calculator
     websocat
     unzip
     wezterm
