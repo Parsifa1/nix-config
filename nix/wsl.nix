@@ -5,7 +5,7 @@
     startMenuLaunchers = true;
     nativeSystemd = true;
   };
-  environment.systemPackages = [pkgs.cloudtide.win32yank];
+  environment.systemPackages = with pkgs; [cloudtide.win32yank wslu];
 
   networking.hostName = "nixos";
   system.stateVersion = "23.11";
