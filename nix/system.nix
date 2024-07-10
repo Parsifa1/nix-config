@@ -18,7 +18,7 @@
   };
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [glibc stdenv.cc.cc openssl sqlite.out];
+  programs.nix-ld.libraries = with pkgs; [glibc stdenv.cc.cc openssl];
 
   nix = {
     package = pkgs.nixVersions.nix_2_19;
