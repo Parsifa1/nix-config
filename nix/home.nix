@@ -1,6 +1,8 @@
 {pkgs, ...}: let
   packages = with pkgs; [
     fastfetch
+    onefetch
+    tokei
     ripgrep
     eza
     bat

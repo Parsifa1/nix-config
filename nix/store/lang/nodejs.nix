@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [nodejs nodePackages_latest.pnpm];
+  home.packages = with pkgs; [nodejs nodePackages_latest.pnpm typescript];
 }

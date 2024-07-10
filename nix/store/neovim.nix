@@ -21,9 +21,6 @@
     ruff
     stylua
     nodePackages.prettier
-
-    # others
-    # typst-preview
   ];
   luarocks = with pkgs; [lua51Packages.lua luajitPackages.luarocks sqlite.out];
 in {
