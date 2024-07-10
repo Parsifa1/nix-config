@@ -23,14 +23,15 @@
     nodePackages.prettier
 
     # others
-    typst-preview
+    # typst-preview
   ];
+  luarocks = with pkgs; [lua51Packages.lua luajitPackages.luarocks sqlite.out];
 in {
   programs.neovim = {
     enable = true;
     package = pkgs.neovim;
   };
 
-  home.packages = with pkgs; [luajitPackages.luarocks sqlite.out] ++ lsp-packages;
+  home.packages = luarocks ++ lsp-packages;
   home.sessionVariables = {LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.so";};
 }

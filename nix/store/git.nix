@@ -14,4 +14,5 @@
       https.proxy = "socks5h://localhost:7890";
     };
   };
+  home.packages = [pkgs.gnutls];
 }

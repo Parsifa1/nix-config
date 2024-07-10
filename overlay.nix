@@ -1,5 +1,5 @@
 {inputs, ...}: {
-  overlays = with inputs; [
+  nixpkgs.overlays = with inputs; [
     #unstable overlays
     (self: super: {
       nixpkgs.config.allowUnfree = true;
@@ -18,6 +18,6 @@
     fenix.overlays.default
 
     #yazi
-    yazi.overlays.default
+    # yazi.overlays.default
   ];
 }

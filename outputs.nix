@@ -1,6 +1,5 @@
 {inputs, ...}:
 with inputs; let
-  nixpkgsWithOverlays = import ./overlay.nix {inherit inputs;};
   argDefaults = {
     inherit inputs self nix-index-database;
     channels = {inherit nixpkgs;};
@@ -11,6 +10,7 @@ in {
     specialArgs = argDefaults // {inherit system;};
     modules = [
       #其他配置文件
+      ./overlay.nix
       ./nix/wsl.nix
       ./nix/system.nix
       ./nix/service.nix
@@ -18,10 +18,7 @@ in {
       nixos-wsl.nixosModules.wsl
       home-manager.nixosModules.home-manager
       # 杂项配置
-      {
-        nixpkgs = nixpkgsWithOverlays;
-        home-manager.extraSpecialArgs = specialArgs;
-      }
+      {home-manager.extraSpecialArgs = specialArgs;}
     ];
   };
 }
