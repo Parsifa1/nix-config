@@ -8,6 +8,7 @@
     tinymist
     nodePackages.vscode-langservers-extracted #html, json
     nodePackages.typescript-language-server
+    vue-language-server
     nodePackages."@astrojs/language-server"
     taplo #toml
     ruff-lsp #python
@@ -30,5 +31,8 @@ in {
   };
 
   home.packages = luarocks ++ lsp-packages;
-  home.sessionVariables = {LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.so";};
+  home.sessionVariables = {
+    LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.so";
+    VUE_TS_SERVER = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
+  };
 }
