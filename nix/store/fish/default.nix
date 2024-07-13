@@ -24,7 +24,7 @@
       fa = "fastfetch";
       cls = "clear";
       py = "python";
-      ls = "eza --icons -F";
+      ls = "eza --icons --group-directories-first --sort=extension -F";
       vf = "set -l file (fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'); and test -n \"\$file\"; and vi \"\$file\"";
       zf = "z \$(fd --type d --hidden . 2>/dev/null | fzf)";
       nvidia-smi = "NIX_LD_LIBRARY_PATH=/usr/lib/wsl/lib/ /usr/lib/wsl/lib/nvidia-smi";
