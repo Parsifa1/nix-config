@@ -18,7 +18,7 @@
   };
 
   programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [glibc stdenv.cc.cc openssl];
+  programs.nix-ld.libraries = with pkgs; [glibc stdenv.cc.cc icu openssl];
 
   nix = {
     package = pkgs.nixVersions.nix_2_19;
@@ -46,7 +46,6 @@
     cmake
     gnumake
     openssh
-    uv
     gnome-calculator
     websocat
     unzip

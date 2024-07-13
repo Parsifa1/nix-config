@@ -1,5 +1,5 @@
 {pkgs, ...}: let
-  lsp-packages = with pkgs; [
+  /* lsp-packages = with pkgs; [
     tree-sitter
     # language servers
     lua-language-server
@@ -22,17 +22,18 @@
     ruff
     stylua
     nodePackages.prettier
-  ];
+  ]; */
   luarocks = with pkgs; [lua51Packages.lua luajitPackages.luarocks sqlite.out];
 in {
   programs.neovim = {
     enable = true;
     package = pkgs.neovim;
   };
-
-  home.packages = luarocks ++ lsp-packages;
-  home.sessionVariables = {
-    LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.so";
-    VUE_TS_SERVER = "${pkgs.vue-language-server}/lib/node_modules/@vue/language-server";
+  home = {
+    packages = luarocks;
+    # ++ lsp-packages;
+    sessionVariables = {
+      LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.so";
+    };
   };
 }

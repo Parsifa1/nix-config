@@ -1,3 +1,3 @@
 {pkgs, ...}: {
-  home.packages = with pkgs; [python311];
+  home.packages = with pkgs; [python311 uv];
 }
