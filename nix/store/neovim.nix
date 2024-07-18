@@ -1,6 +1,5 @@
-{pkgs, ...}: let
+{pkgs, ...}: {
   /* lsp-packages = with pkgs; [
-    tree-sitter
     # language servers
     lua-language-server
     marksman #markdown
@@ -22,18 +21,13 @@
     ruff
     stylua
     nodePackages.prettier
-  ]; */
-  luarocks = with pkgs; [lua51Packages.lua luajitPackages.luarocks sqlite.out];
-in {
+  ];  */
   programs.neovim = {
     enable = true;
     package = pkgs.neovim;
   };
   home = {
-    packages = luarocks;
-    # ++ lsp-packages;
-    sessionVariables = {
-      LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.so";
-    };
+    packages = with pkgs; [lua51Packages.lua luajitPackages.luarocks sqlite.out tree-sitter];
+    sessionVariables = { LIBSQLITE = "${pkgs.sqlite.out}/lib/libsqlite3.so"; };
   };
 }
