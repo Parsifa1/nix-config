@@ -43,6 +43,7 @@
     gnupg
     pinentry-gnome3
     gcc
+    clang-tools_18
     cmake
     gnumake
     openssh
