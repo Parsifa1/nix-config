@@ -17,6 +17,7 @@
     btop
     dust
     duf
+    alejandra
     typst
     pandoc
     git-credential-manager
