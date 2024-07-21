@@ -46,10 +46,8 @@
     cmake
     gnumake
     openssh
-    gnome-calculator
     websocat
     unzip
-    wezterm
     nix-init
     dconf
   ];

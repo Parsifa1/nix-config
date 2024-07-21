@@ -1,5 +1,6 @@
 {pkgs, ...}: let
   packages = with pkgs; [
+    alejandra
     fastfetch
     onefetch
     tokei
@@ -17,7 +18,7 @@
     btop
     dust
     duf
-    alejandra
+    wezterm
     typst
     pandoc
     git-credential-manager
