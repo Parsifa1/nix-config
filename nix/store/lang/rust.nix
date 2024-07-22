@@ -10,5 +10,6 @@
       "rustfmt"
     ])
     rust-analyzer-nightly
+    cargo-xwin
   ];
 }
