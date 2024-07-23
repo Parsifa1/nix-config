@@ -1,4 +1,4 @@
-<h2 align="center">:snowflake: Parsifa1's Nix WSL Config :snowflake:</h2>
+<h2 align="center">:snowflake: Parsifa1's Nix Config :snowflake:</h2>
 
 <p align="center">
   <img src="https://raw.githubusercontent.com/catppuccin/catppuccin/main/assets/palette/macchiato.png" width="400" />

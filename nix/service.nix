@@ -24,9 +24,18 @@
     systemd-resolved.enable = false;
     systemd-udevd.enable = false;
     firewall.enable = false;
-    network-mirrored = {
-      description = "network-mirrored";
+    keep-alive = {
       enable = true;
+      description = "keep wsl alive";
+      wantedBy = ["multi-user.target"];
+      serviceConfig = {
+        ExecStartPre = "/mnt/c/Windows/System32/waitfor.exe /si MakeDistroAlive";
+        ExecStart = "/mnt/c/Windows/System32/waitfor.exe MakeDistroAlive";
+      };
+    };
+    network-mirrored = {
+      enable = true;
+      description = "network-mirrored";
       wants = ["network-pre.target"];
       wantedBy = ["multi-user.target"];
       before = ["network-pre.target" "shutdown.target"];

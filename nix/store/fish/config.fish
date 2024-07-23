@@ -1,6 +1,6 @@
 clear
 set -U fish_greeting
-dbus-launch true
+# dbus-launch true
 
 if not string match -q -- $PNPM_HOME $PATH
   set -gx PATH "$PNPM_HOME" $PATH

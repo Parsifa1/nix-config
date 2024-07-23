@@ -49,6 +49,7 @@
     openssh
     websocat
     unzip
+    rustup
     nix-init
     dconf
   ];
