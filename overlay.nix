@@ -8,5 +8,7 @@
     # my nur overlays
     cloudtide.overlay
 
+    #rust
+    fenix.overlays.default
   ];
 }

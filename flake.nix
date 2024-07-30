@@ -17,6 +17,11 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
+    fenix = {
+      url = "github:nix-community/fenix";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
     cloudtide = {
       url = "github:parsifa1/nixpkg";
       inputs.nixpkgs.follows = "nixpkgs";
