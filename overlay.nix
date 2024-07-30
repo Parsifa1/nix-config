@@ -8,16 +8,5 @@
     # my nur overlays
     cloudtide.overlay
 
-    #nur overlay
-    nur.overlay
-
-    # neovim
-    neovim-nightly.overlays.default
-
-    #rust
-    fenix.overlays.default
-
-    #yazi
-    # yazi.overlays.default
   ];
 }

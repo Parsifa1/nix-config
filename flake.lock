@@ -353,21 +353,6 @@
         "type": "github"
       }
     },
-    "nur": {
-      "locked": {
-        "lastModified": 1722357384,
-        "narHash": "sha256-Fbo5xgdoj99EfScQN4RokWF8JiWSFp+wYU9lxSG6gRc=",
-        "owner": "nix-community",
-        "repo": "NUR",
-        "rev": "7310faa255a26f8ceba0a1572191cad6f51f9a93",
-        "type": "github"
-      },
-      "original": {
-        "owner": "nix-community",
-        "repo": "NUR",
-        "type": "github"
-      }
-    },
     "root": {
       "inputs": {
         "cloudtide": "cloudtide",
@@ -376,8 +361,7 @@
         "neovim-nightly": "neovim-nightly",
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_2",
-        "nur": "nur"
+        "nixpkgs": "nixpkgs_2"
       }
     },
     "rust-analyzer-src": {
