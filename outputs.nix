@@ -10,7 +10,7 @@ in {
     specialArgs = argDefaults // {inherit system;};
     modules = [
       #其他配置文件
-      ./overlay.nix
+      ./nixpkgs.nix
       ./nix/wsl.nix
       ./nix/system.nix
       ./nix/service.nix

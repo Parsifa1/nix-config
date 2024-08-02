@@ -24,7 +24,7 @@
     package = pkgs.nixVersions.nix_2_19;
     settings = {
       trusted-users = ["parsifa1"];
-      experimental-features = ["nix-command" "flakes"];
+      experimental-features = ["nix-command" "flakes" "configurable-impure-env" "auto-allocate-uids"];
       auto-optimise-store = true;
       use-xdg-base-directories = true;
       substituters = ["https://cache.nixos.org" "https://nix-community.cachix.org"];
