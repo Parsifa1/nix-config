@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{
+  config,
+  pkgs,
+  ...
+}: {
   programs.fish.enable = true;
   users.mutableUsers = false;
   security.sudo.wheelNeedsPassword = false;
@@ -17,14 +21,16 @@
     users.parsifa1 = import ./home.nix;
   };
 
-  programs.nix-ld.enable = true;
-  programs.nix-ld.libraries = with pkgs; [glibc stdenv.cc.cc icu openssl];
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [glibc stdenv.cc.cc icu openssl] ++ config.hardware.graphics.extraPackages;
+  };
 
   nix = {
     package = pkgs.nixVersions.nix_2_19;
     settings = {
       trusted-users = ["parsifa1"];
-      experimental-features = ["nix-command" "flakes" "configurable-impure-env" "auto-allocate-uids"];
+      experimental-features = ["nix-command" "flakes"];
       auto-optimise-store = true;
       use-xdg-base-directories = true;
       substituters = ["https://cache.nixos.org" "https://nix-community.cachix.org"];
@@ -80,5 +86,8 @@
     };
   };
 
+  hardware.graphics = {
+    extraPackages = with pkgs; [mesa.drivers libvdpau-va-gl];
+  };
   virtualisation.docker.enable = true;
 }

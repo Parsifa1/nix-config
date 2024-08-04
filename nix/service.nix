@@ -2,6 +2,15 @@
   services = {
     pcscd.enable = true;
     xserver.enable = true;
+    ollama = {
+      enable = true;
+      package = pkgs.ollama;
+      acceleration = "cuda";
+      environmentVariables = {
+        OLLAMA_LLM_LIBRARY = "cuda";
+        LD_LIBRARY_PATH = "run/opengl-driver/lib";
+      };
+    };
     openssh = {
       enable = true;
       ports = [14514];
@@ -17,13 +26,13 @@
     "serial-getty@hvc0".enable = false;
     "getty@tty1".enable = false;
     "autovt@".enable = false;
-    nix-daemon.environment = {
-      https_proxy = "socks5h://localhost:7890";
-      http_proxy = "socks5h://localhost:7890";
-    };
     systemd-resolved.enable = false;
     systemd-udevd.enable = false;
     firewall.enable = false;
+    nix-daemon.environment = {
+      https_proxy = "http://localhost:7890";
+      http_proxy = "http://localhost:7890";
+    };
     keep-alive = {
       enable = true;
       description = "keep wsl alive";

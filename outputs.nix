@@ -1,13 +1,13 @@
 {inputs, ...}:
 with inputs; let
-  argDefaults = {
-    inherit inputs self nix-index-database;
+  args = {
+    inherit inputs self nix-index-database nixpkgs-master;
     channels = {inherit nixpkgs;};
   };
 in {
   nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
     system = "x86_64-linux";
-    specialArgs = argDefaults // {inherit system;};
+    specialArgs = args // {inherit system;};
     modules = [
       #其他配置文件
       ./nixpkgs.nix
