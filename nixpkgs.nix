@@ -21,10 +21,6 @@ in {
         cmakeFlags = oldAttrs.cmakeFlags ++ [(lib.cmakeBool "ENABLE_DIRECTX_HEADERS" true)];
       });
     })
-    # use master branch
-    (final: prev: {
-      ollama = pkgs-master.ollama;
-    })
 
     # my nur overlays
     cloudtide.overlay
