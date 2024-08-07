@@ -1,8 +1,4 @@
-{
-  config,
-  pkgs,
-  ...
-}: {
+{pkgs, ...}: {
   programs.fish.enable = true;
   users.mutableUsers = false;
   security.sudo.wheelNeedsPassword = false;
@@ -23,7 +19,8 @@
 
   programs.nix-ld = {
     enable = true;
-    libraries = with pkgs; [glibc stdenv.cc.cc icu openssl] ++ config.hardware.graphics.extraPackages;
+    libraries = with pkgs; [glibc stdenv.cc.cc icu openssl];
+    # ++ config.hardware.graphics.extraPackages;
   };
 
   nix = {

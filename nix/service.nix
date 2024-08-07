@@ -34,7 +34,7 @@
       };
     };
     network-mirrored = {
-      enable = false;
+      enable = true;
       description = "network-mirrored";
       wants = ["network-pre.target"];
       wantedBy = ["multi-user.target"];
