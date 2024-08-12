@@ -1,16 +1,9 @@
 {
   inputs,
   lib,
-  nixpkgs-master,
   pkgs,
-  system,
   ...
-}: let
-  pkgs-master = import nixpkgs-master {
-    inherit system;
-    config.allowUnfree = true;
-  };
-in {
+}: {
   nixpkgs.config.allowUnfree = true;
 
   nixpkgs.overlays = with inputs; [
