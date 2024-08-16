@@ -1,12 +1,16 @@
 {
   inputs,
   lib,
+  nixpkgs-master,
   pkgs,
+  system,
   ...
-}: {
-  nixpkgs.config.allowUnfree = true;
-
-  nixpkgs.overlays = with inputs; [
+}: let
+  pkgs-master = import nixpkgs-master {
+    inherit system;
+    config.allowUnfree = true;
+  };
+  overlays = with inputs; [
     # fix fastfetch
     (final: prev: {
       fastfetch = prev.fastfetch.overrideAttrs (oldAttrs: {
@@ -15,10 +19,22 @@
       });
     })
 
+    #fix delta
+    (final: prev: {
+      delta = pkgs-master.delta;
+      nix-init = pkgs-master.nix-init;
+      wezterm = pkgs-master.wezterm;
+    })
+
     # my nur overlays
     cloudtide.overlay
 
     #rust toolchain
     fenix.overlays.default
   ];
+in {
+  nixpkgs = {
+    overlays = overlays;
+    config.allowUnfree = true;
+  };
 }
