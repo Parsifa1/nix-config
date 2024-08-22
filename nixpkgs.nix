@@ -20,11 +20,11 @@
     })
 
     #fix delta
-    (final: prev: {
-      delta = pkgs-master.delta;
-      nix-init = pkgs-master.nix-init;
-      wezterm = pkgs-master.wezterm;
-    })
+    # (final: prev: {
+    #   delta = pkgs-master.delta;
+    #   nix-init = pkgs-master.nix-init;
+    #   wezterm = pkgs-master.wezterm;
+    # })
 
     # my nur overlays
     cloudtide.overlay

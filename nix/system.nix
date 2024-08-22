@@ -20,7 +20,6 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [glibc stdenv.cc.cc icu openssl];
-    # ++ config.hardware.graphics.extraPackages;
   };
 
   nix = {
@@ -60,14 +59,17 @@
   fonts = {
     enableDefaultPackages = true;
     packages = with pkgs; [
-      cloudtide.fonts
-      lxgw-wenkai
       ibm-plex
+      noto-fonts
+      lxgw-wenkai
+      cloudtide.fonts
+      noto-fonts-cjk-serif
+      source-han-serif
     ];
     fontconfig = {
       defaultFonts = {
-        serif = ["LXGW WenKai"];
-        sansSerif = ["LXGW WenKai"];
+        serif = ["Noto Sans"];
+        sansSerif = ["Noto Serif"];
         monospace = ["IosevkaCloudtide"];
       };
     };
