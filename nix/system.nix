@@ -44,7 +44,7 @@
     curl
     gnupg
     pinentry-gnome3
-    gcc
+    gcc14
     clang-tools_18
     cmake
     gnumake
