@@ -1,6 +1,8 @@
-{pkgs, ...}: let
+{ pkgs, ... }:
+let
   packages = with pkgs; [
-    alejandra
+    nixfmt-rfc-style
+    # alejandra
     fastfetch
     onefetch
     tokei
@@ -25,7 +27,8 @@
     nix-output-monitor
     nerd-font-patcher
   ];
-in {
+in
+{
   home = {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
@@ -49,8 +52,8 @@ in {
       "org/gnome/desktop/interface" = {
         cursor-theme = "Bibata-Modern-Classic";
         gtk-theme = "WhiteSur-Dark";
-        font-name = "Noto Sans 14";
-        document-font-name = "Noto Sans 14";
+        font-name = "Noto Sans CJK SC 14";
+        document-font-name = "Noto Sans CJK SC 14";
         monospace-font-name = "IosevkaCloudtide Nerd Font 14";
       };
     };

@@ -2,7 +2,7 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nixpkgs-master.url = "github:nixos/nixpkgs/master";
-    neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -28,5 +28,5 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs: import ./outputs.nix {inherit inputs;};
+  outputs = inputs: import ./outputs.nix { inherit inputs; };
 }

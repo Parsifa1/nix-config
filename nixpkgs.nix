@@ -5,7 +5,8 @@
   pkgs,
   system,
   ...
-}: let
+}:
+let
   pkgs-master = import nixpkgs-master {
     inherit system;
     config.allowUnfree = true;
@@ -14,8 +15,8 @@
     # fix fastfetch
     (final: prev: {
       fastfetch = prev.fastfetch.overrideAttrs (oldAttrs: {
-        buildInputs = oldAttrs.buildInputs ++ [pkgs.directx-headers];
-        cmakeFlags = oldAttrs.cmakeFlags ++ [(lib.cmakeBool "ENABLE_DIRECTX_HEADERS" true)];
+        buildInputs = oldAttrs.buildInputs ++ [ pkgs.directx-headers ];
+        cmakeFlags = oldAttrs.cmakeFlags ++ [ (lib.cmakeBool "ENABLE_DIRECTX_HEADERS" true) ];
       });
     })
 
@@ -32,7 +33,8 @@
     #rust toolchain
     fenix.overlays.default
   ];
-in {
+in
+{
   nixpkgs = {
     overlays = overlays;
     config.allowUnfree = true;
