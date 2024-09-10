@@ -5,5 +5,6 @@
     ./python.nix
     ./nodejs.nix
     ./latex.nix
+    ./haskell.nix
   ];
 }

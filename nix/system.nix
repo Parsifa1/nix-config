@@ -70,6 +70,7 @@
     websocat
     unzip
     rustup
+    nil
     nix-init
     dconf
   ];
