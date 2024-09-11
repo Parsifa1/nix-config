@@ -27,10 +27,11 @@
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
-      glibc
-      stdenv.cc.cc
       icu
+      gmp
+      glibc
       openssl
+      stdenv.cc.cc
     ];
   };
 
@@ -70,7 +71,7 @@
     websocat
     unzip
     rustup
-    nil
+    nixd
     nix-init
     dconf
   ];
