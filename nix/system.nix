@@ -36,7 +36,7 @@
   };
 
   nix = {
-    package = pkgs.nixVersions.nix_2_19;
+    package = pkgs.nixVersions.latest;
     settings = {
       trusted-users = [ "parsifa1" ];
       experimental-features = [
@@ -46,6 +46,7 @@
       auto-optimise-store = true;
       use-xdg-base-directories = true;
       substituters = [
+        "https://mirrors.cernet.edu.cn/nix-channels/store"
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"
       ];
@@ -73,6 +74,7 @@
     rustup
     nixd
     nix-init
+    devenv
     dconf
   ];
 
