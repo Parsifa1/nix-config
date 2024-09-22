@@ -1,3 +1,4 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [kind kubectl kubernetes-helm];
+{ pkgs, ... }:
+{
+  # home.packages = with pkgs; [kind kubectl kubernetes-helm];
 }
