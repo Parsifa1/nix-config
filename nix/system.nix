@@ -46,7 +46,6 @@
       auto-optimise-store = true;
       use-xdg-base-directories = true;
       substituters = [
-        "https://mirrors.cernet.edu.cn/nix-channels/store"
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"
       ];
@@ -60,6 +59,7 @@
   };
 
   environment.systemPackages = with pkgs; [
+    delta
     wget
     curl
     gnupg

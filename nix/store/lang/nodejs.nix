@@ -1,3 +1,8 @@
-{pkgs, ...}: {
-  home.packages = with pkgs; [nodejs nodePackages_latest.pnpm bun];
+{ pkgs, ... }:
+{
+  home.packages = with pkgs; [
+    nodejs
+    pnpm
+    bun
+  ];
 }
