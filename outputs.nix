@@ -22,9 +22,9 @@ in
     modules = [
       #其他配置文件
       ./nixpkgs.nix
-      ./nix/wsl.nix
-      ./nix/system.nix
-      ./nix/service.nix
+      ./nixos/wsl.nix
+      ./nixos/system.nix
+      ./nixos/service.nix
       #一些模块
       nixos-wsl.nixosModules.wsl
       home-manager.nixosModules.home-manager
@@ -32,4 +32,14 @@ in
       { home-manager.extraSpecialArgs = specialArgs; }
     ];
   };
+  darwinConfigurations."AldricdeMacBook-Air" = darwin.lib.darwinSystem {
+    system = "aarch64-darwin";
+    modules = [
+      ./darwin/system.nix
+      home-manager.darwinModules.home-manager
+      { home-manager.extraSpecialArgs = args; }
+    ];
+
+  };
+
 }
