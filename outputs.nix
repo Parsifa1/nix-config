@@ -32,12 +32,16 @@ in
       { home-manager.extraSpecialArgs = specialArgs; }
     ];
   };
-  darwinConfigurations."AldricdeMacBook-Air" = darwin.lib.darwinSystem {
+  darwinConfigurations."AldricdeMacBook-Air" = darwin.lib.darwinSystem rec {
     system = "aarch64-darwin";
     modules = [
       ./darwin/system.nix
       home-manager.darwinModules.home-manager
-      { home-manager.extraSpecialArgs = args; }
+      {
+        home-manager.extraSpecialArgs = args // {
+          inherit system;
+        };
+      }
     ];
 
   };
