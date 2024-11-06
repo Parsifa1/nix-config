@@ -1,8 +1,5 @@
-{ pkgs }:
+{ pkgs, gcc }:
 let
-  # gcc package
-  gcc = pkgs.gcc14;
-  # path str
   header = gcc.cc;
   version = gcc.version;
   apple-sdk = pkgs.apple-sdk;
