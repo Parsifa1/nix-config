@@ -1,17 +1,11 @@
 { pkgs }:
 let
-  gcc = pkgs.gcc14.cc;
+  # gcc package
+  gcc = pkgs.gcc14;
+  # path str
+  header = gcc.cc;
+  version = gcc.version;
   apple-sdk = pkgs.apple-sdk;
-  CompileFlags = "
-        - -I${gcc}/include
-        - -I${gcc}/include/c++/14.2.0/
-        - -I${gcc}/include/c++/14.2.0//backward
-        - -I${gcc}/include/c++/14.2.0//aarch64-apple-darwin
-        - -I${gcc}lib/gcc/aarch64-apple-darwin/14.2.0/include
-        - -I${gcc}/lib/gcc/aarch64-apple-darwin/14.2.0/include-fixed
-        - -I${apple-sdk}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
-        - -I${apple-sdk}/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
-  ";
 in
 ''
   If:
@@ -19,14 +13,26 @@ in
   CompileFlags:
     Add:
       - -std=c++2b
-''
-+ CompileFlags
-+ ''
+      - -I${header}/include
+      - -I${header}/include/c++/${version}/
+      - -I${header}/include/c++/${version}/backward
+      - -I${header}/include/c++/${version}/aarch64-apple-darwin
+      - -I${header}lib/gcc.cc/aarch64-apple-darwin/${version}/include
+      - -I${header}/lib/gcc.cc/aarch64-apple-darwin/${version}/include-fixed
+      - -I${apple-sdk}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+      - -I${apple-sdk}/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
   ---
   If:
     PathMatch: [.*\.c]
   CompileFlags:
     Add:
       - -std=c17
+      - -I${header}/include
+      - -I${header}/include/c++/${version}/
+      - -I${header}/include/c++/${version}/backward
+      - -I${header}/include/c++/${version}/aarch64-apple-darwin
+      - -I${header}lib/gcc.cc/aarch64-apple-darwin/${version}/include
+      - -I${header}/lib/gcc.cc/aarch64-apple-darwin/${version}/include-fixed
+      - -I${apple-sdk}/Platforms/MacOSX.platform/Developer/SDKs/MacOSX.sdk/usr/include
+      - -I${apple-sdk}/MacOSX.platform/Developer/SDKs/MacOSX.sdk/System/Library/Frameworks
 ''
-+ CompileFlags
