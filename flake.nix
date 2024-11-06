@@ -26,11 +26,11 @@
       url = "github:parsifa1/nixpkg";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    ghostty = {
-      url = "git+ssh://git@github.com/ghostty-org/ghostty";
-      inputs.nixpkgs-stable.follows = "nixpkgs";
-      inputs.nixpkgs-unstable.follows = "nixpkgs";
-    };
+    # ghostty = {
+    #   url = "git+ssh://git@github.com/ghostty-org/ghostty";
+    #   inputs.nixpkgs-stable.follows = "nixpkgs";
+    #   inputs.nixpkgs-unstable.follows = "nixpkgs";
+    # };
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";

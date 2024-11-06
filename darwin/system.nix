@@ -4,18 +4,45 @@
 
 {
   #临时使用软件包
-  environment.systemPackages = [
-    pkgs.nixd
-    pkgs.nodejs
+  environment.systemPackages = with pkgs; [
+    nixd
+    nodejs
+    gcc14
   ];
+
+  homebrew = {
+    enable = false;
+  };
+
   services.nix-daemon.enable = true;
 
-  nix.settings.experimental-features = "nix-command flakes";
   security.pam.enableSudoTouchIdAuth = true;
 
   system.stateVersion = 2;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
+
+  nix = {
+    package = pkgs.nixVersions.latest;
+    settings = {
+      trusted-users = [ "parsifa1" ];
+      experimental-features = [
+        "nix-command"
+        "flakes"
+      ];
+      auto-optimise-store = true;
+      use-xdg-base-directories = true;
+      substituters = [
+        "https://cache.nixos.org"
+        "https://nix-community.cachix.org"
+      ];
+      trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+    };
+    gc = {
+      automatic = true;
+      options = "--delete-older-than 1w";
+    };
+  };
 
   users.users.parsifa1 = {
     name = "parsifa1";
@@ -33,12 +60,7 @@
     users.parsifa1 = import ./home.nix;
   };
 
-  programs.zsh.enable = true;
-  programs.fish = {
-    enable = true;
-    shellAliases = {
-      v = "nvim";
-      vi = "nvim";
-    };
-  };
+  # programs.zsh.enable = true;
+  programs.fish.enable = true;
+
 }
