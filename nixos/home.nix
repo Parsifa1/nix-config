@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
@@ -25,7 +25,7 @@ let
     git-credential-manager
     nix-output-monitor
     nerd-font-patcher
-    inputs.ghostty.packages.x86_64-linux.default
+    # inputs.ghostty.packages.x86_64-linux.default
   ];
 
 in
