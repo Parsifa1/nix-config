@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{  pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style

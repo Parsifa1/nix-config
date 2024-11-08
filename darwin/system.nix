@@ -30,7 +30,6 @@
         "nix-command"
         "flakes"
       ];
-      auto-optimise-store = true;
       use-xdg-base-directories = true;
       substituters = [
         "https://cache.nixos.org"

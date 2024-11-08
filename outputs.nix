@@ -28,20 +28,19 @@ in
       #一些模块
       nixos-wsl.nixosModules.wsl
       home-manager.nixosModules.home-manager
-      # 杂项配置
       { home-manager.extraSpecialArgs = specialArgs; }
     ];
   };
-  darwinConfigurations."AldricdeMacBook-Air" = darwin.lib.darwinSystem rec {
+  darwinConfigurations.AldricdeMacBook-Air = darwin.lib.darwinSystem rec {
     system = "aarch64-darwin";
+    specialArgs = args // {
+      inherit system;
+    };
     modules = [
+      ./nixpkgs.nix
       ./darwin/system.nix
       home-manager.darwinModules.home-manager
-      {
-        home-manager.extraSpecialArgs = args // {
-          inherit system;
-        };
-      }
+      { home-manager.extraSpecialArgs = specialArgs; }
     ];
 
   };

@@ -15,8 +15,17 @@ let
     # fix fastfetch
     (final: prev: {
       fastfetch = prev.fastfetch.overrideAttrs (oldAttrs: {
-        buildInputs = oldAttrs.buildInputs ++ [ pkgs.directx-headers ];
-        cmakeFlags = oldAttrs.cmakeFlags ++ [ (lib.cmakeBool "ENABLE_DIRECTX_HEADERS" true) ];
+        buildInputs =
+          if pkgs.stdenv.hostPlatform.system == "x86_64-linux" then
+            oldAttrs.buildInputs ++ [ pkgs.directx-headers ]
+          else
+            oldAttrs.buildInputs;
+
+        cmakeFlags =
+          if pkgs.stdenv.hostPlatform.system == "x86_64-linux" then
+            oldAttrs.cmakeFlags ++ [ (lib.cmakeBool "ENABLE_DIRECTX_HEADERS" true) ]
+          else
+            oldAttrs.cmakeFlags;
       });
     })
 
