@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.git = {
     enable = true;
     userName = "Parsifa1";
@@ -6,9 +7,8 @@
     package = pkgs.gitFull;
     extraConfig = {
       # user.signingkey = "99B21766F86301CA";
-      credential.helper = "store";
+      credential.helper = "osxkeychain";
       core.editor = "nvim";
-      credential.credentialStore = "cache";
       # commit.gpgsign = true;
     };
   };
