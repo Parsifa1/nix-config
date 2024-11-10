@@ -34,8 +34,8 @@ in
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
     file = {
-      ".clang-format".source = ../dotfile/.clang-format;
-      ".wakatime.cfg".source = ../dotfile/.wakatime.cfg;
+      ".clang-format".source = ../.dotfile/.clang-format;
+      ".wakatime.cfg".source = ../.dotfile/.wakatime.cfg;
     };
     packages = packages;
   };

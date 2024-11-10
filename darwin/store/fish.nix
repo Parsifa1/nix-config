@@ -18,9 +18,10 @@
       fa = "fastfetch";
       cls = "clear";
       py = "python";
+      zf = "z \$(fd --type d --hidden . 2>/dev/null | fzf)";
+      ghostty = "/Applications/Ghostty.app/Contents/MacOS/ghostty";
       ls = "eza --icons --group-directories-first --sort=extension -F";
       vf = "set -l file (fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'); and test -n \"\$file\"; and vi \"\$file\"";
-      zf = "z \$(fd --type d --hidden . 2>/dev/null | fzf)";
     };
   };
 }
