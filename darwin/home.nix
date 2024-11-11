@@ -31,12 +31,10 @@ in
     file = {
       ".clang-format".source = ../.dotfile/.clang-format;
       ".wakatime.cfg".source = ../.dotfile/.wakatime.cfg;
-      ".clangd".source = pkgs.writeText ".clangd" (
-        import ../.dotfile/.clangd.nix {
-          inherit pkgs;
-          gcc = pkgs.gcc14;
-        }
-      );
+      ".clangd".text = import ../.dotfile/clangd.nix {
+        inherit pkgs;
+        gcc = pkgs.gcc14;
+      };
     };
   };
 
