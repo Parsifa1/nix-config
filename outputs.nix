@@ -39,6 +39,8 @@ in
     modules = [
       ./nixpkgs.nix
       ./darwin/system.nix
+      ./darwin/secret.nix
+      agenix.darwinModules.default
       home-manager.darwinModules.home-manager
       { home-manager.extraSpecialArgs = specialArgs; }
     ];

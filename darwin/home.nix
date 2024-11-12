@@ -30,16 +30,15 @@ in
     packages = packages;
     file = {
       ".clang-format".source = ../.dotfile/.clang-format;
-      ".wakatime.cfg".source = ../.dotfile/.wakatime.cfg;
       ".clangd".text = import ../.dotfile/clangd.nix {
         inherit pkgs;
         gcc = pkgs.gcc14;
       };
+
     };
   };
 
   imports = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
-
   programs.home-manager.enable = true;
   home.stateVersion = "24.05"; # Please read the comment before changing.
 }

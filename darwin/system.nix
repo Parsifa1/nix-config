@@ -1,6 +1,6 @@
 # darwin.nix
 
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 
 {
   #临时使用软件包
@@ -8,6 +8,7 @@
     nixd
     nodejs
     gcc14
+    inputs.agenix.packages.${system}.default
   ];
 
   homebrew = {
@@ -17,6 +18,12 @@
   services.nix-daemon.enable = true;
 
   security.pam.enableSudoTouchIdAuth = true;
+
+  # enable logs for debugging
+  launchd.daemons."activate-agenix".serviceConfig = {
+    StandardErrorPath = "/Library/Logs/org.nixos.activate-agenix.stderr.log";
+    StandardOutPath = "/Library/Logs/org.nixos.activate-agenix.stdout.log";
+  };
 
   system.stateVersion = 2;
 
