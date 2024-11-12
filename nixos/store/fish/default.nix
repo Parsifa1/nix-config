@@ -4,7 +4,7 @@
     EDITOR = "nvim";
     TERM = "wezterm";
     DISPLAY = ":0";
-    DIRENV_LOG_FORMAT = ""; # close direnv log
+    DIRENV_LOG_FORMAT = "\033[2mdirenv: %s\033[0m"; # close direnv log
     WAYLAND_DISPLAY = "wayland-0";
     XDG_SESSION_TYPE = "wayland";
     FLAKE = "/home/parsifa1/nixos/";

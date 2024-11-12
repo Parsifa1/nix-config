@@ -6,7 +6,6 @@
   #临时使用软件包
   environment.systemPackages = with pkgs; [
     nixd
-    nodejs
     gcc14
     inputs.agenix.packages.${system}.default
   ];

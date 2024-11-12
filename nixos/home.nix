@@ -28,6 +28,7 @@ let
     # inputs.ghostty.packages.x86_64-linux.default
   ];
 
+  store = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
 in
 {
   home = {
@@ -63,7 +64,9 @@ in
     };
   };
 
-  imports = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
+  imports = store ++ [
+    # ../packages/direnv.nix
+  ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";
