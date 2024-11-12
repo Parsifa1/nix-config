@@ -8,7 +8,6 @@ in
 ''
   CompileFlags:
     Add:
-      - -std=c++2b
       - -I${header}/include
       - -I${header}/include/c++/${version}/
       - -I${header}/include/c++/${version}/backward

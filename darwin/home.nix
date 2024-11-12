@@ -34,11 +34,11 @@ in
         inherit pkgs;
         gcc = pkgs.gcc14;
       };
-
     };
   };
 
   imports = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
+
   programs.home-manager.enable = true;
   home.stateVersion = "24.05"; # Please read the comment before changing.
 }
