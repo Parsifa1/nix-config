@@ -1,4 +1,4 @@
-{  pkgs, ... }:
+{ pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
@@ -35,7 +35,6 @@ in
     homeDirectory = "/home/parsifa1";
     file = {
       ".clang-format".source = ../.dotfile/.clang-format;
-      ".wakatime.cfg".source = ../.dotfile/.wakatime.cfg;
     };
     packages = packages;
   };

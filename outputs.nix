@@ -24,9 +24,11 @@ in
       ./nixpkgs.nix
       ./nixos/wsl.nix
       ./nixos/system.nix
+      ./nixos/secret.nix
       ./nixos/service.nix
       #一些模块
       nixos-wsl.nixosModules.wsl
+      agenix.nixosModules.default
       home-manager.nixosModules.home-manager
       { home-manager.extraSpecialArgs = specialArgs; }
     ];

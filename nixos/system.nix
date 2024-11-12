@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   programs.fish.enable = true;
   users.mutableUsers = false;
@@ -76,6 +76,7 @@
     nix-init
     devenv
     dconf
+    inputs.agenix.packages.${system}.default
   ];
 
   fonts = {
@@ -114,5 +115,7 @@
       libvdpau-va-gl
     ];
   };
+
+  age.identityPaths = [ "/home/parsifa1/.ssh/id_rsa" ];
   virtualisation.docker.enable = true;
 }

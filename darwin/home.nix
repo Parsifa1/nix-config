@@ -30,7 +30,7 @@ in
     packages = packages;
     file = {
       ".clang-format".source = ../.dotfile/.clang-format;
-      ".clangd".text = import ../.dotfile/clangd.nix {
+      ".clangd".text = import ./store/lang/clangd.nix {
         inherit pkgs;
         gcc = pkgs.gcc14;
       };
