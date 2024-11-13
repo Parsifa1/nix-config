@@ -24,7 +24,7 @@
     StandardOutPath = "/Library/Logs/org.nixos.activate-agenix.stdout.log";
   };
 
-  system.stateVersion = 2;
+  system.stateVersion = 5;
 
   nixpkgs.hostPlatform = "aarch64-darwin";
 
