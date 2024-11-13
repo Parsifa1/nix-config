@@ -7,12 +7,9 @@
   environment.systemPackages = with pkgs; [
     nixd
     gcc14
+    rustup
     inputs.agenix.packages.${system}.default
   ];
-
-  homebrew = {
-    enable = false;
-  };
 
   services.nix-daemon.enable = true;
 

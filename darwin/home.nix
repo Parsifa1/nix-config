@@ -1,6 +1,5 @@
 { pkgs, ... }:
 let
-
   packages = with pkgs; [
     nixfmt-rfc-style
     fastfetch
@@ -20,9 +19,9 @@ let
     dust
     duf
     git-credential-manager
-    neovim
     tree-sitter
   ];
+
   store = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
   public = map (d: ../packages + d) (
     map (n: "/" + n) (with builtins; attrNames (readDir ../packages))
