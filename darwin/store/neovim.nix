@@ -1,8 +1,4 @@
-{
-  # inputs,
-  pkgs,
-  ...
-}:
+{ pkgs, ... }:
 {
   programs.neovim = {
     enable = true;
@@ -15,8 +11,4 @@
     luajitPackages.luarocks
     tree-sitter
   ];
-  home.sessionVariables = {
-    # for blink.cmp lib
-    LIBRARY_PATH = "$LIBRARY_PATH:${pkgs.libiconv.out}/lib";
-  };
 }
