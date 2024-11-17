@@ -1,17 +1,27 @@
 { lib, pkgs, ... }:
+let
+  EDITOR = "nvim";
+  PNPM_HOME = "/Users/parsifa1/.local/share/pnpm";
+  LIBRARY_PATH = lib.makeLibraryPath [ pkgs.libiconv ]; # for neovim blink.cmp lib
+  FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
+  FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";
+in
 {
   home.sessionVariables = {
-    EDITOR = "nvim";
-    PATH = "$PATH:$PNPM_HOME";
-    PNPM_HOME = "/Users/parsifa1/.local/share/pnpm";
-    LIBRARY_PATH = lib.makeLibraryPath [ pkgs.libiconv ]; # for neovim blink.cmp lib
-    FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
-    FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";
+    inherit
+      EDITOR
+      PNPM_HOME
+      LIBRARY_PATH
+      FZF_DEFAULT_COMMAND
+      FZF_DEFAULT_OPTS
+      ;
+    PATH = "$PATH:${PNPM_HOME}";
   };
   programs.fish = {
     enable = true;
     shellInitLast = ''
       set -U fish_greeting
+      eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
     shellAliases = {
       v = "nvim";

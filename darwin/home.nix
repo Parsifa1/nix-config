@@ -9,6 +9,7 @@ let
     eza
     bat
     yarn
+    websocat
     nh
     delta
     fzf
