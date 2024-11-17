@@ -63,6 +63,7 @@
   };
 
   # programs.zsh.enable = true;
+  age.identityPaths = [ "/Users/parsifa1/.ssh/id_ed25519" ];
   programs.fish.enable = true;
 
 }
