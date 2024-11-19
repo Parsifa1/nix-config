@@ -1,16 +1,10 @@
 {
   inputs,
   lib,
-  nixpkgs-master,
   pkgs,
-  system,
   ...
 }:
 let
-  pkgs-master = import nixpkgs-master {
-    inherit system;
-    config.allowUnfree = true;
-  };
   overlays = with inputs; [
     # fix fastfetch
     (final: prev: {
