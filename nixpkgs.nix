@@ -2,6 +2,7 @@
   inputs,
   lib,
   pkgs,
+  system,
   ...
 }:
 let
@@ -23,6 +24,11 @@ let
       });
     })
 
+    #bind agenix
+    (final: prev: {
+      agenix = inputs.agenix.packages.${system}.default;
+    })
+
     # my nur overlays
     cloudtide.overlay
 
@@ -34,5 +40,6 @@ in
   nixpkgs = {
     overlays = overlays;
     config.allowUnfree = true;
+    hostPlatform = system;
   };
 }

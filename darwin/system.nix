@@ -1,14 +1,15 @@
 # darwin.nix
 
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 
 {
   #临时使用软件包
   environment.systemPackages = with pkgs; [
     nixd
     gcc14
+    gnupg
     rustup
-    inputs.agenix.packages.${system}.default
+    agenix
   ];
 
   services.nix-daemon.enable = true;
@@ -20,10 +21,7 @@
     StandardErrorPath = "/Library/Logs/org.nixos.activate-agenix.stderr.log";
     StandardOutPath = "/Library/Logs/org.nixos.activate-agenix.stdout.log";
   };
-
-  system.stateVersion = 5;
-
-  nixpkgs.hostPlatform = "aarch64-darwin";
+  programs.gnupg.agent.enable = true;
 
   nix = {
     package = pkgs.nixVersions.latest;
@@ -66,4 +64,5 @@
   age.identityPaths = [ "/Users/parsifa1/.ssh/id_ed25519" ];
   programs.fish.enable = true;
 
+  system.stateVersion = 5;
 }
