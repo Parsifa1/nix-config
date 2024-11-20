@@ -6,7 +6,6 @@ let
       inputs
       self
       nix-index-database
-      nixpkgs-master
       ;
     channels = {
       inherit nixpkgs;
