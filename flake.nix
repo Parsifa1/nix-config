@@ -5,12 +5,8 @@
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    flake-parts.url = "github:hercules-ci/flake-parts";
 
-    # nix-index-database = {
-    #   url = "github:nix-community/nix-index-database";
-    #   inputs.nixpkgs.follows = "nixpkgs";
-    # };
-    #
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -25,11 +21,6 @@
       url = "github:parsifa1/nixpkg";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # ghostty = {
-    #   url = "git+ssh://git@github.com/ghostty-org/ghostty";
-    #   inputs.nixpkgs-stable.follows = "nixpkgs";
-    #   inputs.nixpkgs-unstable.follows = "nixpkgs";
-    # };
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -40,5 +31,16 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };
-  outputs = inputs: import ./outputs.nix { inherit inputs; };
+  outputs =
+    inputs@{ ... }:
+    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+      systems = [
+        "x86_64-linux"
+        "aarch64-darwin"
+      ];
+      imports = [
+        ./outputs.nix
+      ];
+    };
+
 }
