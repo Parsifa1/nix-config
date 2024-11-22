@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
@@ -40,7 +40,7 @@ in
   };
 
   imports = global ++ [
-
+    inputs.nix-index-database.hmModules.nix-index
   ];
 
   programs.home-manager.enable = true;

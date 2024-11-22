@@ -23,6 +23,7 @@
 
   nix = {
     package = pkgs.nixVersions.latest;
+    channel.enable = false;
     settings = {
       trusted-users = [ "parsifa1" ];
       experimental-features = [
