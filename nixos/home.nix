@@ -28,7 +28,7 @@ let
     # inputs.ghostty.packages.x86_64-linux.default
   ];
 
-  store = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
+  store = with builtins; map (d: ./store/${d}) (attrNames (readDir ./store));
 in
 {
   home = {

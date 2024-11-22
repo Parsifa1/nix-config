@@ -23,10 +23,8 @@ let
     tree-sitter
   ];
 
-  store = map (d: ./store + d) (map (n: "/" + n) (with builtins; attrNames (readDir ./store)));
-  public = map (d: ../packages + d) (
-    map (n: "/" + n) (with builtins; attrNames (readDir ../packages))
-  );
+  store = with builtins; map (d: ./store/${d}) (attrNames (readDir ./store));
+  public = with builtins; map (d: ../packages/${d}) (attrNames (readDir ../packages));
   global = store ++ public;
 in
 {
@@ -36,10 +34,7 @@ in
     packages = packages;
     file = {
       ".clang-format".source = ../.dotfile/.clang-format;
-      ".clangd".text = import ../.dotfile/.clangd.nix {
-        inherit pkgs;
-        gcc = pkgs.gcc14;
-      };
+      ".clangd".text = import ../.dotfile/.clangd.nix { inherit pkgs; };
     };
   };
 

@@ -1,6 +1,7 @@
 # for darwin
-{ pkgs, gcc }:
+{ pkgs, ... }:
 let
+  gcc = pkgs.gcc14;
   header = gcc.cc;
   version = gcc.version;
   apple-sdk = pkgs.apple-sdk;

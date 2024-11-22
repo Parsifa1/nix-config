@@ -2,11 +2,7 @@
 with inputs;
 let
   args = {
-    inherit
-      inputs
-      self
-      nix-index-database
-      ;
+    inherit inputs self;
     channels = {
       inherit nixpkgs;
     };
@@ -15,9 +11,7 @@ in
 {
   nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
     system = "x86_64-linux";
-    specialArgs = args // {
-      inherit system;
-    };
+    specialArgs = args // system;
     modules = [
       #其他配置文件
       ./nixpkgs.nix
@@ -34,13 +28,12 @@ in
   };
   darwinConfigurations.AldricdeMacBook-Air = darwin.lib.darwinSystem rec {
     system = "aarch64-darwin";
-    specialArgs = args // {
-      inherit system;
-    };
+    specialArgs = args // system;
     modules = [
       ./nixpkgs.nix
       ./darwin/system.nix
       ./darwin/secret.nix
+      #一些模块
       agenix.darwinModules.default
       home-manager.darwinModules.home-manager
       { home-manager.extraSpecialArgs = specialArgs; }
