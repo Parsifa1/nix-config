@@ -24,9 +24,10 @@ let
       });
     })
 
-    #bind agenix
+    #bind agenix nh
     (final: prev: {
       agenix = inputs.agenix.packages.${system}.default;
+      nh = inputs.nh.packages.${system}.default;
     })
 
     # my nur overlays
