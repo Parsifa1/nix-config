@@ -34,11 +34,13 @@ in
     packages = packages;
     file = {
       ".clang-format".source = ../.dotfile/.clang-format;
-      ".clangd".text = import ../.dotfile/.clangd.nix { inherit pkgs; };
+      ".clangd".text = import ../.dotfile/clangd.nix { inherit pkgs; };
     };
   };
 
-  imports = global ++ [ ];
+  imports = global ++ [
+
+  ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05"; # Please read the comment before changing.

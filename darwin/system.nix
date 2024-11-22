@@ -1,7 +1,5 @@
 # darwin.nix
-
 { pkgs, ... }:
-
 {
   #临时使用软件包
   environment.systemPackages = with pkgs; [

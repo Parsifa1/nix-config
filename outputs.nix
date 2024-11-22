@@ -11,7 +11,9 @@ in
 {
   nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
     system = "x86_64-linux";
-    specialArgs = args // system;
+    specialArgs = args // {
+      inherit system;
+    };
     modules = [
       #其他配置文件
       ./nixpkgs.nix
@@ -28,7 +30,9 @@ in
   };
   darwinConfigurations.AldricdeMacBook-Air = darwin.lib.darwinSystem rec {
     system = "aarch64-darwin";
-    specialArgs = args // system;
+    specialArgs = args // {
+      inherit system;
+    };
     modules = [
       ./nixpkgs.nix
       ./darwin/system.nix
