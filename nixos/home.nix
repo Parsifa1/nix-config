@@ -19,6 +19,7 @@ let
     btop
     dust
     duf
+    comma
     wezterm
     typst
     pandoc
@@ -51,6 +52,7 @@ in
       package = pkgs.bibata-cursors;
     };
   };
+
   dconf = {
     enable = true;
     settings = {

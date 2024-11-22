@@ -19,6 +19,7 @@ let
     btop
     dust
     duf
+    comma
     git-credential-manager
     tree-sitter
   ];

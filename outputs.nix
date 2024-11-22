@@ -1,13 +1,10 @@
-{ inputs, ... }:
-with inputs;
+{ self, inputs, ... }:
 let
   args = {
     inherit inputs self;
-    channels = {
-      inherit nixpkgs;
-    };
   };
 in
+with inputs;
 {
   flake = {
     nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {

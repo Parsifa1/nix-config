@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 {
   programs.fish.enable = true;
   users.mutableUsers = false;
@@ -76,7 +76,7 @@
     nix-init
     devenv
     dconf
-    inputs.agenix.packages.${system}.default
+    agenix
   ];
 
   fonts = {

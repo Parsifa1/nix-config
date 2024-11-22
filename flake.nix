@@ -42,6 +42,15 @@
       imports = [
         ./outputs.nix
       ];
+      perSystem =
+        { system, ... }:
+        {
+          _module.args = {
+            pkgs = import ./nixpkgs.nix {
+              inherit system inputs;
+            };
+          };
+        };
     };
 
 }

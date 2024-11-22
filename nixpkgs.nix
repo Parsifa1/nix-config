@@ -1,11 +1,11 @@
 {
-  inputs,
-  lib,
   pkgs,
+  inputs,
   system,
   ...
 }:
 let
+  inherit (inputs.nixpkgs) lib;
   overlays = with inputs; [
     # fix fastfetch
     (final: prev: {
