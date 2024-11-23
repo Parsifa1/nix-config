@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
@@ -67,7 +67,8 @@ in
   };
 
   imports = store ++ [
-    # ../packages/direnv.nix
+
+    inputs.nix-index-database.hmModules.nix-index
   ];
 
   programs.home-manager.enable = true;
