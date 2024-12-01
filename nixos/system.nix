@@ -66,6 +66,7 @@
     gnupg
     pinentry-gnome3
     gcc14
+    zig
     clang-tools_18
     cmake
     gnumake

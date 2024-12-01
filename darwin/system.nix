@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     nixd
     gcc14
+    zig
     gnupg
     rustup
     agenix

@@ -37,6 +37,9 @@ in
     file = {
       ".clang-format".source = ../.dotfile/.clang-format;
       ".clangd".text = import ../.dotfile/clangd.nix { inherit pkgs; };
+      ".gnupg/gpg-agent.conf".text = ''
+        pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
+      '';
     };
   };
 
