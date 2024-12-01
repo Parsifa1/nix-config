@@ -1,22 +1,27 @@
 { ... }:
 let
   EDITOR = "nvim";
-  PATH = "$PATH:${PNPM_HOME}";
-  FLAKE = "/Users/parsifa1/.config/nix/";
-  PNPM_HOME = "/Users/parsifa1/.local/share/pnpm";
+  CARGO_HOME = "$HOME/.cargo/bin";
+  FLAKE = "/Users/parsifa1/.config/nix";
+  ADD_PATH = builtins.concatStringsSep ":";
+  PNPM_HOME = "$HOME/.local/share/pnpm/bin";
   FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
   FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";
 in
 {
   home.sessionVariables = {
     inherit
-      PATH
       FLAKE
       EDITOR
       PNPM_HOME
       FZF_DEFAULT_OPTS
       FZF_DEFAULT_COMMAND
       ;
+    PATH = ADD_PATH [
+      "$PATH"
+      PNPM_HOME
+      CARGO_HOME
+    ];
   };
   programs.fish = {
     enable = true;

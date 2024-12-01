@@ -5,6 +5,7 @@
   environment.systemPackages = with pkgs; [
     nixd
     gcc14
+    clang-tools_19
     zig
     gnupg
     rustup
