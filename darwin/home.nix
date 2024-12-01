@@ -5,6 +5,7 @@ let
     fastfetch
     onefetch
     tokei
+    typst
     ripgrep
     eza
     bat
