@@ -3,7 +3,7 @@
   programs.neovim = {
     enable = true;
     extraLuaPackages = ps: [ ps.magick ];
-    package = pkgs.neovim;
+    # package = pkgs.neovim;
   };
   home.packages = with pkgs; [
     imagemagick
