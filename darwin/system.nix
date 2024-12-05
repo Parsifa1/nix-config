@@ -3,24 +3,16 @@
 {
   #临时使用软件包
   environment.systemPackages = with pkgs; [
+    zig
     nixd
     gcc14
-    clang-tools_19
-    zig
     gnupg
     rustup
     agenix
   ];
 
   services.nix-daemon.enable = true;
-
   security.pam.enableSudoTouchIdAuth = true;
-
-  # enable logs for debugging
-  launchd.daemons."activate-agenix".serviceConfig = {
-    StandardErrorPath = "/Library/Logs/org.nixos.activate-agenix.stderr.log";
-    StandardOutPath = "/Library/Logs/org.nixos.activate-agenix.stdout.log";
-  };
   programs.gnupg.agent.enable = true;
 
   nix = {

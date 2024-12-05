@@ -1,8 +1,9 @@
 { ... }:
 let
   EDITOR = "nvim";
+  LOCAL = "$HOME/.local/bin";
+  NH_FLAKE = "/$HOME/.config/nix";
   CARGO_HOME = "$HOME/.cargo/bin";
-  FLAKE = "/Users/parsifa1/.config/nix";
   ADD_PATH = builtins.concatStringsSep ":";
   PNPM_HOME = "$HOME/.local/share/pnpm/bin";
   FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
@@ -11,13 +12,14 @@ in
 {
   home.sessionVariables = {
     inherit
-      FLAKE
       EDITOR
+      NH_FLAKE
       PNPM_HOME
       FZF_DEFAULT_OPTS
       FZF_DEFAULT_COMMAND
       ;
     PATH = ADD_PATH [
+      LOCAL
       "$PATH"
       PNPM_HOME
       CARGO_HOME
@@ -27,6 +29,7 @@ in
     enable = true;
     shellInitLast = ''
       set -U fish_greeting
+      ln -s /usr/bin/clang ~/.local/bin/cc
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
     shellAliases = {

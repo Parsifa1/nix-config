@@ -35,9 +35,7 @@ in
   home = {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
-    file = {
-      ".clang-format".source = ../.dotfile/.clang-format;
-    };
+    file.".clang-format".source = ../.dotfile/.clang-format;
     packages = packages;
   };
 
