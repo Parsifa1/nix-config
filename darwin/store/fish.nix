@@ -2,7 +2,7 @@
 let
   EDITOR = "nvim";
   LOCAL = "$HOME/.local/bin";
-  NH_FLAKE = "/$HOME/.config/nix";
+  NH_FLAKE = "$HOME/.config/nix";
   CARGO_HOME = "$HOME/.cargo/bin";
   ADD_PATH = builtins.concatStringsSep ":";
   PNPM_HOME = "$HOME/.local/share/pnpm/bin";
@@ -27,9 +27,12 @@ in
   };
   programs.fish = {
     enable = true;
+    loginShellInit = ''
+      unlink $HOME/.local/bin/cc
+      ln -s /usr/bin/clang ~/.local/bin/cc
+    '';
     shellInitLast = ''
       set -U fish_greeting
-      ln -s /usr/bin/clang ~/.local/bin/cc
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
     shellAliases = {
