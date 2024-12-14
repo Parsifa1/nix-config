@@ -1,12 +1,12 @@
 { pkgs, ... }:
 {
   home.sessionVariables = {
+    DISPLAY = ":0";
     EDITOR = "nvim";
     TERM = "wezterm";
-    DISPLAY = ":0";
-    WAYLAND_DISPLAY = "wayland-0";
     XDG_SESSION_TYPE = "wayland";
-    FLAKE = "/home/parsifa1/nixos/";
+    WAYLAND_DISPLAY = "wayland-0";
+    NH_FLAKE = "/home/parsifa1/nixos/";
     PNPM_HOME = "/home/parsifa1/.local/share/pnpm";
     PATH = "$PATH:$HOME/.cargo/bin:/usr/lib/wsl/lib:/bin";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:/run/opengl-driver/lib";

@@ -29,6 +29,7 @@ let
       agenix = inputs.agenix.packages.${system}.default;
       nh = inputs.nh.packages.${system}.default;
       neovim = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
+      wezterm = inputs.wezterm.packages.${pkgs.system}.default;
     })
 
     # my nur overlays
