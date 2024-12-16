@@ -26,10 +26,28 @@ let
   ];
 
   store = with builtins; map (d: ./store/${d}) (attrNames (readDir ./store));
-  public = with builtins; map (d: ../packages/${d}) (attrNames (readDir ../packages));
-  global = store ++ public;
 in
 {
+  userPackages = {
+    atuin.enable = true;
+    direnv.enable = true;
+    git.enable = true;
+    lazygit.enable = true;
+    neovim.enable = true;
+    ssh.enable = true;
+    starship.enable = true;
+    yazi.enable = true;
+    zoxide.enable = true;
+    lang = {
+      rust.enable = true;
+      golang.enable = false;
+      python.enable = true;
+      haskell.enable = false;
+      nodejs.enable = true;
+      latex.enable = false;
+    };
+  };
+
   home = {
     username = "parsifa1";
     homeDirectory = "/Users/parsifa1";
@@ -43,7 +61,8 @@ in
     };
   };
 
-  imports = global ++ [
+  imports = store ++ [
+    ../packages
     inputs.nix-index-database.hmModules.nix-index
   ];
 

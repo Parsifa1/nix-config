@@ -1,4 +1,5 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+{
   programs.atuin = {
     package = pkgs.atuin;
     enable = true;

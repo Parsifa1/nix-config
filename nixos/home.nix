@@ -26,12 +26,31 @@ let
     git-credential-manager
     nix-output-monitor
     nerd-font-patcher
-    # inputs.ghostty.packages.x86_64-linux.default
   ];
 
   store = with builtins; map (d: ./store/${d}) (attrNames (readDir ./store));
 in
 {
+  userPackages = {
+    atuin.enable = true;
+    direnv.enable = true;
+    git.enable = true;
+    lazygit.enable = true;
+    neovim.enable = true;
+    ssh.enable = true;
+    starship.enable = true;
+    yazi.enable = true;
+    zoxide.enable = true;
+    lang = {
+      rust.enable = true;
+      golang.enable = true;
+      python.enable = true;
+      haskell.enable = true;
+      nodejs.enable = true;
+      latex.enable = true;
+    };
+  };
+
   home = {
     username = "parsifa1";
     homeDirectory = "/home/parsifa1";
@@ -65,8 +84,8 @@ in
   };
 
   imports = store ++ [
-
     inputs.nix-index-database.hmModules.nix-index
+    ../packages
   ];
 
   programs.home-manager.enable = true;
