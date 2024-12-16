@@ -1,4 +1,8 @@
-{pkgs, ...}: {
+{ pkgs, ... }:
+let
+  inherit (pkgs) stdenv;
+in
+{
   programs.git = {
     enable = true;
     userName = "Parsifa1";
@@ -6,12 +10,10 @@
     package = pkgs.gitFull;
     extraConfig = {
       user.signingkey = "99B21766F86301CA";
-      credential.helper = "store";
+      credential.helper = if stdenv.isDarwin then "osxkeychain" else "store";
       core.editor = "nvim";
       credential.credentialStore = "cache";
       commit.gpgsign = true;
-      # http.proxy = "socks5h://localhost:7890";
-      # https.proxy = "socks5h://localhost:7890";
     };
   };
 }

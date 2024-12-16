@@ -16,9 +16,19 @@
   };
   programs.fish = {
     enable = true;
-    shellInitLast = ''
+    loginShellInit = ''
       rm /run/user/1000/wayland-0.lock && rm /run/user/1000/wayland-0
       ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000/
+    '';
+    shellInitLast = ''
+      clear
+      set -U fish_greeting
+      if not string match -q -- $PNPM_HOME $PATH
+        set -gx PATH "$PNPM_HOME" $PATH
+      end
+      if test -d "/mnt/c/Windows/System32/"
+          export PATH="$PATH:/mnt/c/Windows/System32/"
+      end
     '';
     shellAliases = {
       v = "nvim";
@@ -31,7 +41,6 @@
       vf = "set -l file (fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'); and test -n \"\$file\"; and vi \"\$file\"";
       zf = "z \$(fd --type d --hidden . 2>/dev/null | fzf)";
     };
-    interactiveShellInit = builtins.readFile ./config.fish;
   };
   home.packages = with pkgs; [ just ];
 }
