@@ -24,8 +24,6 @@ let
     git-credential-manager
     tree-sitter
   ];
-
-  store = with builtins; map (d: ./store/${d}) (attrNames (readDir ./store));
 in
 {
   userPackages = {
@@ -61,8 +59,9 @@ in
     };
   };
 
-  imports = store ++ [
-    ../packages
+  imports = [
+    ../store
+    ./shell.nix
     inputs.nix-index-database.hmModules.nix-index
   ];
 

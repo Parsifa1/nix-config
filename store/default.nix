@@ -1,34 +1,32 @@
-# packages/lang/default.nix
 { lib, ... }:
 let
   removeSubnix = lib.removeSuffix ".nix";
-
-  files = lib.filterAttrs (n: t: t == "regular" && n != "default.nix") (builtins.readDir ./.);
-
+  files = lib.filterAttrs (n: t: n != "lang" && n != "default.nix") (builtins.readDir ./.);
   Modules = lib.mapAttrsToList (
-    name: _: mkLangModule (removeSubnix name) (import (./. + "/${name}"))
+    name: _: mkPkgModule (removeSubnix name) (import (./. + "/${name}"))
   ) files;
 
-  langModules =
+  pkgModule =
     let
       inherit files;
-      languages = lib.mapAttrs' (
+      pkg = lib.mapAttrs' (
         name: _:
         lib.nameValuePair (removeSubnix name) (
           lib.mkOption {
             type = lib.types.submodule {
               options = {
-                enable = lib.mkEnableOption "${removeSubnix name} toolchain";
+                enable = lib.mkEnableOption "${removeSubnix name}";
               };
             };
             default = { };
-            description = "${removeSubnix name} language configuration";
+            description = "${removeSubnix name} configuration";
           }
         )
       ) files;
     in
-    languages;
-  mkLangModule =
+    pkg;
+
+  mkPkgModule =
     name: moduleFunc:
     {
       config,
@@ -37,7 +35,7 @@ let
       ...
     }:
     let
-      cfg = config.userPackages.lang.${name}.enable;
+      cfg = config.userPackages.${name}.enable;
     in
     {
       config = lib.mkIf cfg (moduleFunc {
@@ -46,7 +44,6 @@ let
     };
 in
 {
-  options.userPackages.lang = langModules;
-
-  imports = Modules;
+  options.userPackages = pkgModule;
+  imports = [ ./lang ] ++ Modules;
 }

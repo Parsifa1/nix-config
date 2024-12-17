@@ -28,7 +28,6 @@ let
     nerd-font-patcher
   ];
 
-  store = with builtins; map (d: ./store/${d}) (attrNames (readDir ./store));
 in
 {
   userPackages = {
@@ -37,6 +36,7 @@ in
     git.enable = true;
     lazygit.enable = true;
     neovim.enable = true;
+    emacs.enable = true;
     ssh.enable = true;
     starship.enable = true;
     yazi.enable = true;
@@ -83,9 +83,10 @@ in
     };
   };
 
-  imports = store ++ [
+  imports = [
+    ../store
+    ./shell.nix
     inputs.nix-index-database.hmModules.nix-index
-    ../packages
   ];
 
   programs.home-manager.enable = true;
