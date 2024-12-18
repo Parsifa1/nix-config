@@ -6,6 +6,7 @@
 }:
 let
   inherit (inputs.nixpkgs) lib;
+  # nixpkgs overlays
   overlays = with inputs; [
     # fix fastfetch
     (final: prev: {
@@ -23,18 +24,15 @@ let
             oldAttrs.cmakeFlags;
       });
     })
-
-    #bind agenix nh
+    #bind packages need overlay
     (final: prev: {
       agenix = inputs'.agenix.packages.default;
       nh = inputs'.nh.packages.default;
       neovim = inputs'.neovim-nightly-overlay.packages.default;
       wezterm = inputs'.wezterm.packages.default;
     })
-
     # my nur overlays
     cloudtide.overlay
-
     #rust toolchain
     fenix.overlays.default
   ];
