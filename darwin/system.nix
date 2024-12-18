@@ -1,5 +1,5 @@
 # darwin.nix
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   #临时使用软件包
   environment.systemPackages = with pkgs; [
@@ -51,6 +51,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.parsifa1 = import ./home.nix;
+    extraSpecialArgs = { inherit inputs pkgs; };
   };
 
   # programs.zsh.enable = true;

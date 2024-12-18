@@ -40,21 +40,22 @@
     };
   };
   outputs =
-    inputs@{ ... }:
-    inputs.flake-parts.lib.mkFlake { inherit inputs; } {
+    inputs@{ flake-parts, ... }:
+    flake-parts.lib.mkFlake { inherit inputs; } {
       systems = [
         "x86_64-linux"
         "aarch64-darwin"
       ];
       imports = [
-        ./outputs.nix
+        ./darwin
+        ./nixos
       ];
       perSystem =
-        { system, ... }:
+        { inputs', system, ... }:
         {
           _module.args = {
             pkgs = import ./nixpkgs.nix {
-              inherit system inputs;
+              inherit system inputs inputs';
             };
           };
         };

@@ -1,6 +1,6 @@
 {
-  pkgs,
   inputs,
+  inputs',
   system,
   ...
 }:
@@ -11,13 +11,13 @@ let
     (final: prev: {
       fastfetch = prev.fastfetch.overrideAttrs (oldAttrs: {
         buildInputs =
-          if pkgs.stdenv.hostPlatform.system == "x86_64-linux" then
-            oldAttrs.buildInputs ++ [ pkgs.directx-headers ]
+          if system == "x86_64-linux" then
+            oldAttrs.buildInputs ++ [ prev.directx-headers ]
           else
             oldAttrs.buildInputs;
 
         cmakeFlags =
-          if pkgs.stdenv.hostPlatform.system == "x86_64-linux" then
+          if system == "x86_64-linux" then
             oldAttrs.cmakeFlags ++ [ (lib.cmakeBool "ENABLE_DIRECTX_HEADERS" true) ]
           else
             oldAttrs.cmakeFlags;
@@ -26,10 +26,10 @@ let
 
     #bind agenix nh
     (final: prev: {
-      agenix = inputs.agenix.packages.${system}.default;
-      nh = inputs.nh.packages.${system}.default;
-      neovim = inputs.neovim-nightly-overlay.packages.${pkgs.system}.default;
-      wezterm = inputs.wezterm.packages.${pkgs.system}.default;
+      agenix = inputs'.agenix.packages.default;
+      nh = inputs'.nh.packages.default;
+      neovim = inputs'.neovim-nightly-overlay.packages.default;
+      wezterm = inputs'.wezterm.packages.default;
     })
 
     # my nur overlays
@@ -39,10 +39,9 @@ let
     fenix.overlays.default
   ];
 in
-{
-  nixpkgs = {
-    overlays = overlays;
-    config.allowUnfree = true;
-    hostPlatform = system;
-  };
+
+import inputs.nixpkgs {
+  inherit system overlays;
+  config.allowUnfree = true;
+
 }

@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ inputs, pkgs, ... }:
 {
   programs.fish.enable = true;
   users.mutableUsers = false;
@@ -23,6 +23,7 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.parsifa1 = import ./home.nix;
+    extraSpecialArgs = { inherit inputs pkgs; };
   };
 
   programs.nix-ld = {
