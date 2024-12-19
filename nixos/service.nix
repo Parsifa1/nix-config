@@ -5,7 +5,7 @@
     xserver.enable = true;
     openssh = {
       enable = true;
-      ports = [ 14514 ];
+      ports = [ 11451 ];
       settings = {
         ClientAliveInterval = 60;
         ClientAliveCountMax = 3;
