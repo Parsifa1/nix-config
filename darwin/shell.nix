@@ -36,6 +36,7 @@ in
       eval "$(/opt/homebrew/bin/brew shellenv)"
     '';
     shellAliases = {
+      y = "yy";
       v = "nvim";
       vi = "nvim";
       cls = "clear";
