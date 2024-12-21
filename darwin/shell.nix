@@ -37,6 +37,7 @@ in
     '';
     shellAliases = {
       v = "nvim";
+      y = "yazi";
       vi = "nvim";
       cls = "clear";
       py = "python";
