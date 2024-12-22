@@ -31,8 +31,8 @@
       end
     '';
     shellAliases = {
+      y = "yy";
       v = "nvim";
-      y = "yazi";
       vi = "nvim";
       lg = "lazygit";
       fa = "fastfetch";
