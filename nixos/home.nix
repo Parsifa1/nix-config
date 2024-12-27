@@ -21,6 +21,7 @@ let
     duf
     comma
     wezterm
+    ghostty
     typst
     pandoc
     git-credential-manager

@@ -30,6 +30,7 @@ let
       nh = inputs'.nh.packages.default;
       neovim = inputs'.neovim-nightly-overlay.packages.default;
       wezterm = inputs'.wezterm.packages.default;
+      ghostty = inputs'.ghostty.packages.default;
     })
     # my nur overlays
     cloudtide.overlay
