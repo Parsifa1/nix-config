@@ -38,11 +38,9 @@ in
     zoxide.enable = true;
     lang = {
       rust.enable = true;
-      golang.enable = false;
       python.enable = true;
-      haskell.enable = false;
       nodejs.enable = true;
-      latex.enable = false;
+      moonbit.enable = true;
     };
   };
 

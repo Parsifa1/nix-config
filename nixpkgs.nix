@@ -36,6 +36,8 @@ let
     cloudtide.overlay
     #rust toolchain
     fenix.overlays.default
+    #mbt toolchain
+    inputs.moonbit-overlay.overlays.default
   ];
 in
 

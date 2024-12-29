@@ -12,6 +12,8 @@
 
     ghostty.url = "github:ghostty-org/ghostty";
 
+    moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
+
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
