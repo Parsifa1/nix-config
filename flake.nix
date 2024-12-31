@@ -12,7 +12,7 @@
 
     ghostty.url = "github:ghostty-org/ghostty";
 
-    moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
+    moonbit-overlay.url = "github:parsifa1/moonbit-overlay";
 
     home-manager = {
       url = "github:nix-community/home-manager";
