@@ -1,19 +1,12 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-
     nh.url = "github:viperML/nh";
-
     flake-parts.url = "github:hercules-ci/flake-parts";
-
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-
     wezterm.url = "github:wez/wezterm?dir=nix";
-
     ghostty.url = "github:ghostty-org/ghostty";
-
-    moonbit-overlay.url = "github:parsifa1/moonbit-overlay";
-
+    moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -56,10 +49,7 @@
         "x86_64-linux"
         "aarch64-darwin"
       ];
-      imports = [
-        ./darwin
-        ./nixos
-      ];
+      imports = [ ./hosts ];
       perSystem =
         { inputs', system, ... }:
         {

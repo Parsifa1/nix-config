@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
@@ -21,16 +21,17 @@ let
     duf
     comma
     wezterm
-    ghostty
     typst
     pandoc
     git-credential-manager
     nix-output-monitor
     nerd-font-patcher
+    # ghostty
   ];
-
 in
 {
+  imports = [ ./shell.nix ];
+
   userPackages = {
     atuin.enable = true;
     direnv.enable = true;
@@ -84,12 +85,6 @@ in
       };
     };
   };
-
-  imports = [
-    ../store
-    ./shell.nix
-    inputs.nix-index-database.hmModules.nix-index
-  ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";

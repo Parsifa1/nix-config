@@ -79,6 +79,7 @@
     rustup
     nixd
     nix-init
+    nix-output-monitor
     devenv
     dconf
     agenix

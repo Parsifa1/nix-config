@@ -37,7 +37,7 @@ let
     #rust toolchain
     fenix.overlays.default
     #mbt toolchain
-    inputs.moonbit-overlay.overlays.default
+    moonbit-overlay.overlays.default
   ];
 in
 

@@ -1,4 +1,4 @@
-{ inputs, pkgs, ... }:
+{ pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
@@ -22,10 +22,13 @@ let
     duf
     comma
     git-credential-manager
+    nix-output-monitor
     tree-sitter
   ];
 in
 {
+  imports = [ ./shell.nix ];
+
   userPackages = {
     atuin.enable = true;
     direnv.enable = true;
@@ -56,12 +59,6 @@ in
       '';
     };
   };
-
-  imports = [
-    ../store
-    ./shell.nix
-    inputs.nix-index-database.hmModules.nix-index
-  ];
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05"; # Please read the comment before changing.
