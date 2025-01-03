@@ -56,6 +56,19 @@
     extraSpecialArgs = { inherit inputs pkgs; };
   };
 
+  fonts.packages = with pkgs; [
+    ibm-plex
+    noto-fonts
+    lxgw-wenkai
+    cloudtide.fonts
+    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
+    source-han-serif
+  ];
+  environment.variables.FONTCONFIG_FILE = "${pkgs.makeFontsConf {
+    fontDirectories = [ "/Library/Fonts" ];
+  }}";
+
   age.identityPaths = [ "/Users/parsifa1/.ssh/id_ed25519" ];
   programs.fish.enable = true;
 

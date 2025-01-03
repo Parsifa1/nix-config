@@ -11,6 +11,7 @@ let
     bat
     yarn
     websocat
+    fontconfig
     nh
     delta
     fzf
