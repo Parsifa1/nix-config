@@ -14,6 +14,7 @@ let
     helix
     fzf
     fd
+    silicon
     which
     tree
     btop

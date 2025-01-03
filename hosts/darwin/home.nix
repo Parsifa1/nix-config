@@ -21,6 +21,7 @@ let
     dust
     duf
     comma
+    silicon
     git-credential-manager
     nix-output-monitor
     tree-sitter
