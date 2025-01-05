@@ -30,16 +30,16 @@
         ]
       },
       "locked": {
-        "lastModified": 1736074017,
-        "narHash": "sha256-g3dtKZ3GjnT2KrXLW/Xn3kXxprp3BBu3HeyAhtWSRHs=",
+        "lastModified": 1736103779,
+        "narHash": "sha256-WQ9x1oJrUtvTrJM2XPMuavJinhODmwzTFpBMnSLRmR8=",
         "owner": "parsifa1",
-        "repo": "nixpkg",
-        "rev": "125a0f7843b0e6cc380aaf598ee58e697ec784ef",
+        "repo": "cloudtix",
+        "rev": "5d8321bef74d7d64432979cac2ddd6c388b8a5f3",
         "type": "github"
       },
       "original": {
         "owner": "parsifa1",
-        "repo": "nixpkg",
+        "repo": "cloudtix",
         "type": "github"
       }
     },

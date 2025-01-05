@@ -28,7 +28,7 @@
     };
 
     cloudtide = {
-      url = "github:parsifa1/nixpkg";
+      url = "github:parsifa1/cloudtix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
