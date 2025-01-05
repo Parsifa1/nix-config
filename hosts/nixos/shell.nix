@@ -3,7 +3,6 @@
   home.sessionVariables = {
     DISPLAY = ":0";
     EDITOR = "nvim";
-    TERM = "wezterm";
     XDG_SESSION_TYPE = "wayland";
     WAYLAND_DISPLAY = "wayland-0";
     NH_FLAKE = "/home/parsifa1/nixos/";
@@ -17,12 +16,12 @@
   programs.fish = {
     enable = true;
     loginShellInit = ''
+      clear
+      set -U fish_greeting
       rm /run/user/1000/wayland-0.lock && rm /run/user/1000/wayland-0
       ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000/
     '';
     shellInitLast = ''
-      clear
-      set -U fish_greeting
       if not string match -q -- $PNPM_HOME $PATH
         set -gx PATH "$PNPM_HOME" $PATH
       end

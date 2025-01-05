@@ -21,7 +21,7 @@ let
     dust
     duf
     comma
-    wezterm
+    # wezterm
     typst
     pandoc
     git-credential-manager
