@@ -28,7 +28,6 @@ let
     (final: prev: {
       agenix = inputs'.agenix.packages.default;
       nh = inputs'.nh.packages.default;
-      neovim = inputs'.neovim-nightly-overlay.packages.default;
       wezterm = inputs'.wezterm.packages.default;
       ghostty = inputs'.ghostty.packages.default;
     })
@@ -36,6 +35,8 @@ let
     cloudtide.overlay
     #rust toolchain
     fenix.overlays.default
+    #neovim-nightly
+    neovim-nightly-overlay.overlays.default
     #mbt toolchain
     moonbit-overlay.overlays.default
   ];
