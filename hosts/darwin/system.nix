@@ -13,6 +13,12 @@
 
   services.nix-daemon.enable = true;
   security.pam.enableSudoTouchIdAuth = true;
+  system = {
+    startup.chime = false;
+    defaults = {
+      dock.autohide = true;
+    };
+  };
   programs.gnupg.agent.enable = true;
 
   nix = {
