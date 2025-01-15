@@ -30,11 +30,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1736103779,
-        "narHash": "sha256-WQ9x1oJrUtvTrJM2XPMuavJinhODmwzTFpBMnSLRmR8=",
+        "lastModified": 1736953100,
+        "narHash": "sha256-tJlXRZ2Fw+u10442MNUrxSjjUF5OlwAI35/w55CjXc4=",
         "owner": "parsifa1",
         "repo": "cloudtix",
-        "rev": "5d8321bef74d7d64432979cac2ddd6c388b8a5f3",
+        "rev": "60d87e65503bc9535de5b6a209f710f2bb0a5feb",
         "type": "github"
       },
       "original": {

@@ -9,6 +9,7 @@ with inputs;
       modules = [
         ./darwin/system.nix
         ./darwin/secret.nix
+        ./darwin/service.nix
         #some modules
         agenix.darwinModules.default
         home-manager.darwinModules.home-manager
