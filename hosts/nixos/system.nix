@@ -1,4 +1,9 @@
-{ inputs, pkgs, ... }:
+{
+  lib,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   programs.fish.enable = true;
   users.mutableUsers = false;
@@ -41,8 +46,10 @@
   nix = {
     package = pkgs.nixVersions.latest;
     channel.enable = false;
+    registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
       trusted-users = [ "parsifa1" ];
+      nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       experimental-features = [
         "nix-command"
         "flakes"
@@ -65,6 +72,8 @@
       options = "--delete-older-than 1w";
     };
   };
+
+  environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
 
   environment.systemPackages = with pkgs; [
     delta

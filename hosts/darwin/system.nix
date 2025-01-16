@@ -1,5 +1,10 @@
 # darwin.nix
-{ inputs, pkgs, ... }:
+{
+  lib,
+  inputs,
+  pkgs,
+  ...
+}:
 {
   #临时使用软件包
   environment.systemPackages = with pkgs; [
@@ -24,8 +29,11 @@
   nix = {
     package = pkgs.nixVersions.latest;
     channel.enable = false;
+    registry.nixpkgs.flake = inputs.nixpkgs;
+    optimise.automatic = true;
     settings = {
       trusted-users = [ "parsifa1" ];
+      nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       experimental-features = [
         "nix-command"
         "flakes"
@@ -34,14 +42,20 @@
       substituters = [
         "https://cache.nixos.org"
         "https://nix-community.cachix.org"
+        "https://cloudtide.cachix.org"
       ];
-      trusted-public-keys = [ "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs=" ];
+      trusted-public-keys = [
+        "nix-community.cachix.org-1:mB9FSh9qf2dCimDSUo8Zy7bkq5CX+/rkCWyvRCYg3Fs="
+        "cloudtide.cachix.org-1:9NZ1Mah2+u8cd/CmVffFV23z5uFNpZSrhfgTt5fuN/4="
+      ];
     };
     gc = {
       automatic = true;
       options = "--delete-older-than 1w";
     };
   };
+
+  environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
 
   users.users.parsifa1 = {
     name = "parsifa1";
