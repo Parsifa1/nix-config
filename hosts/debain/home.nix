@@ -16,7 +16,7 @@
     yazi
     nixd
     dust
-    neovim
+    nvim
   ];
   userPackages = {
     atuin.enable = true;

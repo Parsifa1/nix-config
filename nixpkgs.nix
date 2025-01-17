@@ -30,13 +30,14 @@ let
       nh = inputs'.nh.packages.default;
       wezterm = inputs'.wezterm.packages.default;
       ghostty = inputs'.ghostty.packages.default;
+      nvim = prev.neovim;
     })
     # my nur overlays
     cloudtide.overlay
     #rust toolchain
     fenix.overlays.default
     #neovim-nightly
-    # neovim-nightly-overlay.overlays.default
+    neovim-nightly-overlay.overlays.default
     #mbt toolchain
     moonbit-overlay.overlays.default
   ];
