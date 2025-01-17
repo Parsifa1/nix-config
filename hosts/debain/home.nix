@@ -1,6 +1,11 @@
 { pkgs, ... }:
 {
   home.username = "parsifa1";
+  home.file = {
+    ".gnupg/gpg-agent.conf".text = ''
+      pinentry-program ${pkgs.pinentry-tty}/bin/pinentry
+    '';
+  };
   home.homeDirectory = "/home/parsifa1";
   programs.fish.enable = true;
   home.stateVersion = "24.11"; # Please read the comment before changing.
