@@ -8,7 +8,6 @@ with inputs;
       specialArgs = { inherit inputs' inputs pkgs; };
       modules = [
         ./darwin/system.nix
-        ./darwin/secret.nix
         ./darwin/service.nix
         #some modules
         agenix.darwinModules.default
@@ -17,6 +16,7 @@ with inputs;
           home-manager = {
             extraSpecialArgs = { inherit inputs inputs' pkgs; };
             users.parsifa1.imports = [
+              agenix.homeManagerModules.default
               nix-index-database.hmModules.nix-index
               ../modules
             ];
@@ -33,7 +33,6 @@ with inputs;
       specialArgs = { inherit inputs inputs' pkgs; };
       modules = [
         ./nixos/system.nix
-        ./nixos/secret.nix
         ./nixos/service.nix
         ./nixos/wsl.nix
         # some modules
@@ -44,6 +43,7 @@ with inputs;
           home-manager = {
             extraSpecialArgs = { inherit inputs inputs' pkgs; };
             users.parsifa1.imports = [
+              agenix.homeManagerModules.default
               nix-index-database.hmModules.nix-index
               ../modules
             ];
@@ -59,6 +59,7 @@ with inputs;
       modules = [
         ../modules
         ./debain/home.nix
+        agenix.homeManagerModules.default
       ];
     }
   );

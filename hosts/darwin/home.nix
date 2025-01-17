@@ -33,6 +33,7 @@ in
 
   userPackages = {
     atuin.enable = true;
+    secret.enable = true;
     direnv.enable = true;
     git.enable = true;
     lazygit.enable = true;
