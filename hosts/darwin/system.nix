@@ -1,4 +1,3 @@
-# darwin.nix
 {
   lib,
   inputs,
@@ -73,7 +72,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.parsifa1 = import ./home.nix;
-    extraSpecialArgs = { inherit inputs pkgs; };
   };
 
   fonts.packages = with pkgs; [

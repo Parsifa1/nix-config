@@ -14,10 +14,13 @@ with inputs;
         agenix.darwinModules.default
         home-manager.darwinModules.home-manager
         {
-          home-manager.users.parsifa1.imports = [
-            nix-index-database.hmModules.nix-index
-            ../modules
-          ];
+          home-manager = {
+            extraSpecialArgs = { inherit inputs inputs' pkgs; };
+            users.parsifa1.imports = [
+              nix-index-database.hmModules.nix-index
+              ../modules
+            ];
+          };
         }
       ];
 
@@ -38,12 +41,26 @@ with inputs;
         agenix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
-          home-manager.users.parsifa1.imports = [
-            nix-index-database.hmModules.nix-index
-            ../modules
-          ];
+          home-manager = {
+            extraSpecialArgs = { inherit inputs inputs' pkgs; };
+            users.parsifa1.imports = [
+              nix-index-database.hmModules.nix-index
+              ../modules
+            ];
+          };
         }
       ];
     }
   );
+  flake.homeConfigurations."parsifa1" = withSystem "x86_64-linux" (
+    { pkgs, ... }:
+    home-manager.lib.homeManagerConfiguration {
+      inherit pkgs;
+      modules = [
+        ../modules
+        ./debain/home.nix
+      ];
+    }
+  );
+
 }

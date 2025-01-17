@@ -4,7 +4,7 @@
     enable = true;
     extraLuaPackages = ps: [ ps.magick ];
     extraPackages = [ pkgs.imagemagick ];
-    # package = pkgs.neovim;
+    package = pkgs.neovim;
   };
   home.packages = with pkgs; [
     lua51Packages.lua

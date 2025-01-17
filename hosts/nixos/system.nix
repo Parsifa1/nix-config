@@ -29,7 +29,6 @@
     useGlobalPkgs = true;
     useUserPackages = true;
     users.parsifa1 = import ./home.nix;
-    extraSpecialArgs = { inherit inputs pkgs; };
   };
 
   programs.nix-ld = {
