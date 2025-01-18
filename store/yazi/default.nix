@@ -12,6 +12,12 @@ let
     rev = "247f49d";
     sha256 = "sha256-0J6hxcdDX9b63adVlNVWysRR5htwAtP5WhIJ2AK2+Gs=";
   };
+  exifaudio = pkgs.fetchFromGitHub {
+    owner = "Sonico98";
+    repo = "exifaudio.yazi";
+    rev = "d794614";
+    sha256 = "sha256-0J6hxcdDX9b63adVlNVWysRR5htwAtP5WhIJ2AK2+Gs=";
+  };
 in
 {
   programs.yazi = {
@@ -23,7 +29,7 @@ in
     theme = lib.importTOML ./theme.toml;
     keymap = lib.importTOML ./keymap.toml;
     plugins = {
-      inherit starship;
+      inherit starship exifaudio;
       git = "${yazi-plugins}/git.yazi";
       max-preview = "${yazi-plugins}/max-preview.yazi";
       smart-enter = "${yazi-plugins}/smart-enter.yazi";

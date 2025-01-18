@@ -1,21 +1,21 @@
 [manager]
-sort_by = "natural"
+sort_by        = "natural"
 sort_sensitive = true
-sort_reverse = false
+sort_reverse   = false
 sort_dir_first = true
-linemode = "none"
-show_hidden = false
-show_symlink = true
+linemode       = "none"
+show_hidden    = false
+show_symlink   = true
 
 [preview]
-tab_size = 2
-max_width = 600
-max_height = 900
-cache_dir = ""
-image_filter = "triangle"
-image_quality = 80
-sixel_fraction = 15
-ueberzug_scale = 1
+tab_size        = 2
+max_width       = 600
+max_height      = 900
+cache_dir       = ""
+image_filter    = "triangle"
+image_quality   = 80
+sixel_fraction  = 15
+ueberzug_scale  = 1
 ueberzug_offset = [0, 0, 0, 0]
 
 [opener]
@@ -23,3 +23,4 @@ edit = [{ run = 'nvim "$@"', block = true }]
 
 [plugin]
 prepend_previewers = [{ mime = "audio/*", run = "exifaudio" }]
+prepend_fetchers   = [{ id = "git", name = "*", run = "git" }, { id = "git", name = "*/", run = "git" }]
