@@ -24,6 +24,7 @@ let
     # wezterm
     typst
     pandoc
+    exiftool
     git-credential-manager
     nix-output-monitor
     nerd-font-patcher
