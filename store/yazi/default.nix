@@ -16,7 +16,7 @@ let
     owner = "Sonico98";
     repo = "exifaudio.yazi";
     rev = "d794614";
-    sha256 = "sha256-0J6hxcdDX9b63adVlNVWysRR5htwAtP5WhIJ2AK2+Gs=";
+    sha256 = "sha256-nXBxPG6PVi5vstvVMn8dtnelfCa329CTIOCdXruOxT4=";
   };
 in
 {

@@ -5,7 +5,7 @@
     EDITOR = "nvim";
     XDG_SESSION_TYPE = "wayland";
     WAYLAND_DISPLAY = "wayland-0";
-    NH_FLAKE = "/home/parsifa1/nixos/";
+    NH_FLAKE = "/home/parsifa1/nix/";
     PNPM_HOME = "/home/parsifa1/.local/share/pnpm";
     PATH = "$PATH:$HOME/.cargo/bin:/usr/lib/wsl/lib:/bin";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:/run/opengl-driver/lib";
