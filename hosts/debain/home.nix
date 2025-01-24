@@ -3,7 +3,7 @@
   home.username = "parsifa1";
   home.file = {
     ".gnupg/gpg-agent.conf".text = ''
-      pinentry-program ${pkgs.pinentry_curses}/bin/pinentry
+      pinentry-program ${pkgs.pinentry}/bin/pinentry
     '';
   };
   home.homeDirectory = "/home/parsifa1";
@@ -16,9 +16,10 @@
     nh
     eza
     delta
+    agenix
     ripgrep
-    rustup
     rclone
+    rustup
     yazi
     nixd
     dust
@@ -26,6 +27,7 @@
   ];
   userPackages = {
     atuin.enable = true;
+    secret.enable = true;
     git.enable = true;
     lazygit.enable = true;
     starship.enable = true;
