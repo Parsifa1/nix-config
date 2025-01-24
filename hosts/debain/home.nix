@@ -15,7 +15,6 @@
     fzf
     nh
     eza
-    tmux
     delta
     agenix
     ripgrep
@@ -30,6 +29,7 @@
     atuin.enable = true;
     secret.enable = true;
     git.enable = true;
+    tmux.enable = true;
     lazygit.enable = true;
     starship.enable = true;
     yazi.enable = true;
