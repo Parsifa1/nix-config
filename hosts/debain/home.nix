@@ -15,6 +15,7 @@
     fzf
     nh
     eza
+    tmux
     delta
     agenix
     ripgrep
