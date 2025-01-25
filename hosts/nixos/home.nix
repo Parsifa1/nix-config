@@ -39,6 +39,7 @@ in
     secret.enable = true;
     direnv.enable = true;
     git.enable = true;
+    tmux.enable = true;
     lazygit.enable = true;
     neovim.enable = true;
     emacs.enable = true;
