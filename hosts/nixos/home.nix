@@ -21,6 +21,7 @@ let
     dust
     duf
     comma
+    rclone
     # wezterm
     typst
     pandoc
