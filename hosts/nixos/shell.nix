@@ -31,6 +31,9 @@
       if test -d "/mnt/c/Windows/System32/"
           set -gx PATH $PATH /mnt/c/Windows/System32/
       end
+      if test -d "/mnt/e/Program Files/Scoop/shims"
+          set -gx PATH $PATH /mnt/e/Program\ Files/Scoop/shims
+      end
     '';
     shellAliases = {
       y = "yy";

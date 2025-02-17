@@ -2,7 +2,7 @@
 let
   packages = with pkgs; [
     nixfmt-rfc-style
-    # alejandra
+    wezterm
     fastfetch
     onefetch
     tokei
