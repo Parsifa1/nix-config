@@ -23,6 +23,7 @@ let
     duf
     comma
     silicon
+    cloudtide.awrit
     git-credential-manager
     nix-output-monitor
     tree-sitter

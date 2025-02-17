@@ -28,8 +28,7 @@ in
   programs.fish = {
     enable = true;
     loginShellInit = ''
-      unlink $HOME/.local/bin/cc
-      ln -s /usr/bin/clang ~/.local/bin/cc
+      test ! -e $HOME/.local/bin/cc && ln -s /usr/bin/clang ~/.local/bin/cc
     '';
     shellInitLast = ''
       set -U fish_greeting
