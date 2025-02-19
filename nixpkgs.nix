@@ -29,7 +29,7 @@ let
       agenix = inputs'.agenix.packages.default;
       nh = inputs'.nh.packages.default;
       wezterm = inputs'.wezterm.packages.default;
-      ghostty = inputs'.ghostty.packages.default;
+      # ghostty = inputs'.ghostty.packages.default;
       nvim = prev.neovim;
     })
     # my nur overlays

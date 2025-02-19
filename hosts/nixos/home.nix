@@ -29,7 +29,8 @@ let
     git-credential-manager
     nix-output-monitor
     nerd-font-patcher
-    # ghostty
+    ghostscript
+    tectonic
   ];
 in
 {
@@ -48,6 +49,7 @@ in
     starship.enable = true;
     yazi.enable = true;
     zoxide.enable = true;
+    ghostty.enable = true;
     lang = {
       rust.enable = true;
       golang.enable = true;

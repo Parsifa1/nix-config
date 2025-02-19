@@ -43,6 +43,7 @@ in
     ssh.enable = true;
     starship.enable = true;
     yazi.enable = true;
+    ghostty.enable = true;
     zoxide.enable = true;
     lang = {
       rust.enable = true;
