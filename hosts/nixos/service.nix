@@ -30,7 +30,7 @@
       description = "keep wsl alive";
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
-        ExecStartPre = "/mnt/c/Windows/System32/waitfor.exe /si MakeDistroAlive";
+        # ExecStartPre = "/mnt/c/Windows/System32/waitfor.exe /si MakeDistroAlive";
         ExecStart = "/mnt/c/Windows/System32/waitfor.exe MakeDistroAlive";
       };
     };
@@ -78,5 +78,16 @@
         RemainAfterExit = "yes";
       };
     };
+  };
+  i18n.inputMethod = {
+    type = "fcitx5";
+    enable = true;
+    # fcitx5.waylandFrontend = true;
+    fcitx5.addons = with pkgs; [
+      fcitx5-rime
+      fcitx5-gtk
+      fcitx5-lua
+      rime-data
+    ];
   };
 }

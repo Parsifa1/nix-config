@@ -27,7 +27,6 @@ let
         command = "ssh parsifa1@127.0.0.1 -p 11451";
         window-height = 40;
         window-width = 140;
-        gtk-adwaita = false;
         keybind = [
           "ctrl+v=paste_from_clipboard"
           "ctrl+shift+apostrophe=new_split:right"
