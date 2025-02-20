@@ -27,6 +27,8 @@ let
     git-credential-manager
     nix-output-monitor
     tree-sitter
+    ghostscript
+    tectonic
   ];
 in
 {
