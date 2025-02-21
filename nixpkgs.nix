@@ -49,9 +49,3 @@ in
     config.allowUnfree = true;
   };
 }
-
-# import inputs.nixpkgs {
-#   inherit system overlays;
-#   config.allowUnfree = true;
-#
-# }

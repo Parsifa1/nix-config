@@ -3,6 +3,8 @@ with inputs;
 {
   flake.darwinConfigurations.AldricdeMacBook-Air = withSystem "aarch64-darwin" (
     { pkgs, inputs', ... }:
+    let
+    in
     darwin.lib.darwinSystem {
       inherit (pkgs) system;
       specialArgs = { inherit inputs' inputs pkgs; };
@@ -55,10 +57,11 @@ with inputs;
     { inputs', ... }:
     let
       system = "x86_64-linux";
-      overlay = import ../nixpkgs.nix { inherit inputs inputs' system; };
+      conf = import ../nixpkgs.nix { inherit inputs inputs' system; };
       pkgs = import inputs.nixpkgs {
-        inherit system overlay;
+        inherit system;
         config.allowUnfree = true;
+        overlays = conf.nixpkgs.overlays;
       };
     in
     home-manager.lib.homeManagerConfiguration {
