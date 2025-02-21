@@ -32,7 +32,10 @@ let
   ];
 in
 {
-  imports = [ ./shell.nix ];
+  imports = [
+    ./shell.nix
+    ../../modules
+  ];
 
   userPackages = {
     atuin.enable = true;

@@ -42,9 +42,16 @@ let
     moonbit-overlay.overlays.default
   ];
 in
-
-import inputs.nixpkgs {
-  inherit system overlays;
-  config.allowUnfree = true;
-
+{
+  nixpkgs = {
+    inherit overlays;
+    hostPlatform = system;
+    config.allowUnfree = true;
+  };
 }
+
+# import inputs.nixpkgs {
+#   inherit system overlays;
+#   config.allowUnfree = true;
+#
+# }

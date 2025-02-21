@@ -127,13 +127,6 @@
     };
   };
 
-  hardware.graphics = {
-    extraPackages = with pkgs; [
-      mesa.drivers
-      libvdpau-va-gl
-    ];
-  };
-
   age.identityPaths = [ "/home/parsifa1/.ssh/id_rsa" ];
   virtualisation.docker.enable = true;
   system.stateVersion = "23.11";

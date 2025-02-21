@@ -18,7 +18,6 @@ with inputs;
             users.parsifa1.imports = [
               agenix.homeManagerModules.default
               nix-index-database.hmModules.nix-index
-              ../modules
             ];
           };
         }
@@ -27,25 +26,25 @@ with inputs;
     }
   );
   flake.nixosConfigurations.nixos = withSystem "x86_64-linux" (
-    { pkgs, inputs', ... }:
-    nixpkgs.lib.nixosSystem {
-      inherit (pkgs) system;
-      specialArgs = { inherit inputs inputs' pkgs; };
+    { inputs', ... }:
+    nixpkgs.lib.nixosSystem rec {
+      specialArgs = { inherit inputs inputs' system; };
+      system = "x86_64-linux";
       modules = [
+        ../nixpkgs.nix
+        ./nixos/wsl.nix
         ./nixos/system.nix
         ./nixos/service.nix
-        ./nixos/wsl.nix
         # some modules
         nixos-wsl.nixosModules.wsl
         agenix.nixosModules.default
         home-manager.nixosModules.home-manager
         {
           home-manager = {
-            extraSpecialArgs = { inherit inputs inputs' pkgs; };
+            extraSpecialArgs = { inherit inputs inputs' system; };
             users.parsifa1.imports = [
               agenix.homeManagerModules.default
               nix-index-database.hmModules.nix-index
-              ../modules
             ];
           };
         }
@@ -53,7 +52,15 @@ with inputs;
     }
   );
   flake.homeConfigurations."parsifa1" = withSystem "x86_64-linux" (
-    { pkgs, ... }:
+    { inputs', ... }:
+    let
+      system = "x86_64-linux";
+      overlay = import ../nixpkgs.nix { inherit inputs inputs' system; };
+      pkgs = import inputs.nixpkgs {
+        inherit system overlay;
+        config.allowUnfree = true;
+      };
+    in
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
