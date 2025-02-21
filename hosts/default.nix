@@ -2,13 +2,12 @@
 with inputs;
 {
   flake.darwinConfigurations.AldricdeMacBook-Air = withSystem "aarch64-darwin" (
-    { pkgs, inputs', ... }:
-    let
-    in
-    darwin.lib.darwinSystem {
-      inherit (pkgs) system;
-      specialArgs = { inherit inputs' inputs pkgs; };
+    { inputs', ... }:
+    darwin.lib.darwinSystem rec {
+      system = "aarch64-darwin";
+      specialArgs = { inherit inputs' inputs system; };
       modules = [
+        ../nixpkgs.nix
         ./darwin/system.nix
         ./darwin/service.nix
         #some modules
@@ -16,7 +15,7 @@ with inputs;
         home-manager.darwinModules.home-manager
         {
           home-manager = {
-            extraSpecialArgs = { inherit inputs inputs' pkgs; };
+            extraSpecialArgs = { inherit inputs inputs'; };
             users.parsifa1.imports = [
               agenix.homeManagerModules.default
               nix-index-database.hmModules.nix-index

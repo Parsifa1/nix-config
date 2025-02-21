@@ -50,15 +50,6 @@
         "aarch64-darwin"
       ];
       imports = [ ./hosts ];
-      perSystem =
-        { inputs', system, ... }:
-        {
-          _module.args = {
-            pkgs = import ./nixpkgs.nix {
-              inherit system inputs inputs';
-            };
-          };
-        };
     };
 
 }
