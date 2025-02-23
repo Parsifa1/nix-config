@@ -13,14 +13,19 @@
       extraConfig = "AcceptEnv TERM_PROGRAM_VERSION WEZTERM_REMOTE_PANE TERM COLORTERM TERM_PROGRAM WSLENV";
     };
   };
+
+  systemd.tmpfiles.rules = [
+    "L+ /run/user/1000/wayland-0 0700 - - - /mnt/wslg/runtime-dir/wayland-0"
+  ];
+
   systemd.services = {
-    "serial-getty@ttyS0".enable = false;
-    "serial-getty@hvc0".enable = false;
-    "getty@tty1".enable = false;
-    "autovt@".enable = false;
-    systemd-resolved.enable = false;
-    systemd-udevd.enable = false;
-    firewall.enable = false;
+    # "serial-getty@ttyS0".enable = false;
+    # "serial-getty@hvc0".enable = false;
+    # "getty@tty1".enable = false;
+    # "autovt@".enable = false;
+    # systemd-resolved.enable = false;
+    # systemd-udevd.enable = false;
+    # firewall.enable = false;
     nix-daemon.environment = {
       https_proxy = "http://localhost:7890";
       http_proxy = "http://localhost:7890";

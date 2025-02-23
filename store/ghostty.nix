@@ -25,8 +25,8 @@ let
         font-size = 17.5;
         theme = "Everforest Dark - Hard";
         command = "ssh parsifa1@127.0.0.1 -p 11451";
-        window-height = 40;
-        window-width = 140;
+        window-height = 42;
+        window-width = 170;
         keybind = [
           "ctrl+v=paste_from_clipboard"
           "ctrl+shift+apostrophe=new_split:right"

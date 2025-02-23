@@ -20,8 +20,8 @@
       set -U fish_greeting
       # 输入法
       fcitx5 --disable=wayland --verbose=\*=0 -d
-      rm /run/user/1000/wayland-0.lock && rm /run/user/1000/wayland-0
-      ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000/
+      # rm /run/user/1000/wayland-0.lock && rm /run/user/1000/wayland-0
+      # ln -s /mnt/wslg/runtime-dir/wayland-0* /run/user/1000/
     '';
     shellInitLast = ''
       if not string match -q -- $PNPM_HOME $PATH
