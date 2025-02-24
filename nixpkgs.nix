@@ -26,11 +26,9 @@ let
     })
     #bind packages need overlay
     (final: prev: {
-      agenix = inputs'.agenix.packages.default;
-      nh = inputs'.nh.packages.default;
-      wezterm = inputs'.wezterm.packages.default;
-      # ghostty = inputs'.ghostty.packages.default;
       nvim = prev.neovim;
+      nh = inputs'.nh.packages.default;
+      agenix = inputs'.agenix.packages.default;
     })
     # my nur overlays
     cloudtide.overlay

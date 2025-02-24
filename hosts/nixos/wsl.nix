@@ -5,6 +5,7 @@
     defaultUser = "parsifa1";
     startMenuLaunchers = true;
     useWindowsDriver = true;
+    wslConf.interop.appendWindowsPath = false;
   };
   environment.systemPackages = with pkgs; [
     cloudtide.win32yank

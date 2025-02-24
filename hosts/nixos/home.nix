@@ -29,7 +29,7 @@ let
     nix-output-monitor
     nerd-font-patcher
     ghostscript
-    tectonic
+    # tectonic
   ];
 in
 {
