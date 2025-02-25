@@ -530,6 +530,22 @@
         "type": "github"
       }
     },
+    "nixpkgs-fish": {
+      "locked": {
+        "lastModified": 1739962724,
+        "narHash": "sha256-suewF0ujnZrzQA2v1pBupOmT5XZc/1sDrY0VPRw9NF0=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "76a4fec95113a2d9d21c7366c9fdc0290eba97ae",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "ref": "fish",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "nixpkgs-lib": {
       "locked": {
         "lastModified": 1738452942,
@@ -636,7 +652,8 @@
         "nh": "nh",
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
-        "nixpkgs": "nixpkgs_4"
+        "nixpkgs": "nixpkgs_4",
+        "nixpkgs-fish": "nixpkgs-fish"
       }
     },
     "rust-analyzer-src": {

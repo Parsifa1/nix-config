@@ -1,8 +1,10 @@
 { pkgs, ... }:
 {
   services = {
-    pcscd.enable = true;
-    xserver.enable = true;
+    xserver = {
+      enable = true;
+      displayManager.lightdm.enable = false;
+    };
     openssh = {
       enable = true;
       ports = [ 11451 ];
@@ -19,13 +21,6 @@
   ];
 
   systemd.services = {
-    # "serial-getty@ttyS0".enable = false;
-    # "serial-getty@hvc0".enable = false;
-    # "getty@tty1".enable = false;
-    # "autovt@".enable = false;
-    # systemd-resolved.enable = false;
-    # systemd-udevd.enable = false;
-    # firewall.enable = false;
     nix-daemon.environment = {
       https_proxy = "http://localhost:7890";
       http_proxy = "http://localhost:7890";
@@ -35,8 +30,19 @@
       description = "keep wsl alive";
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
-        # ExecStartPre = "/mnt/c/Windows/System32/waitfor.exe /si MakeDistroAlive";
         ExecStart = "/mnt/c/Windows/System32/waitfor.exe MakeDistroAlive";
+      };
+    };
+    wslg-fix = {
+      enable = true;
+      description = "fix wslg";
+      wantedBy = [ "multi-user.target" ];
+      serviceConfig = {
+        Type = "oneshot";
+        ExecStart = [
+          "${pkgs.coreutils}/bin/chmod 0777 /mnt/wslg/runtime-dir"
+          "${pkgs.coreutils}/bin/chmod 0666 /mnt/wslg/runtime-dir/wayland-0.lock"
+        ];
       };
     };
   };

@@ -29,6 +29,8 @@ let
       nvim = prev.neovim;
       nh = inputs'.nh.packages.default;
       agenix = inputs'.agenix.packages.default;
+      # fish4.0b
+      fish = inputs'.nixpkgs-fish.legacyPackages.fish;
     })
     # my nur overlays
     cloudtide.overlay

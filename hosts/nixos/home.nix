@@ -25,6 +25,7 @@ let
     typst
     pandoc
     exiftool
+    adwaita-icon-theme
     git-credential-manager
     nix-output-monitor
     nerd-font-patcher
