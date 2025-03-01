@@ -5,7 +5,6 @@
     nh.url = "github:viperML/nh";
     flake-parts.url = "github:hercules-ci/flake-parts";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    ghostty.url = "github:ghostty-org/ghostty";
     moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";
