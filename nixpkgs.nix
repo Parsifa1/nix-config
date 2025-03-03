@@ -40,6 +40,8 @@ let
     neovim-nightly-overlay.overlays.default
     #mbt toolchain
     moonbit-overlay.overlays.default
+    #yazi
+    yazi.overlays.default
   ];
 in
 {

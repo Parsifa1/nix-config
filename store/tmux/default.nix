@@ -49,12 +49,15 @@ in
       unbind %
       set -sg escape-time 0
       set -g status-position top
+      set -g allow-passthrough on
+      set -ga update-environment TERM
+      set -ga update-environment TERM_PROGRAM
+      set-option -g focus-events on
+      set-option -sa terminal-features 'xterm-256color:RGB'
       bind C-n select-window -n
       bind C-p select-window -p
-      set-option -g focus-events on
       bind "'" splitw -v -c '#{pane_current_path}'
       bind ";" splitw -h -c '#{pane_current_path}' 
-      set-option -sa terminal-features 'xterm-256color:RGB'
       bind r source-file ~/.config/tmux/tmux.conf \; display-message "Config reloaded.."
     '';
   };
