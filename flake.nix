@@ -1,7 +1,6 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nixpkgs-fish.url = "github:NixOS/nixpkgs/fish";
     nh.url = "github:viperML/nh";
     yazi.url = "github:sxyazi/yazi";
     flake-parts.url = "github:hercules-ci/flake-parts";
