@@ -1,9 +1,4 @@
-{
-  pkgs,
-  inputs,
-  config,
-  ...
-}:
+{ pkgs, inputs, ... }:
 {
   environment.systemPackages = with pkgs; [
     delta
@@ -28,25 +23,6 @@
     agenix
   ];
 
-  users.users.${config.username} = {
-    isNormalUser = true;
-    hashedPassword = "$y$j9T$fdy82j7goIaaecK3SEUKE0$JqPx5WkZ0OMRbXVB/d2dQIA/c7dSV3BXUAV7vlBcVOA";
-    shell = pkgs.fish;
-    extraGroups = [
-      "networkmanager"
-      "wheel"
-      "docker"
-    ];
-    openssh.authorizedKeys.keys = [
-      "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIpOQirGxMfUl3F8KQxjzDZg0POSIpeNk5ayZQvugQOm li.aldric@gmail.com"
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoYJIrhUQGPbm2xzV9Rd6H6vfGeGC2Okr4yHdIxyLJgZTvbY6F9/HUKuIOo/EpZkNs+YXrxw6WVbMFMRhdgYLHbaWxlWmd5VqA+2msLw/Xj1KtObCJp3bwYqvIv6O6tzCc7KuQf+kY3MZLKCxMRV6Mv6AzdeD4rsc78V9XKN4VOT+meHXGfP8/Di42FRNratyQQKiKZh+Pcz8wW+kYq4n+8PkYLkIzpboAfvp2Kmbv8ElkspCKEpmlIXsDX+3Ara3zsY+5j7rfuh0U2c+/g9m33EwhtQ6YTGB6UDjQRoa4bu/e3V6LJb77QuSZK4E6oGAiTgASP12Ns5oQkTTtwF36JYOrAYpGoiCsoAo1zDPHS1gDIJVq+AoUZ2WF1qW0s/rGOMEw3EoBvz5UQ1LmqaJ3uo4lnEkGyVYpeu4aMizDtL1DvRMJNhgyB2v37OoNiiva3sxCINBAlc0n4CebFUvYWd5xhS6EHfcKbQ/wL9udUKTMuZoR3DBIm5depm3F+ks= parsifal@LAPTOP-ALDRIC"
-      "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgb0NbVy2X/Hbn0/MOJ49TJwwJ1DJp4Y+itBEOJvKgHzKLZyoOC5MhdLgy+6sIeaNXEjVcRTAhvKWJISVGEhx6LjuLDEhLpn+7KwZOa//iqoE4WImw8xfbqZDWvGgc+ZOM7r0JpjzXSa23SKdhHD/iZYS6YW7EeOLEbcDSxeKCIdzEff7m/7khUp34Cuw6IOV7lNmHTO+oyyr26M/CtXNuDX4kTygL3D7y5xje/AFzTXD5lwWIEIQi0lKwFPao9XSnK05Qlaj3mg2pg/qlscRoxmZ3nIJtIrQKgIn+l/QLJyh3kwZmI+PWzN+aNmqnwGh6nJxLuGhlue2dCAZx1tkvGmfnZIZNV2bqn5fKhQO8zqAHDziYzCWYN9pk3G9tXSXGBbNiEKTQ1IWFAlayuCf3JLNhwwwE+rww41CxplasQ9pho/atrKaCWHxka+SDdg94SaMEPaA9U3e9CqO6G8gRHNFTnhowNZ3CQteG4BsU7UD0RCRASDBeF1SHECx+oEU= li.aldric@gmail.com"
-    ];
-  };
-  programs.fish.enable = true;
-  users.mutableUsers = false;
-  security.sudo.wheelNeedsPassword = false;
-
   programs.nix-ld = {
     enable = true;
     libraries = with pkgs; [
@@ -56,6 +32,16 @@
       openssl
       stdenv.cc.cc
     ];
+  };
+
+  programs.gnupg.agent = {
+    enable = true;
+    settings = {
+      max-cache-ttl = 604800000;
+      default-cache-ttl = 604800000;
+      allow-preset-passphrase = "";
+      no-allow-external-cache = "";
+    };
   };
 
   fonts = {
@@ -78,18 +64,10 @@
     };
   };
 
-  programs.gnupg.agent = {
-    enable = true;
-    settings = {
-      max-cache-ttl = 604800000;
-      default-cache-ttl = 604800000;
-      allow-preset-passphrase = "";
-      no-allow-external-cache = "";
-    };
-  };
-
   environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
   age.identityPaths = [ "$HOME/.ssh/id_rsa" ];
+  security.sudo.wheelNeedsPassword = false;
   virtualisation.docker.enable = true;
   system.stateVersion = "23.11";
+  programs.fish.enable = true;
 }
