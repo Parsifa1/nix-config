@@ -16,14 +16,21 @@
     agenix
   ];
 
-  security.pam.services.sudo_local.touchIdAuth = true;
+  home-manager = {
+    useGlobalPkgs = true;
+    useUserPackages = true;
+    users.${config.username}.imports = with inputs; [
+      ./home.nix
+      ../../modules/homeModules
+      agenix.homeManagerModules.default
+      nix-index-database.hmModules.nix-index
+    ];
+  };
+
   system = {
     startup.chime = false;
-    defaults = {
-      dock.autohide = true;
-    };
+    defaults.dock.autohide = true;
   };
-  programs.gnupg.agent.enable = true;
 
   nix = {
     package = pkgs.nixVersions.latest;
@@ -56,12 +63,10 @@
     };
   };
 
-  environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
-
   users.users.${config.username} = {
+    uid = 501;
     name = config.username;
     home = "/Users/${config.username}";
-    uid = 501;
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
       "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIpOQirGxMfUl3F8KQxjzDZg0POSIpeNk5ayZQvugQOm li.aldric@gmail.com"
@@ -70,17 +75,6 @@
     ];
   };
   users.knownUsers = [ config.username ];
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.${config.username}.imports = with inputs; [
-      ./home.nix
-      ../../modules/homeModules
-      agenix.homeManagerModules.default
-      nix-index-database.hmModules.nix-index
-    ];
-
-  };
 
   fonts.packages = with pkgs; [
     ibm-plex
@@ -91,12 +85,15 @@
     noto-fonts-cjk-sans
     source-han-serif
   ];
+
   environment.variables.FONTCONFIG_FILE = "${pkgs.makeFontsConf {
     fontDirectories = [ "/Library/Fonts" ];
   }}";
 
+  environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
   age.identityPaths = [ "/Users/${config.username}/.ssh/id_ed25519" ];
+  security.pam.services.sudo_local.touchIdAuth = true;
+  programs.gnupg.agent.enable = true;
   programs.fish.enable = true;
-
   system.stateVersion = 5;
 }

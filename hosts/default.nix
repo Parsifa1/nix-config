@@ -14,7 +14,6 @@ with inputs;
         #some modules
         agenix.darwinModules.default
         home-manager.darwinModules.home-manager
-        { home-manager.extraSpecialArgs = { inherit inputs inputs' system; }; }
       ];
 
     }
@@ -34,8 +33,6 @@ with inputs;
         nixos-wsl.nixosModules.wsl
         agenix.nixosModules.default
         home-manager.nixosModules.home-manager
-        { home-manager.extraSpecialArgs = { inherit inputs inputs' system; }; }
-
       ];
     }
   );
