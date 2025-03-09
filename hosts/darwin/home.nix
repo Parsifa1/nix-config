@@ -32,7 +32,6 @@ let
 in
 {
   imports = [ ./shell.nix ];
-
   userPackages = {
     atuin.enable = true;
     secret.enable = true;

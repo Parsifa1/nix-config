@@ -7,9 +7,8 @@ with inputs;
       system = "aarch64-darwin";
       specialArgs = { inherit inputs' inputs system; };
       modules = [
+        ./darwin
         ../nixpkgs.nix
-        ./darwin/system.nix
-        ./darwin/service.nix
         ../modules/nixModules
         #some modules
         agenix.darwinModules.default
@@ -24,10 +23,8 @@ with inputs;
       specialArgs = { inherit inputs inputs' system; };
       system = "x86_64-linux";
       modules = [
+        ./nixos
         ../nixpkgs.nix
-        ./nixos/wsl.nix
-        ./nixos/system.nix
-        ./nixos/service.nix
         ../modules/nixModules
         # some modules
         nixos-wsl.nixosModules.wsl
