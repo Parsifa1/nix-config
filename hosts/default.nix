@@ -21,7 +21,7 @@ with inputs;
     { inputs', ... }:
     let
       system = "x86_64-linux";
-      conf = import ../modules/imports/nixpkgs.nix { inherit inputs inputs' system; };
+      conf = import ../modules/options/nixpkgs.nix { inherit inputs inputs' system; };
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;

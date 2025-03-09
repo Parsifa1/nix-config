@@ -6,13 +6,13 @@ with inputs;
       # username
       username = {
         username = "parsifa1";
-        imports = [ ./imports/username.nix ];
+        imports = [ ./options/username.nix ];
       };
       # utils
       utils = {
         imports = [
-          ./imports/langs.nix
-          ./imports/packages.nix
+          ./options/langs.nix
+          ./options/packages.nix
           self.flakeModules.username
         ];
       };
@@ -20,7 +20,7 @@ with inputs;
     nixosModules = {
       nixos = {
         imports = [
-          ./imports/nixpkgs.nix
+          ./options/nixpkgs.nix
           ../hosts/nixos/config.nix
           self.flakeModules.username
           nixos-wsl.nixosModules.wsl
@@ -30,7 +30,7 @@ with inputs;
       };
       darwin = {
         imports = [
-          ./imports/nixpkgs.nix
+          ./options/nixpkgs.nix
           ../hosts/darwin/config.nix
           self.flakeModules.username
           agenix.darwinModules.default
