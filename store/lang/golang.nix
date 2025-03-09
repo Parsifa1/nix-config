@@ -5,6 +5,6 @@
     gopls
   ];
   home.sessionVariables = {
-    GOPATH = "/home/${config.home.username}/.local/share/go";
+    GOPATH = "/home/${config.username}/.local/share/go";
   };
 }

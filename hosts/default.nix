@@ -47,7 +47,7 @@ with inputs;
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ./debain/home.nix
+        ./debain
         ../modules/homeModules
         agenix.homeManagerModules.default
       ];
