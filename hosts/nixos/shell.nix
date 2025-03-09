@@ -6,9 +6,9 @@
     # GALLIUM_DRIVER = "d3d12";
     XDG_SESSION_TYPE = "wayland";
     WAYLAND_DISPLAY = "wayland-0";
-    NH_FLAKE = "/home/parsifa1/nix/";
+    NH_FLAKE = "$HOME/nix/";
     # MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
-    PNPM_HOME = "/home/parsifa1/.local/share/pnpm";
+    PNPM_HOME = "$HOME/.local/share/pnpm";
     PATH = "$PATH:$HOME/.cargo/bin:/usr/lib/wsl/lib:/bin";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:/run/opengl-driver/lib";
     FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";

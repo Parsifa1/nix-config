@@ -1,6 +1,7 @@
 {
   lib,
   inputs,
+  config,
   pkgs,
   ...
 }:
@@ -9,7 +10,7 @@
   users.mutableUsers = false;
   security.sudo.wheelNeedsPassword = false;
 
-  users.users.parsifa1 = {
+  users.users.${config.username} = {
     isNormalUser = true;
     hashedPassword = "$y$j9T$fdy82j7goIaaecK3SEUKE0$JqPx5WkZ0OMRbXVB/d2dQIA/c7dSV3BXUAV7vlBcVOA";
     shell = pkgs.fish;
@@ -28,7 +29,13 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.parsifa1 = import ./home.nix;
+    users.${config.username}.imports = with inputs; [
+      ./home.nix
+      ../../modules/homeModules
+      agenix.homeManagerModules.default
+      nix-index-database.hmModules.nix-index
+    ];
+
   };
 
   programs.nix-ld = {
@@ -47,7 +54,7 @@
     channel.enable = false;
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
-      trusted-users = [ "parsifa1" ];
+      trusted-users = [ config.username ];
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       experimental-features = [
         "nix-command"
@@ -129,7 +136,7 @@
     };
   };
 
-  age.identityPaths = [ "/home/parsifa1/.ssh/id_rsa" ];
+  age.identityPaths = [ "$HOME/.ssh/id_rsa" ];
   virtualisation.docker.enable = true;
   system.stateVersion = "23.11";
 }

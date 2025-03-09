@@ -10,18 +10,11 @@ with inputs;
         ../nixpkgs.nix
         ./darwin/system.nix
         ./darwin/service.nix
+        ../modules/nixModules
         #some modules
         agenix.darwinModules.default
         home-manager.darwinModules.home-manager
-        {
-          home-manager = {
-            extraSpecialArgs = { inherit inputs inputs'; };
-            users.parsifa1.imports = [
-              agenix.homeManagerModules.default
-              nix-index-database.hmModules.nix-index
-            ];
-          };
-        }
+        { home-manager.extraSpecialArgs = { inherit inputs inputs' system; }; }
       ];
 
     }
@@ -36,23 +29,17 @@ with inputs;
         ./nixos/wsl.nix
         ./nixos/system.nix
         ./nixos/service.nix
+        ../modules/nixModules
         # some modules
         nixos-wsl.nixosModules.wsl
         agenix.nixosModules.default
         home-manager.nixosModules.home-manager
-        {
-          home-manager = {
-            extraSpecialArgs = { inherit inputs inputs' system; };
-            users.parsifa1.imports = [
-              agenix.homeManagerModules.default
-              nix-index-database.hmModules.nix-index
-            ];
-          };
-        }
+        { home-manager.extraSpecialArgs = { inherit inputs inputs' system; }; }
+
       ];
     }
   );
-  flake.homeConfigurations."parsifa1" = withSystem "x86_64-linux" (
+  flake.homeConfigurations.parsifa1 = withSystem "x86_64-linux" (
     { inputs', ... }:
     let
       system = "x86_64-linux";
@@ -66,8 +53,8 @@ with inputs;
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
       modules = [
-        ../modules
         ./debain/home.nix
+        ../modules/homeModules
         agenix.homeManagerModules.default
       ];
     }

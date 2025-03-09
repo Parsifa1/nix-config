@@ -1,5 +1,6 @@
 {
   lib,
+  config,
   inputs,
   pkgs,
   ...
@@ -30,7 +31,7 @@
     registry.nixpkgs.flake = inputs.nixpkgs;
     optimise.automatic = true;
     settings = {
-      trusted-users = [ "parsifa1" ];
+      trusted-users = [ config.username ];
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       experimental-features = [
         "nix-command"
@@ -57,9 +58,9 @@
 
   environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
 
-  users.users.parsifa1 = {
-    name = "parsifa1";
-    home = "/Users/parsifa1";
+  users.users.${config.username} = {
+    name = config.username;
+    home = "/Users/${config.username}";
     uid = 501;
     shell = pkgs.fish;
     openssh.authorizedKeys.keys = [
@@ -68,11 +69,17 @@
       "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQDgb0NbVy2X/Hbn0/MOJ49TJwwJ1DJp4Y+itBEOJvKgHzKLZyoOC5MhdLgy+6sIeaNXEjVcRTAhvKWJISVGEhx6LjuLDEhLpn+7KwZOa//iqoE4WImw8xfbqZDWvGgc+ZOM7r0JpjzXSa23SKdhHD/iZYS6YW7EeOLEbcDSxeKCIdzEff7m/7khUp34Cuw6IOV7lNmHTO+oyyr26M/CtXNuDX4kTygL3D7y5xje/AFzTXD5lwWIEIQi0lKwFPao9XSnK05Qlaj3mg2pg/qlscRoxmZ3nIJtIrQKgIn+l/QLJyh3kwZmI+PWzN+aNmqnwGh6nJxLuGhlue2dCAZx1tkvGmfnZIZNV2bqn5fKhQO8zqAHDziYzCWYN9pk3G9tXSXGBbNiEKTQ1IWFAlayuCf3JLNhwwwE+rww41CxplasQ9pho/atrKaCWHxka+SDdg94SaMEPaA9U3e9CqO6G8gRHNFTnhowNZ3CQteG4BsU7UD0RCRASDBeF1SHECx+oEU= li.aldric@gmail.com"
     ];
   };
-  users.knownUsers = [ "parsiafa1" ];
+  users.knownUsers = [ config.username ];
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.parsifa1 = import ./home.nix;
+    users.${config.username}.imports = with inputs; [
+      ./home.nix
+      ../../modules/homeModules
+      agenix.homeManagerModules.default
+      nix-index-database.hmModules.nix-index
+    ];
+
   };
 
   fonts.packages = with pkgs; [
@@ -88,7 +95,7 @@
     fontDirectories = [ "/Library/Fonts" ];
   }}";
 
-  age.identityPaths = [ "/Users/parsifa1/.ssh/id_ed25519" ];
+  age.identityPaths = [ "/Users/${config.username}/.ssh/id_ed25519" ];
   programs.fish.enable = true;
 
   system.stateVersion = 5;

@@ -1,9 +1,9 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   home.sessionVariables = {
     EDITOR = "nvim";
-    NH_FLAKE = "/home/parsifa1/nix";
-    PNPM_HOME = "/home/parsifa1/.local/share/pnpm";
+    NH_FLAKE = "$HOME/nix";
+    PNPM_HOME = "$HOME/.local/share/pnpm";
     PATH = "$PATH:$HOME/.cargo/bin";
     GPG_TTY = "$(tty)";
     FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";

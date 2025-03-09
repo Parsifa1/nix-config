@@ -1,8 +1,8 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
   wsl = {
     enable = true;
-    defaultUser = "parsifa1";
+    defaultUser = config.username;
     startMenuLaunchers = true;
     useWindowsDriver = true;
     wslConf.interop.appendWindowsPath = false;

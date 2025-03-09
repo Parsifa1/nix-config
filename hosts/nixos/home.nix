@@ -1,4 +1,4 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
@@ -34,10 +34,7 @@ let
   ];
 in
 {
-  imports = [
-    ./shell.nix
-    ../../modules
-  ];
+  imports = [ ./shell.nix ];
 
   userPackages = {
     atuin.enable = true;
@@ -65,8 +62,8 @@ in
   };
 
   home = {
-    username = "parsifa1";
-    homeDirectory = "/home/parsifa1";
+    username = config.username;
+    homeDirectory = "/home/${config.username}";
     file.".clang-format".source = ../.dotfile/.clang-format;
     packages = packages;
   };
