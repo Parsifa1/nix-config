@@ -30,7 +30,7 @@ with inputs;
       };
       darwin = {
         imports = [
-          ../hosts/nixos/config.nix
+          ./imports/nixpkgs.nix
           ../hosts/darwin/config.nix
           self.flakeModules.username
           agenix.darwinModules.default

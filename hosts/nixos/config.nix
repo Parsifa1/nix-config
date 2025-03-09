@@ -32,9 +32,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${config.username}.imports = with inputs; [
-      self.homeModules.nixos
-    ];
+    users.${config.username}.imports = [ inputs.self.homeModules.nixos ];
   };
 
   users = {

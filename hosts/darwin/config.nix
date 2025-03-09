@@ -1,10 +1,12 @@
 {
-  lib,
   pkgs,
   config,
   inputs,
   ...
 }:
+let
+  inherit (inputs.nixpkgs) lib;
+in
 {
   #临时使用软件包
   environment.systemPackages = with pkgs; [
@@ -19,7 +21,7 @@
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${config.username} = import inputs.self.homeModules.darwin;
+    users.${config.username}.imports = [ inputs.self.homeModules.darwin ];
   };
 
   users = {
