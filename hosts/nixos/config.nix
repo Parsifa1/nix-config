@@ -6,24 +6,48 @@
   ...
 }:
 {
+  environment.systemPackages = with pkgs; [
+    delta
+    wget
+    curl
+    gnupg
+    pinentry-gnome3
+    gcc14
+    zig
+    clang-tools_18
+    cmake
+    gnumake
+    openssh
+    websocat
+    unzip
+    rustup
+    nixd
+    nix-init
+    nix-output-monitor
+    devenv
+    dconf
+    agenix
+  ];
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${config.username}.imports = with inputs; [
-      ./home.nix
-      ../../modules/homeModules
-      agenix.homeManagerModules.default
-      nix-index-database.hmModules.nix-index
+      self.homeModules.nixos
     ];
   };
 
   users = {
-    knownUsers = [ config.username ];
+    mutableUsers = false;
     users.${config.username} = {
-      uid = 501;
-      name = config.username;
-      home = "/Users/${config.username}";
+      isNormalUser = true;
+      hashedPassword = "$y$j9T$fdy82j7goIaaecK3SEUKE0$JqPx5WkZ0OMRbXVB/d2dQIA/c7dSV3BXUAV7vlBcVOA";
       shell = pkgs.fish;
+      extraGroups = [
+        "networkmanager"
+        "wheel"
+        "docker"
+      ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIpOQirGxMfUl3F8KQxjzDZg0POSIpeNk5ayZQvugQOm li.aldric@gmail.com"
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoYJIrhUQGPbm2xzV9Rd6H6vfGeGC2Okr4yHdIxyLJgZTvbY6F9/HUKuIOo/EpZkNs+YXrxw6WVbMFMRhdgYLHbaWxlWmd5VqA+2msLw/Xj1KtObCJp3bwYqvIv6O6tzCc7KuQf+kY3MZLKCxMRV6Mv6AzdeD4rsc78V9XKN4VOT+meHXGfP8/Di42FRNratyQQKiKZh+Pcz8wW+kYq4n+8PkYLkIzpboAfvp2Kmbv8ElkspCKEpmlIXsDX+3Ara3zsY+5j7rfuh0U2c+/g9m33EwhtQ6YTGB6UDjQRoa4bu/e3V6LJb77QuSZK4E6oGAiTgASP12Ns5oQkTTtwF36JYOrAYpGoiCsoAo1zDPHS1gDIJVq+AoUZ2WF1qW0s/rGOMEw3EoBvz5UQ1LmqaJ3uo4lnEkGyVYpeu4aMizDtL1DvRMJNhgyB2v37OoNiiva3sxCINBAlc0n4CebFUvYWd5xhS6EHfcKbQ/wL9udUKTMuZoR3DBIm5depm3F+ks= parsifal@LAPTOP-ALDRIC"
@@ -36,7 +60,6 @@
     package = pkgs.nixVersions.latest;
     channel.enable = false;
     registry.nixpkgs.flake = inputs.nixpkgs;
-    optimise.automatic = true;
     settings = {
       trusted-users = [ config.username ];
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
@@ -44,6 +67,7 @@
         "nix-command"
         "flakes"
       ];
+      auto-optimise-store = true;
       use-xdg-base-directories = true;
       substituters = [
         "https://cache.nixos.org"
@@ -59,12 +83,61 @@
     };
     gc = {
       automatic = true;
+      dates = "weekly";
       options = "--delete-older-than 1w";
     };
   };
 
+  programs.nix-ld = {
+    enable = true;
+    libraries = with pkgs; [
+      icu
+      gmp
+      glibc
+      openssl
+      stdenv.cc.cc
+    ];
+  };
+
+  programs.gnupg.agent = {
+    enable = true;
+    settings = {
+      max-cache-ttl = 604800000;
+      default-cache-ttl = 604800000;
+      allow-preset-passphrase = "";
+      no-allow-external-cache = "";
+    };
+  };
+
+  fonts = {
+    enableDefaultPackages = true;
+    packages = with pkgs; [
+      ibm-plex
+      noto-fonts
+      lxgw-wenkai
+      cloudtide.fonts
+      noto-fonts-cjk-serif
+      noto-fonts-cjk-sans
+      source-han-serif
+    ];
+    fontconfig = {
+      defaultFonts = {
+        serif = [ "Noto Sans" ];
+        sansSerif = [ "Noto Serif" ];
+        monospace = [ "Iosevka Cloudtide" ];
+      };
+    };
+  };
+
+  environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
+  age.identityPaths = [ "$HOME/.ssh/id_rsa" ];
+  security.sudo.wheelNeedsPassword = false;
+  virtualisation.docker.enable = true;
+  system.stateVersion = "23.11";
+  programs.fish.enable = true;
+
   imports = [
+    ./wsl.nix
     ./service.nix
-    ./system.nix
   ];
 }

@@ -1,6 +1,0 @@
-{ ... }:
-{
-  imports = [
-    ../username.nix
-  ];
-}

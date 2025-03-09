@@ -1,12 +1,11 @@
 { lib, ... }:
 let
-  path = ../store;
+  path = ../../store;
   removeSubnix = lib.removeSuffix ".nix";
   files = lib.filterAttrs (n: t: n != "lang" && n != "default.nix") (builtins.readDir path);
   Modules = lib.mapAttrsToList (
     name: _: mkPkgModule (removeSubnix name) (import (path + "/${name}"))
   ) files;
-
   pkgModule =
     let
       inherit files;
@@ -26,7 +25,6 @@ let
       ) files;
     in
     pkg;
-
   mkPkgModule =
     name: moduleFunc:
     {

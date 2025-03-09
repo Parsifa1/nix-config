@@ -1,12 +1,11 @@
 { lib, ... }:
 let
-  path = ../store/lang;
+  path = ../../store/lang;
   removeSubnix = lib.removeSuffix ".nix";
   files = lib.filterAttrs (n: t: t == "regular" && n != "default.nix") (builtins.readDir path);
   Modules = lib.mapAttrsToList (
     name: _: mkLangModule (removeSubnix name) (import (path + "/${name}"))
   ) files;
-
   langModules =
     let
       inherit files;

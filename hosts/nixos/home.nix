@@ -34,7 +34,6 @@ let
   ];
 in
 {
-  imports = [ ./shell.nix ];
   userPackages = {
     atuin.enable = true;
     secret.enable = true;
@@ -94,4 +93,6 @@ in
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";
+
+  imports = [ ./shell.nix ];
 }

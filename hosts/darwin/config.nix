@@ -6,28 +6,29 @@
   ...
 }:
 {
+  #临时使用软件包
+  environment.systemPackages = with pkgs; [
+    zig
+    nixd
+    gcc14
+    gnupg
+    rustup
+    agenix
+  ];
+
   home-manager = {
     useGlobalPkgs = true;
     useUserPackages = true;
-    users.${config.username}.imports = with inputs; [
-      ./home.nix
-      ../../modules/homeModules
-      agenix.homeManagerModules.default
-      nix-index-database.hmModules.nix-index
-    ];
+    users.${config.username} = import inputs.self.homeModules.darwin;
   };
 
   users = {
-    mutableUsers = false;
+    knownUsers = [ config.username ];
     users.${config.username} = {
-      isNormalUser = true;
-      hashedPassword = "$y$j9T$fdy82j7goIaaecK3SEUKE0$JqPx5WkZ0OMRbXVB/d2dQIA/c7dSV3BXUAV7vlBcVOA";
+      uid = 501;
+      name = config.username;
+      home = "/Users/${config.username}";
       shell = pkgs.fish;
-      extraGroups = [
-        "networkmanager"
-        "wheel"
-        "docker"
-      ];
       openssh.authorizedKeys.keys = [
         "ssh-ed25519 AAAAC3NzaC1lZDI1NTE5AAAAIIpOQirGxMfUl3F8KQxjzDZg0POSIpeNk5ayZQvugQOm li.aldric@gmail.com"
         "ssh-rsa AAAAB3NzaC1yc2EAAAADAQABAAABgQCoYJIrhUQGPbm2xzV9Rd6H6vfGeGC2Okr4yHdIxyLJgZTvbY6F9/HUKuIOo/EpZkNs+YXrxw6WVbMFMRhdgYLHbaWxlWmd5VqA+2msLw/Xj1KtObCJp3bwYqvIv6O6tzCc7KuQf+kY3MZLKCxMRV6Mv6AzdeD4rsc78V9XKN4VOT+meHXGfP8/Di42FRNratyQQKiKZh+Pcz8wW+kYq4n+8PkYLkIzpboAfvp2Kmbv8ElkspCKEpmlIXsDX+3Ara3zsY+5j7rfuh0U2c+/g9m33EwhtQ6YTGB6UDjQRoa4bu/e3V6LJb77QuSZK4E6oGAiTgASP12Ns5oQkTTtwF36JYOrAYpGoiCsoAo1zDPHS1gDIJVq+AoUZ2WF1qW0s/rGOMEw3EoBvz5UQ1LmqaJ3uo4lnEkGyVYpeu4aMizDtL1DvRMJNhgyB2v37OoNiiva3sxCINBAlc0n4CebFUvYWd5xhS6EHfcKbQ/wL9udUKTMuZoR3DBIm5depm3F+ks= parsifal@LAPTOP-ALDRIC"
@@ -40,6 +41,7 @@
     package = pkgs.nixVersions.latest;
     channel.enable = false;
     registry.nixpkgs.flake = inputs.nixpkgs;
+    optimise.automatic = true;
     settings = {
       trusted-users = [ config.username ];
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
@@ -47,7 +49,6 @@
         "nix-command"
         "flakes"
       ];
-      auto-optimise-store = true;
       use-xdg-base-directories = true;
       substituters = [
         "https://cache.nixos.org"
@@ -63,14 +64,39 @@
     };
     gc = {
       automatic = true;
-      dates = "weekly";
       options = "--delete-older-than 1w";
     };
   };
 
-  imports = [
-    ./wsl.nix
-    ./service.nix
-    ./system.nix
+  fonts.packages = with pkgs; [
+    ibm-plex
+    noto-fonts
+    lxgw-wenkai
+    cloudtide.fonts
+    noto-fonts-cjk-serif
+    noto-fonts-cjk-sans
+    source-han-serif
   ];
+
+  environment = {
+    variables.FONTCONFIG_FILE = "${pkgs.makeFontsConf {
+      fontDirectories = [ "/Library/Fonts" ];
+    }}";
+    etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";
+  };
+
+  security.pam.services.sudo_local.touchIdAuth = true;
+
+  programs = {
+    gnupg.agent.enable = true;
+    fish.enable = true;
+  };
+
+  system = {
+    startup.chime = false;
+    defaults.dock.autohide = true;
+    stateVersion = 5;
+  };
+
+  imports = [ ./service.nix ];
 }

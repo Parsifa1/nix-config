@@ -5,39 +5,23 @@ with inputs;
     { inputs', ... }:
     darwin.lib.darwinSystem rec {
       system = "aarch64-darwin";
-      specialArgs = { inherit inputs' inputs system; };
-      modules = [
-        ./darwin
-        ../nixpkgs.nix
-        ../modules/nixModules
-        #some modules
-        agenix.darwinModules.default
-        home-manager.darwinModules.home-manager
-      ];
-
+      specialArgs = { inherit inputs inputs' system; };
+      modules = [ self.nixosModules.darwin ];
     }
   );
   flake.nixosConfigurations.nixos = withSystem "x86_64-linux" (
     { inputs', ... }:
     nixpkgs.lib.nixosSystem rec {
-      specialArgs = { inherit inputs inputs' system; };
       system = "x86_64-linux";
-      modules = [
-        ./nixos
-        ../nixpkgs.nix
-        ../modules/nixModules
-        # some modules
-        nixos-wsl.nixosModules.wsl
-        agenix.nixosModules.default
-        home-manager.nixosModules.home-manager
-      ];
+      specialArgs = { inherit inputs inputs' system; };
+      modules = [ self.nixosModules.nixos ];
     }
   );
   flake.homeConfigurations.parsifa1 = withSystem "x86_64-linux" (
     { inputs', ... }:
     let
       system = "x86_64-linux";
-      conf = import ../nixpkgs.nix { inherit inputs inputs' system; };
+      conf = import ../modules/imports/nixpkgs.nix { inherit inputs inputs' system; };
       pkgs = import inputs.nixpkgs {
         inherit system;
         config.allowUnfree = true;
@@ -46,12 +30,7 @@ with inputs;
     in
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
-      modules = [
-        ./debain
-        ../modules/homeModules
-        agenix.homeManagerModules.default
-      ];
+      modules = [ self.homeModules.debian ];
     }
   );
-
 }
