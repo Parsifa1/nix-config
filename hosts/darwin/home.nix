@@ -31,7 +31,6 @@ let
   ];
 in
 {
-  imports = [ ./shell.nix ];
   userPackages = {
     atuin.enable = true;
     secret.enable = true;
@@ -47,6 +46,7 @@ in
     zoxide.enable = true;
     lang = {
       rust.enable = true;
+      clangd.enable = true;
       python.enable = true;
       nodejs.enable = true;
       moonbit.enable = true;
@@ -54,18 +54,13 @@ in
   };
 
   home = {
+    packages = packages;
     username = config.username;
     homeDirectory = "/Users/${config.username}";
-    packages = packages;
-    file = {
-      ".clang-format".source = ../.dotfile/.clang-format;
-      ".clangd".text = import ../.dotfile/clangd.nix { inherit pkgs; };
-      ".gnupg/gpg-agent.conf".text = ''
-        pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac
-      '';
-    };
   };
 
   programs.home-manager.enable = true;
   home.stateVersion = "24.05"; # Please read the comment before changing.
+
+  imports = [ ./shell.nix ];
 }

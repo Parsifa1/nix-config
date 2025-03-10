@@ -1,8 +1,8 @@
 { pkgs, ... }:
 let
-  stdenv = pkgs.stdenv;
+  inherit (pkgs.stdenv) isDarwin;
   special =
-    if stdenv.isDarwin then
+    if isDarwin then
       {
         font-size = 18.5;
         window-height = 45;
@@ -50,7 +50,7 @@ in
 {
   programs.ghostty = {
     enable = true;
-    package = if stdenv.isDarwin then null else pkgs.ghostty;
+    package = if isDarwin then null else pkgs.ghostty;
     enableFishIntegration = true;
     inherit settings;
   };

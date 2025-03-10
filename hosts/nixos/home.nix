@@ -50,6 +50,7 @@ in
     ghostty.enable = true;
     lang = {
       rust.enable = true;
+      clangd.enable = true;
       golang.enable = true;
       python.enable = true;
       haskell.enable = true;
@@ -60,10 +61,9 @@ in
   };
 
   home = {
+    packages = packages;
     username = config.username;
     homeDirectory = "/home/${config.username}";
-    file.".clang-format".source = ../.dotfile/.clang-format;
-    packages = packages;
   };
 
   gtk = {

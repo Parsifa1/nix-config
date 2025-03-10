@@ -1,36 +1,24 @@
-{ withSystem, inputs, ... }:
+{ inputs, ... }:
 with inputs;
 {
-  flake.darwinConfigurations.AldricdeMacBook-Air = withSystem "aarch64-darwin" (
-    { inputs', ... }:
-    darwin.lib.darwinSystem rec {
-      system = "aarch64-darwin";
-      specialArgs = { inherit inputs inputs' system; };
-      modules = [ self.nixosModules.darwin ];
-    }
-  );
-  flake.nixosConfigurations.nixos = withSystem "x86_64-linux" (
-    { inputs', ... }:
-    nixpkgs.lib.nixosSystem rec {
-      system = "x86_64-linux";
-      specialArgs = { inherit inputs inputs' system; };
-      modules = [ self.nixosModules.nixos ];
-    }
-  );
-  flake.homeConfigurations.parsifa1 = withSystem "x86_64-linux" (
-    { inputs', ... }:
+  flake.darwinConfigurations.AldricdeMacBook-Air = darwin.lib.darwinSystem rec {
+    system = "aarch64-darwin";
+    specialArgs = { inherit inputs system; };
+    modules = [ self.nixosModules.darwin ];
+  };
+  flake.nixosConfigurations.nixos = nixpkgs.lib.nixosSystem rec {
+    system = "x86_64-linux";
+    specialArgs = { inherit inputs system; };
+    modules = [ self.nixosModules.nixos ];
+  };
+  flake.homeConfigurations.parsifa1 =
     let
       system = "x86_64-linux";
-      conf = import ../modules/options/nixpkgs.nix { inherit inputs inputs' system; };
-      pkgs = import inputs.nixpkgs {
-        inherit system;
-        config.allowUnfree = true;
-        overlays = conf.nixpkgs.overlays;
-      };
+      pkgs = nixpkgs.legacyPackages.${system};
     in
     home-manager.lib.homeManagerConfiguration {
       inherit pkgs;
+      extraSpecialArgs = { inherit inputs system; };
       modules = [ self.homeModules.debian ];
-    }
-  );
+    };
 }
