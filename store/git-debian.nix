@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  inherit (pkgs) stdenv;
+  inherit (pkgs.stdenv) isDarwin;
 in
 {
   programs.git = {
@@ -9,7 +9,7 @@ in
     userEmail = "li.aldric@gmail.com";
     package = pkgs.gitFull;
     extraConfig = {
-      credential.helper = if stdenv.isDarwin then "osxkeychain" else "store";
+      credential.helper = if isDarwin then "osxkeychain" else "store";
       core.editor = "nvim";
       credential.credentialStore = "cache";
       commit.gpgsign = false;

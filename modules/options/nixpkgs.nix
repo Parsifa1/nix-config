@@ -1,9 +1,4 @@
-{
-  inputs,
-  inputs',
-  system,
-  ...
-}:
+{ inputs, system, ... }:
 let
   inherit (inputs.nixpkgs) lib;
   # nixpkgs overlays
@@ -16,7 +11,6 @@ let
             oldAttrs.buildInputs ++ [ prev.directx-headers ]
           else
             oldAttrs.buildInputs;
-
         cmakeFlags =
           if system == "x86_64-linux" then
             oldAttrs.cmakeFlags ++ [ (lib.cmakeBool "ENABLE_DIRECTX_HEADERS" true) ]
@@ -27,8 +21,8 @@ let
     #bind packages need overlay
     (final: prev: {
       nvim = prev.neovim;
-      nh = inputs'.nh.packages.default;
-      agenix = inputs'.agenix.packages.default;
+      nh = inputs.nh.packages.${system}.default;
+      agenix = inputs.agenix.packages.${system}.default;
     })
     # my nur overlays
     cloudtide.overlay
@@ -44,8 +38,7 @@ let
 in
 {
   nixpkgs = {
-    inherit overlays;
-    hostPlatform = system;
+    inherit overlays system;
     config.allowUnfree = true;
   };
 }
