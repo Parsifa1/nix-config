@@ -11,6 +11,7 @@ let
     yarn
     nh
     helix
+    xxd
     fzf
     fd
     silicon
