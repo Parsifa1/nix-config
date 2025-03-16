@@ -24,17 +24,8 @@
     '';
     shellInitLast = ''
       if not string match -q -- $PNPM_HOME $PATH
-        set -gx PATH "$PNPM_HOME" $PATH
+         set -gx PATH "$PNPM_HOME" $PATH
       end
-      # if test -d "/mnt/c/Windows/system32/WindowsPowerShell/v1.0"
-      #     set -gx PATH $PATH /mnt/c/Windows/system32/WindowsPowerShell/v1.0
-      # end
-      # if test -d "/mnt/c/Windows/System32/"
-      #     set -gx PATH $PATH /mnt/c/Windows/System32/
-      # end
-      # if test -d "/mnt/e/Program Files/Scoop/shims"
-      #     set -gx PATH $PATH /mnt/e/Program\ Files/Scoop/shims
-      # end
     '';
     shellAliases = {
       y = "yy";

@@ -36,6 +36,7 @@ let
 in
 {
   userPackages = {
+    fhs.enable = true;
     atuin.enable = true;
     secret.enable = true;
     direnv.enable = true;
@@ -48,7 +49,7 @@ in
     starship.enable = true;
     yazi.enable = true;
     zoxide.enable = true;
-    ghostty.enable = true;
+    ghostty.enable = false;
     lang = {
       rust.enable = true;
       clangd.enable = true;
