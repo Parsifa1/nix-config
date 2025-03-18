@@ -1,4 +1,7 @@
 { config, pkgs, ... }:
+let
+  pwsh = "exec -a $0 /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe $@";
+in
 {
   wsl = {
     enable = true;
@@ -8,6 +11,7 @@
     wslConf.interop.appendWindowsPath = false;
   };
   environment.systemPackages = with pkgs; [
+    (pkgs.writeShellScriptBin "powershell.exe" pwsh)
     cloudtide.win32yank
     wslu
   ];

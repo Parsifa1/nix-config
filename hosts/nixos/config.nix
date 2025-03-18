@@ -35,6 +35,9 @@ in
     userinfo.enable = true;
     nixconf.enable = true;
     fonts.enable = true;
+    lang = {
+      python.enable = true;
+    };
   };
 
   home-manager = {
