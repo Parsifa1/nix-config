@@ -54,7 +54,7 @@ in
       rust.enable = true;
       clangd.enable = true;
       golang.enable = true;
-      # python.enable = true;
+      python.enable = true;
       haskell.enable = true;
       nodejs.enable = true;
       latex.enable = true;
