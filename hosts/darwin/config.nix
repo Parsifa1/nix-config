@@ -14,7 +14,6 @@ in
     nixd
     gcc14
     gnupg
-    rustup
     agenix
   ];
 

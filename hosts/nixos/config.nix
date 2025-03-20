@@ -22,7 +22,6 @@ in
     openssh
     websocat
     unzip
-    rustup
     nixd
     nix-init
     nix-output-monitor

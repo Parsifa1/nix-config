@@ -15,7 +15,6 @@
     agenix
     ripgrep
     rclone
-    rustup
     nixd
     dust
     nvim
@@ -29,6 +28,9 @@
     lazygit.enable = true;
     starship.enable = true;
     zoxide.enable = true;
+    lang = {
+      rust.enable = true;
+    };
   };
   programs.home-manager.enable = true;
 }
