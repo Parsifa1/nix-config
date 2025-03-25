@@ -4,7 +4,6 @@
     enable = true;
     extraLuaPackages = ps: [ ps.magick ];
     extraPackages = with pkgs; [ imagemagick ];
-    package = pkgs.neovim;
   };
   home.packages = with pkgs; [
     fnlfmt

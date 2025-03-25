@@ -49,7 +49,7 @@ in
     starship.enable = true;
     yazi.enable = true;
     zoxide.enable = true;
-    ghostty.enable = false;
+    ghostty.enable = true;
     lang = {
       rust.enable = true;
       clangd.enable = true;

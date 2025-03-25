@@ -9,6 +9,7 @@ let
 in
 {
   environment.systemPackages = with pkgs; [
+    gh
     delta
     wget
     curl
