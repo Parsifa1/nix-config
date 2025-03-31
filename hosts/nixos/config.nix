@@ -95,7 +95,10 @@ in
 
   age.identityPaths = [ "$HOME/.ssh/id_rsa" ];
   security.sudo.wheelNeedsPassword = false;
-  virtualisation.docker.enable = true;
+  virtualisation = {
+    docker.enable = true;
+    podman.enable = true;
+  };
   system.stateVersion = "23.11";
 
   imports = [
