@@ -23,7 +23,6 @@ in
     openssh
     websocat
     unzip
-    nixd
     nix-init
     nix-output-monitor
     devenv

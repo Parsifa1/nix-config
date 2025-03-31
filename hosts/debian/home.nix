@@ -15,7 +15,6 @@
     agenix
     ripgrep
     rclone
-    nixd
     dust
     nvim
   ];

@@ -6,7 +6,7 @@
     extraPackages = with pkgs; [ imagemagick ];
   };
   home.packages = with pkgs; [
-    fnlfmt
+    nixd
     lua51Packages.lua
     luajitPackages.luarocks
     cloudtide.tree-sitter
