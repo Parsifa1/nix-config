@@ -31,6 +31,7 @@ let
     nix-output-monitor
     nerd-font-patcher
     ghostscript
+    cloudtide.distrobox
     # tectonic
   ];
 in
