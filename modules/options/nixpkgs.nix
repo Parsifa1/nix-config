@@ -9,13 +9,14 @@ let
     })
     # my nur overlays
     cloudtide.overlay
-    #rust toolchain
+    # rust toolchain
     fenix.overlays.default
-    #neovim-nightly
-    neovim-nightly-overlay.overlays.default
-    #mbt toolchain
+    # neovim-nightly
+    # FIXME: wait for nightly fix: https://github.com/neovim/neovim/issues/33277
+    # neovim-nightly-overlay.overlays.default
+    # mlt toolchain
     moonbit-overlay.overlays.default
-    #yazi
+    # yazi
     yazi.overlays.default
   ];
 in
