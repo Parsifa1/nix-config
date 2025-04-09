@@ -33,18 +33,6 @@
         ExecStart = "/mnt/c/Windows/System32/waitfor.exe MakeDistroAlive";
       };
     };
-    wslg-fix = {
-      enable = true;
-      description = "fix wslg";
-      wantedBy = [ "multi-user.target" ];
-      serviceConfig = {
-        Type = "oneshot";
-        ExecStart = [
-          "${pkgs.coreutils}/bin/chmod 0777 /mnt/wslg/runtime-dir"
-          "${pkgs.coreutils}/bin/chmod 0666 /mnt/wslg/runtime-dir/wayland-0.lock"
-        ];
-      };
-    };
     network-mirrored = {
       enable = true;
       description = "network-mirrored";
@@ -93,7 +81,7 @@
   };
   i18n.inputMethod = {
     type = "fcitx5";
-    enable = true;
+    enable = false;
     # fcitx5.waylandFrontend = true;
     fcitx5.addons = with pkgs; [
       fcitx5-rime
