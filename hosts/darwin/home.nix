@@ -49,7 +49,7 @@ in
       clangd.enable = true;
       python.enable = true;
       nodejs.enable = true;
-      moonbit.enable = true;
+      # moonbit.enable = true;
     };
   };
 

@@ -59,7 +59,7 @@ in
       haskell.enable = true;
       nodejs.enable = true;
       latex.enable = true;
-      moonbit.enable = true;
+      # moonbit.enable = true;
     };
   };
 
