@@ -15,6 +15,7 @@ let
         macos-titlebar-proxy-icon = "visible";
         macos-icon-screen-color = "blue";
         keybind = [
+          "command+q=unbind"
           "ctrl+v=paste_from_clipboard"
           "ctrl+shift+apostrophe=new_split:right"
           "ctrl+shift+semicolon=new_split:down"
