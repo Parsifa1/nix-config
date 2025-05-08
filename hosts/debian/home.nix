@@ -17,6 +17,7 @@
     rclone
     dust
     nvim
+    nodejs_22
   ];
   userPackages = {
     atuin.enable = true;
