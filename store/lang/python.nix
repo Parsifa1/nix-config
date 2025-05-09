@@ -15,6 +15,16 @@ let
         stdenv.cc.cc
       ];
   };
+  uvxFHS = pkgs.buildFHSEnv {
+    name = "uvx";
+    runScript = "uvx";
+    targetPkgs =
+      pkgs: with pkgs; [
+        uv
+        zlib
+        stdenv.cc.cc
+      ];
+  };
 in
 {
   home.packages =
@@ -30,5 +40,6 @@ in
         python3_11
         pkgs.pixi
         uvFHS
+        uvxFHS
       ];
 }

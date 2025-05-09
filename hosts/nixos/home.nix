@@ -45,7 +45,7 @@ in
     tmux.enable = true;
     lazygit.enable = true;
     neovim.enable = true;
-    # emacs.enable = true;
+    emacs.enable = true;
     ssh.enable = true;
     starship.enable = true;
     yazi.enable = true;
