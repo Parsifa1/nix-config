@@ -11,8 +11,11 @@
     channel.enable = false;
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
-      trusted-users = [ config.username ];
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
+      trusted-users = [
+        config.username
+        "root"
+      ];
       experimental-features = [
         "nix-command"
         "flakes"
