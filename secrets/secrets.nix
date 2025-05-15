@@ -9,6 +9,7 @@ let
   ];
 in
 {
+  "gemini.age".publicKeys = sub;
   "wakatime.age".publicKeys = sub;
   "sshconfig.age".publicKeys = sub;
 }

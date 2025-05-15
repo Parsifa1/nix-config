@@ -17,7 +17,7 @@ let
     # mlt toolchain
     moonbit-overlay.overlays.default
     # yazi
-    yazi.overlays.default
+    # yazi.overlays.default
   ];
 in
 {

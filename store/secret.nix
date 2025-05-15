@@ -13,5 +13,11 @@
       file = ../secrets/sshconfig.age;
       mode = "444";
     };
+    gemini = rec {
+      name = ".gemini.key";
+      path = "$HOME/${name}";
+      file = ../secrets/gemini.age;
+      mode = "444";
+    };
   };
 }
