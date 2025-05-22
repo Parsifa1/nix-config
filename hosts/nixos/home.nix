@@ -57,7 +57,7 @@ in
       golang.enable = true;
       python.enable = true;
       haskell.enable = true;
-      nodejs.enable = true;
+      frontend.enable = true;
       latex.enable = true;
       # moonbit.enable = true;
     };

@@ -2,8 +2,8 @@
 {
   home.packages = with pkgs; [
     typescript
+    nodejs_24
     eslint
-    nodejs
     pnpm
     bun
   ];

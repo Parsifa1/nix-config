@@ -48,7 +48,7 @@ in
       rust.enable = true;
       clangd.enable = true;
       python.enable = true;
-      nodejs.enable = true;
+      frontend.enable = true;
       # moonbit.enable = true;
     };
   };

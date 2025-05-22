@@ -51,8 +51,9 @@ in
 
   system = {
     startup.chime = false;
-    defaults.dock.autohide = true;
     stateVersion = 5;
+    primaryUser = "${username}";
+    defaults.dock.autohide = true;
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;
