@@ -2,7 +2,7 @@
 let
   packages = with pkgs; [
     nixfmt-rfc-style
-    fastfetch
+    # fastfetch
     onefetch
     tokei
     ripgrep
@@ -51,9 +51,10 @@ in
     yazi.enable = true;
     zoxide.enable = true;
     ghostty.enable = true;
+    fastfetch.enable = true;
     lang = {
       rust.enable = true;
-      clangd.enable = true;
+      clang.enable = true;
       golang.enable = true;
       python.enable = true;
       haskell.enable = true;

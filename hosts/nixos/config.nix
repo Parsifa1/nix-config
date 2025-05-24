@@ -17,7 +17,7 @@ in
     pinentry-gnome3
     gcc14
     zig
-    clang-tools_18
+    clang-tools_19
     cmake
     gnumake
     openssh

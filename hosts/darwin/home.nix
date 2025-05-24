@@ -1,8 +1,13 @@
-{ config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
-    fastfetch
+    # fastfetch
     onefetch
     tokei
     typst
@@ -24,11 +29,14 @@ let
     comma
     silicon
     cloudtide.awrit
+    clang-tools_19
     git-credential-manager
     nix-output-monitor
     ghostscript
     tectonic
   ];
+
+  inherit (pkgs.stdenv) isDarwin;
 in
 {
   userPackages = {
@@ -44,9 +52,10 @@ in
     yazi.enable = true;
     ghostty.enable = true;
     zoxide.enable = true;
+    fastfetch.enable = true;
     lang = {
       rust.enable = true;
-      clangd.enable = true;
+      clang.enable = true;
       python.enable = true;
       frontend.enable = true;
       # moonbit.enable = true;
@@ -57,6 +66,11 @@ in
     packages = packages;
     username = config.username;
     homeDirectory = "/Users/${config.username}";
+    file = {
+      ".gnupg/gpg-agent.conf" = lib.mkIf isDarwin {
+        text = ''pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac'';
+      };
+    };
   };
 
   programs.home-manager.enable = true;
