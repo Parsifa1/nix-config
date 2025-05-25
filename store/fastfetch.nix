@@ -1,4 +1,7 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
+let
+  inherit (pkgs.stdenv) isDarwin;
+in
 {
   programs.fastfetch = {
     enable = true;
@@ -11,8 +14,12 @@
       in
       {
         logo = {
-          type = "kitty-direct";
+          type = if isDarwin then "kitty-direct" else "kitty";
           source = "${logo}";
+          width = lib.mkIf (!isDarwin) 25;
+          padding = {
+            top = 1;
+          };
         };
         modules = [
           "title"

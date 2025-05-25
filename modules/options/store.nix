@@ -4,8 +4,12 @@ let
   pkgPath = ../../store;
   langPath = ../../store/lang;
   removeSubnix = lib.removeSuffix ".nix";
-  langFiles = builtins.readDir langPath;
-  pkgFiles = lib.filterAttrs (n: t: n != "lang") (builtins.readDir pkgPath);
+  # langFiles = builtins.readDir langPath;
+  langFiles = lib.filterAttrs (n: t: lib.hasSuffix ".nix" n) (builtins.readDir langPath);
+  pkgFiles = lib.filterAttrs (
+    n: t: n != "lang" && (t == "directory" || (t == "regular" && lib.hasSuffix ".nix" n))
+  ) (builtins.readDir pkgPath);
+
   # Module generators
   mkPkgModule =
     name: moduleFunc:
