@@ -15,7 +15,7 @@
     };
     gemini = rec {
       name = ".gemini.key";
-      path = "$HOME/${name}";
+      path = "$HOME/.config/secret/${name}";
       file = ../secrets/gemini.age;
       mode = "444";
     };

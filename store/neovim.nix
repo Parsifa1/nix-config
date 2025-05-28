@@ -7,9 +7,9 @@
   };
   home.packages = with pkgs; [
     nixd
+    tree-sitter
     lua51Packages.lua
     luajitPackages.luarocks
-    cloudtide.tree-sitter
     (pkgs.writeShellScriptBin "v" "exec -a $0 ${pkgs.neovim}/bin/nvim $@")
   ];
 }
