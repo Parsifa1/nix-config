@@ -3,7 +3,7 @@
 
 "$schema" = "https://yazi-rs.github.io/schemas/keymap.json"
 
-[manager]
+[mgr]
 
 keymap = [
     { on = "<Esc>", run = "escape", desc = "Exit visual mode, clear selected, or cancel search" },
@@ -317,7 +317,7 @@ keymap = [
     { on = "<F1>", run = "help", desc = "Open help" },
 ]
 
-[completion]
+[cmp]
 
 keymap = [
     { on = "<C-c>", run = "close", desc = "Cancel completion" },

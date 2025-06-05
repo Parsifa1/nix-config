@@ -2,7 +2,7 @@
 
 # : Manager {{{
 
-[manager]
+[mgr]
 cwd = { fg = "#83a598" }
 
 # Hovered
@@ -94,7 +94,7 @@ hovered = { underline = true }
 # : Which {{{
 
 [which]
-mask            = { bg = "#3c3836" }
+mask            = { hidden = true }
 cand            = { fg = "#83a598" }
 rest            = { fg = "#928374" }
 desc            = { fg = "#fe8019" }
@@ -134,10 +134,6 @@ prepend_rules = [
 	{ mime = "application/x-bzip2", fg = "#f5c2e7" },
 	{ mime = "application/x-7z-compressed", fg = "#f5c2e7" },
 	{ mime = "application/x-rar", fg = "#f5c2e7" },
-
-	# Fallback
-	{ name = "*", fg = "#cdd6f4" },
-	{ name = "*/", fg = "#89b4fa" },
 ]
 
 
