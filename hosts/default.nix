@@ -6,7 +6,7 @@ with inputs;
     specialArgs = { inherit inputs system; };
     modules = [ self.nixosModules.nixos ];
   };
-  flake.darwinConfigurations.AldricdeMacBook-Air = darwin.lib.darwinSystem rec {
+  flake.darwinConfigurations.apfel = darwin.lib.darwinSystem rec {
     system = "aarch64-darwin";
     specialArgs = { inherit inputs system; };
     modules = [ self.nixosModules.darwin ];
