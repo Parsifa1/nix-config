@@ -17,10 +17,7 @@
   programs.fish = {
     enable = true;
     loginShellInit = ''
-      clear
       set -U fish_greeting
-      # 输入法
-      # fcitx5 --disable=wayland --verbose=\*=0 -d
     '';
     shellInitLast = ''
       if not string match -q -- $PNPM_HOME $PATH

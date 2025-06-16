@@ -1,11 +1,11 @@
-{ ... }:
+{ lib, ... }:
 let
   EDITOR = "nvim";
-  LOCAL = "$HOME/.local/bin";
   NH_FLAKE = "$HOME/.config/nix";
   CARGO_HOME = "$HOME/.cargo/bin";
-  ADD_PATH = builtins.concatStringsSep ":";
+  BREW_PATH = "/opt/homebrew/bin";
   PNPM_HOME = "$HOME/.local/share/pnpm/bin";
+  ADD_PATH = paths: builtins.concatStringsSep ":" ([ "$PATH" ] ++ paths);
   FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
   FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";
 in
@@ -19,23 +19,14 @@ in
       FZF_DEFAULT_COMMAND
       ;
     PATH = ADD_PATH [
-      LOCAL
-      "$PATH"
       PNPM_HOME
+      BREW_PATH
       CARGO_HOME
     ];
   };
   programs.fish = {
     enable = true;
-    loginShellInit = ''
-      set -U fish_greeting
-      eval "$(/opt/homebrew/bin/brew shellenv)"
-      if test "$TERM_PROGRAM" = ghostty
-        if test -n "$GHOSTTY_RESOURCES_DIR"
-          source $GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish
-        end
-      end
-    '';
+    loginShellInit = lib.readFile ./.config.fish;
     shellAliases = {
       y = "yy";
       v = "nvim";
