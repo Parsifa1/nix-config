@@ -15,7 +15,7 @@ in
     curl
     gnupg
     pinentry-gnome3
-    gcc14
+    gcc15
     zig
     clang-tools_19
     cmake
