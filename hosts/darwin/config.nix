@@ -49,6 +49,25 @@ in
     fish.enable = true;
   };
 
+  homebrew = {
+    enable = true;
+    onActivation = {
+      autoUpdate = false;
+      # 'zap': uninstalls all formulae(and related files) not listed here.
+      cleanup = "zap";
+    };
+    # `brew install`
+    # TODO Feel free to add your favorite apps here.
+    brews = [ "llvm@20" ];
+    # `brew install --cask`
+    # TODO Feel free to add your favorite apps here.
+    casks = [
+      "applite"
+      "keycastr"
+      "playcover-community"
+    ];
+  };
+
   system = {
     startup.chime = false;
     stateVersion = 5;

@@ -2,12 +2,7 @@
 set -U fish_greeting
 
 # set homebrew
-set --global --export HOMEBREW_PREFIX "/opt/homebrew";
-set --global --export HOMEBREW_CELLAR "/opt/homebrew/Cellar";
-set --global --export HOMEBREW_REPOSITORY "/opt/homebrew";
-if test -n "$MANPATH[1]"; set --global --export MANPATH '' $MANPATH; end;
-if not contains "/opt/homebrew/share/info" $INFOPATH; set --global --export INFOPATH "/opt/homebrew/share/info" $INFOPATH; end;
-
+eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # set ghostty integration
 if test "$TERM_PROGRAM" = ghostty
