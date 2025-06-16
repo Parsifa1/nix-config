@@ -28,19 +28,11 @@ in
   programs.fish = {
     enable = true;
     loginShellInit = ''
-      test ! -e $HOME/.local/bin/cc && ln -s /usr/bin/clang ~/.local/bin/cc
-    '';
-    shellInitLast = ''
       set -U fish_greeting
       eval "$(/opt/homebrew/bin/brew shellenv)"
-    '';
-    interactiveShellInit = ''
       if test "$TERM_PROGRAM" = ghostty
         if test -n "$GHOSTTY_RESOURCES_DIR"
           source $GHOSTTY_RESOURCES_DIR/shell-integration/fish/vendor_conf.d/ghostty-shell-integration.fish
-        end
-        if test -n "$GHOSTTY_BIN_DIR" && not contains "$GHOSTTY_BIN_DIR" $PATH
-          set -p PATH "$GHOSTTY_BIN_DIR"
         end
       end
     '';

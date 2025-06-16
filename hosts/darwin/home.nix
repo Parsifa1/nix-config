@@ -29,7 +29,8 @@ let
     comma
     silicon
     cloudtide.awrit
-    clang-tools_19
+    xmake
+    clang_20
     git-credential-manager
     nix-output-monitor
     ghostscript
