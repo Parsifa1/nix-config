@@ -10,8 +10,6 @@ in
 {
   #临时使用软件包
   environment.systemPackages = with pkgs; [
-    zig
-    gcc14
     gnupg
     agenix
   ];
