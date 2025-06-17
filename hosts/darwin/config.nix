@@ -62,6 +62,7 @@ in
     casks = [
       "applite"
       "keycastr"
+      "linearmouse"
       "playcover-community"
     ];
   };
