@@ -32,6 +32,7 @@ let
     nerd-font-patcher
     ghostscript
     cloudtide.distrobox
+    koka
     # tectonic
   ];
 in

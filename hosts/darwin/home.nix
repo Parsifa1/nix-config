@@ -35,6 +35,7 @@ let
     nix-output-monitor
     ghostscript
     tectonic
+    koka
   ];
 
   inherit (pkgs.stdenv) isDarwin;
