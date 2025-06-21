@@ -5,7 +5,7 @@ let
     if isDarwin then
       {
         font-size = 18.5;
-        window-height = 37;
+        window-height = 38;
         window-width = 154;
         window-padding-y = "1,1";
         macos-option-as-alt = true;
