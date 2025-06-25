@@ -62,6 +62,7 @@ in
     casks = [
       "stats"
       "applite"
+      "alt-tab"
       "keycastr"
       "linearmouse"
       "playcover-community"
