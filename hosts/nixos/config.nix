@@ -25,7 +25,6 @@ in
     unzip
     nix-init
     nix-output-monitor
-    devenv
     dconf
     agenix
   ];
