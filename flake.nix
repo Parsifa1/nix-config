@@ -2,9 +2,9 @@
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
     nh.url = "github:viperML/nh";
-    yazi.url = "github:sxyazi/yazi";
+    # yazi.url = "github:sxyazi/yazi";
     flake-parts.url = "github:hercules-ci/flake-parts";
-    neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
     moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
     home-manager = {
       url = "github:nix-community/home-manager";

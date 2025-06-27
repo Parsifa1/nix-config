@@ -17,7 +17,11 @@
       name = ".gemini.key";
       path = "$HOME/.config/secret/${name}";
       file = ../secrets/gemini.age;
-      mode = "444";
+    };
+    github-token = rec {
+      name = ".github.key";
+      path = "$HOME/.config/secret/${name}";
+      file = ../secrets/github.age;
     };
   };
 }

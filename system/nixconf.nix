@@ -5,6 +5,9 @@
   inputs,
   ...
 }:
+let
+  home = config.users.users.${config.username}.home;
+in
 {
   nix = {
     package = pkgs.nixVersions.latest;
@@ -36,6 +39,7 @@
         "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
       ];
     };
+    extraOptions = ''!include ${home}/.config/secret/.github.key'';
     gc = {
       automatic = true;
       options = "--delete-older-than 1w";
