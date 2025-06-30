@@ -26,33 +26,38 @@ in
           "os"
           "kernel"
           "uptime"
-          {
-            "type" = "packages";
-            "format" = "{all}";
-          }
+          # {
+          #   "type" = "packages";
+          #   "format" = "{all}";
+          # }
           "shell"
           {
             "type" = "display";
             "key" = "Resolution";
             "compactType" = "original";
           }
-          "de"
           "wm"
           "wmtheme"
           {
             "type" = "terminalfont";
             "key" = "font";
           }
-          {
-            "type" = "disk";
-            "folders" = "/";
-            "key" = "Disk";
-          }
           "cpu"
           "gpu"
           {
             "type" = "memory";
             "key" = "RAM";
+            "percent" = {
+              "type" = 3;
+            };
+          }
+          {
+            "type" = "disk";
+            "folders" = "/";
+            "key" = "Disk";
+            "percent" = {
+              "type" = 3;
+            };
           }
         ];
       };
