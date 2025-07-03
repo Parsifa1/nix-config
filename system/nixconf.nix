@@ -17,6 +17,7 @@ in
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       trusted-users = [
         config.username
+        "@admin"
         "root"
       ];
       experimental-features = [
