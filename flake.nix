@@ -1,41 +1,38 @@
 {
   inputs = {
     nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
-    nh.url = "github:viperML/nh";
-    # yazi.url = "github:sxyazi/yazi";
     flake-parts.url = "github:hercules-ci/flake-parts";
+    # yazi.url = "github:sxyazi/yazi";
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
-    moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
+    # moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
+    nh = {
+      url = "github:viperML/nh";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nixos-wsl = {
       url = "github:nix-community/NixOS-WSL";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     nix-index-database = {
       url = "github:nix-community/nix-index-database";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     fenix = {
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     cloudtide = {
       url = "github:parsifa1/cloudtix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     darwin = {
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-
     agenix = {
       url = "github:ryantm/agenix";
       inputs.nixpkgs.follows = "nixpkgs";

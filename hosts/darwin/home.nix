@@ -1,13 +1,7 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}:
+{ config, pkgs, ... }:
 let
   packages = with pkgs; [
     nixfmt-rfc-style
-    # fastfetch
     onefetch
     tokei
     typst
@@ -37,8 +31,6 @@ let
     tectonic
     koka
   ];
-
-  inherit (pkgs.stdenv) isDarwin;
 in
 {
   userPackages = {
@@ -60,7 +52,6 @@ in
       clang.enable = true;
       python.enable = true;
       frontend.enable = true;
-      # moonbit.enable = true;
     };
   };
 
@@ -69,9 +60,8 @@ in
     username = config.username;
     homeDirectory = "/Users/${config.username}";
     file = {
-      ".gnupg/gpg-agent.conf" = lib.mkIf isDarwin {
-        text = ''pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac'';
-      };
+      ".gnupg/gpg-agent.conf".text =
+        ''pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac'';
     };
   };
 

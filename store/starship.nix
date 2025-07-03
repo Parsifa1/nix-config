@@ -1,4 +1,8 @@
-{ pkgs, ... }:
+{ lib, pkgs, ... }:
+let
+  inherit (pkgs.stdenv) isDarwin;
+  inherit (lib) mkIf;
+in
 {
   programs.starship = {
     enable = true;
@@ -8,7 +12,7 @@
       gcloud.disabled = true;
       hostname.disabled = true;
       username.disabled = true;
-      custom.fhs = {
+      custom.fhs = mkIf isDarwin {
         command = "echo 🐧";
         when = ''
           test -n "$FHS"

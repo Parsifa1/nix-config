@@ -12,10 +12,9 @@ let
     # rust toolchain
     fenix.overlays.default
     # neovim-nightly
-    # FIXME: wait for nightly fix: https://github.com/neovim/neovim/issues/33277
     # neovim-nightly-overlay.overlays.default
-    # mlt toolchain
-    moonbit-overlay.overlays.default
+    # mbt toolchain
+    # moonbit-overlay.overlays.default
     # yazi
     # yazi.overlays.default
   ];

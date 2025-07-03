@@ -26,10 +26,6 @@ in
           "os"
           "kernel"
           "uptime"
-          # {
-          #   "type" = "packages";
-          #   "format" = "{all}";
-          # }
           "shell"
           {
             "type" = "display";
