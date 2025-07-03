@@ -42,7 +42,7 @@ in
     extraOptions = ''!include ${home}/.config/secret/.github.key'';
     gc = {
       automatic = true;
-      options = "--delete-older-than 1w";
+      # options = "--delete-older-than 1w";
     };
   };
   environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";

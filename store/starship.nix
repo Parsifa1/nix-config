@@ -12,7 +12,7 @@ in
       gcloud.disabled = true;
       hostname.disabled = true;
       username.disabled = true;
-      custom.fhs = mkIf isDarwin {
+      custom.fhs = mkIf (!isDarwin) {
         command = "echo 🐧";
         when = ''
           test -n "$FHS"
