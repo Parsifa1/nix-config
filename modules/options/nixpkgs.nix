@@ -12,7 +12,7 @@ let
     # rust toolchain
     fenix.overlays.default
     # neovim-nightly
-    # neovim-nightly-overlay.overlays.default
+    neovim-nightly-overlay.overlays.default
     # mbt toolchain
     # moonbit-overlay.overlays.default
     # yazi
