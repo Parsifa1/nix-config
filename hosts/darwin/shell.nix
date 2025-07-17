@@ -1,27 +1,22 @@
 { lib, ... }:
 let
-  EDITOR = "nvim";
-  NH_FLAKE = "$HOME/.config/nix";
   INIT_PATH = paths: builtins.concatStringsSep ":" paths;
-  FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
-  FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";
 in
 {
   home.sessionVariables = {
-    inherit
-      EDITOR
-      NH_FLAKE
-      FZF_DEFAULT_OPTS
-      FZF_DEFAULT_COMMAND
-      ;
+    EDITOR = "nvim";
+    NH_FLAKE = "$HOME/.config/nix";
+    PNPM_HOME = "$HOME/.local/share/pnpm";
+    FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
+    FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";
     PATH = INIT_PATH [
-      "/etc/profiles/per-user/$USER/bin"
+      "/etc/profiles/per-user/$USER/bin" # NIX_PATH
       "/run/current-system/sw/bin"
       "/nix/var/nix/profiles/default/bin"
       "/opt/homebrew/opt/llvm@20/bin" # LLVM_PATH
-      "$HOME/.local/share/pnpm/bin" # PNPM_HOME
+      "$HOME/.local/share/pnpm/" # PNPM_HOME
       "$HOME/.cargo/bin" # CARGO_HOME
-      "/usr/local/bin"
+      "/usr/local/bin" # NATIVE
       "/usr/bin"
       "/bin"
       "/usr/sbin"

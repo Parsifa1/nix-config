@@ -38,7 +38,7 @@ with inputs;
         ../hosts/nixos/home.nix
         self.flakeModules.homeUtils
         agenix.homeManagerModules.default
-        nix-index-database.hmModules.nix-index
+        nix-index-database.homeModules.nix-index
       ];
     };
     darwin = {
@@ -46,7 +46,7 @@ with inputs;
         ../hosts/darwin/home.nix
         self.flakeModules.homeUtils
         agenix.homeManagerModules.default
-        nix-index-database.hmModules.nix-index
+        nix-index-database.homeModules.nix-index
       ];
     };
     debian = {

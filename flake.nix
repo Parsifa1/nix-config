@@ -1,6 +1,6 @@
 {
   inputs = {
-    nixpkgs.url = "github:nixos/nixpkgs/nixos-unstable";
+    nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     # yazi.url = "github:sxyazi/yazi";
     # neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
