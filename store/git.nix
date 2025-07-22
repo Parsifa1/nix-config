@@ -15,5 +15,6 @@ in
       credential.credentialStore = "cache";
       commit.gpgsign = true;
     };
+    ignores = [ ".DS_Store" ];
   };
 }
