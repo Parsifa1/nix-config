@@ -35,7 +35,7 @@ in
       lg = "lazygit";
       fa = "fastfetch";
       zf = "z \$(fd --type d --hidden . 3>/dev/null | fzf)";
-      ls = "eza --icons --group-directories-first --sort=extension -F";
+      ls = "eza --icons --group-directories-first --sort=extension -F -I='.DS_Store'";
       vf = "set -l file (fzf --preview 'bat --style=numbers --color=always --line-range :501 {}'); and test -n \"\$file\"; and vi \"\$file\"";
     };
   };

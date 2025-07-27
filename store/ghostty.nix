@@ -16,6 +16,9 @@ let
         macos-icon-screen-color = "blue";
         keybind = [
           "command+q=unbind"
+          "super+enter=unbind"
+          "option+left=unbind"
+          "option+right=unbind"
           "ctrl+v=paste_from_clipboard"
           "ctrl+shift+apostrophe=new_split:right"
           "ctrl+shift+semicolon=new_split:down"
