@@ -24,6 +24,7 @@
          set -gx PATH "$PNPM_HOME" $PATH
       end
     '';
+    binds."ctrl-s".command = "edit_command_buffer";
     shellAliases = {
       y = "yy";
       v = "nvim";

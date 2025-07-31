@@ -26,6 +26,7 @@ in
   programs.fish = {
     enable = true;
     loginShellInit = lib.readFile ./.config.fish;
+    binds."ctrl-s".command = "edit_command_buffer";
     shellAliases = {
       y = "yy";
       v = "nvim";
