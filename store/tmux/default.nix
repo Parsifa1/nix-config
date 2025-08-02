@@ -43,11 +43,20 @@ in
           set -g @continuum-save-interval '60' # minutes
         '';
       }
+      {
+        plugin = tmuxPlugins.tmux-thumbs;
+        extraConfig = ''
+          set -g @thumbs-command 'tmux set-buffer -w -- {} && tmux display-message \"Copied {}\"'
+        '';
+
+      }
     ];
     extraConfig = ''
       unbind '"'
       unbind %
       set -sg escape-time 0
+      set -s set-clipboard on
+      set -g @thumbs-key space
       set -g status-position top
       set -g allow-passthrough on
       set -ga update-environment TERM
