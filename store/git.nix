@@ -7,7 +7,7 @@ in
     enable = true;
     userName = "Parsifa1";
     userEmail = "li.aldric@gmail.com";
-    package = pkgs.gitFull;
+    package = pkgs.git;
     extraConfig = {
       user.signingkey = "99B21766F86301CA";
       credential.helper = if isDarwin then "osxkeychain" else "store";
