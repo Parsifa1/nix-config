@@ -29,7 +29,6 @@ let
     nix-output-monitor
     ghostscript
     tectonic
-    koka
   ];
 in
 {
