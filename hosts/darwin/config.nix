@@ -14,6 +14,20 @@ in
     agenix
   ];
 
+  environment.systemPath = [
+    "/etc/profiles/per-user/$USER/bin" # NIX_PATH
+    "/run/current-system/sw/bin"
+    "/nix/var/nix/profiles/default/bin"
+    "/opt/homebrew/opt/llvm@20/bin" # LLVM_PATH
+    "$HOME/.local/share/pnpm/" # PNPM_HOME
+    "$HOME/.cargo/bin" # CARGO_HOME
+    "/usr/local/bin" # NATIVE
+    "/usr/bin"
+    "/bin"
+    "/usr/sbin"
+    "/sbin"
+  ];
+
   nixosConfig = {
     userinfo.enable = true;
     nixconf.enable = true;

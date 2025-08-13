@@ -2,6 +2,7 @@
 let
   packages = with pkgs; [
     nixfmt-rfc-style
+    nix-tree
     onefetch
     tokei
     typst
