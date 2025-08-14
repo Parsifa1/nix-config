@@ -39,7 +39,10 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${username} = {
-      imports = [ inputs.self.homeModules.nixos ];
+      imports = [
+        ./home.nix
+        inputs.self.homeModules.nix-wsl
+      ];
     };
   };
 

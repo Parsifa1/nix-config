@@ -38,7 +38,10 @@ in
     useGlobalPkgs = true;
     useUserPackages = true;
     users.${username} = {
-      imports = [ inputs.self.homeModules.darwin ];
+      imports = [
+        ./home.nix
+        inputs.self.homeModules.apfel
+      ];
     };
   };
 

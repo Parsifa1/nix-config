@@ -3,6 +3,9 @@ with inputs;
 {
   flake.flakeModules = {
     # utils
+    nixpkgs.imports = [
+      ./options/nixpkgs.nix
+    ];
     homeUtils.imports = [
       ./options/store.nix
       ./options/username.nix
@@ -14,18 +17,16 @@ with inputs;
     ];
   };
   flake.nixosModules = {
-    nixos = {
+    nix-wsl = {
       imports = [
-        ../hosts/nixos/config.nix
         self.flakeModules.nixUtils
         nixos-wsl.nixosModules.wsl
         agenix.nixosModules.default
         home-manager.nixosModules.home-manager
       ];
     };
-    darwin = {
+    apfel = {
       imports = [
-        ../hosts/darwin/config.nix
         self.flakeModules.nixUtils
         agenix.darwinModules.default
         home-manager.darwinModules.home-manager
@@ -33,17 +34,15 @@ with inputs;
     };
   };
   flake.homeModules = {
-    nixos = {
+    nix-wsl = {
       imports = [
-        ../hosts/nixos/home.nix
         self.flakeModules.homeUtils
         agenix.homeManagerModules.default
         nix-index-database.homeModules.nix-index
       ];
     };
-    darwin = {
+    apfel = {
       imports = [
-        ../hosts/darwin/home.nix
         self.flakeModules.homeUtils
         agenix.homeManagerModules.default
         nix-index-database.homeModules.nix-index
@@ -51,8 +50,7 @@ with inputs;
     };
     debian = {
       imports = [
-        ./options/nixpkgs.nix
-        ../hosts/debian/config.nix
+        self.flakeModules.nixpkgs
         self.flakeModules.homeUtils
         agenix.homeManagerModules.default
       ];
