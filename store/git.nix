@@ -10,7 +10,8 @@ in
     package = pkgs.git;
     extraConfig = {
       user.signingkey = "99B21766F86301CA";
-      credential.helper = if isDarwin then "osxkeychain" else "store";
+      credential.helper =
+        if isDarwin then "osxkeychain" else "store --file $HOME/.config/git/credentials";
       core.editor = "nvim";
       credential.credentialStore = "cache";
       commit.gpgsign = true;
