@@ -23,11 +23,12 @@ let
           "ctrl+shift+apostrophe=new_split:right"
           "ctrl+shift+semicolon=new_split:down"
         ];
+        theme = "dark:Everforest,light:GruvboxLightHard";
       }
     else
       {
         font-size = 17.5;
-        theme = "Everforest Dark - Hard";
+        theme = "Everforest";
         command = "ssh parsifa1@127.0.0.1 -p 11451";
         window-height = 42;
         window-width = 170;
@@ -47,7 +48,6 @@ let
     confirm-close-surface = false;
     shell-integration-features = "no-cursor";
     window-title-font-family = "Iosevka Cloudtide";
-    theme = "dark:Everforest,light:GruvboxLightHard";
   };
 in
 {
