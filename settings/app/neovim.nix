@@ -7,6 +7,7 @@
   };
   home.packages = with pkgs; [
     nixd
+    ast-grep
     tree-sitter
     lua51Packages.lua
     luajitPackages.luarocks
