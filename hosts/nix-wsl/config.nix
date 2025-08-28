@@ -76,11 +76,9 @@ in
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
-        icu
-        gmp
-        glibc
-        openssl
-        stdenv.cc.cc
+        nss
+        nspr
+        (pkgs.runCommand "steamrun-lib" { } "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")
       ];
     };
     gnupg.agent = {

@@ -30,8 +30,8 @@ let
         font-size = 17.5;
         theme = "Everforest";
         command = "ssh parsifa1@127.0.0.1 -p 11451";
-        window-height = 42;
-        window-width = 170;
+        window-height = 40;
+        window-width = 135;
         keybind = [
           "ctrl+enter=unbind"
           "ctrl+v=paste_from_clipboard"
