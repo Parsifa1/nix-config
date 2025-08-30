@@ -9,10 +9,7 @@ let
 in
 {
   #临时使用软件包
-  environment.systemPackages = with pkgs; [
-    gnupg
-    agenix
-  ];
+  environment.systemPackages = with pkgs; [ agenix ];
 
   environment.systemPath = [
     "/etc/profiles/per-user/$USER/bin" # NIX_PATH

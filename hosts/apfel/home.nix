@@ -31,6 +31,8 @@ let
     nix-output-monitor
     ghostscript
     tectonic
+    neovide
+    gnupg
   ];
 in
 {
