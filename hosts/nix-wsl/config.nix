@@ -78,7 +78,10 @@ in
       libraries = with pkgs; [
         nss
         nspr
-        (pkgs.runCommand "steamrun-lib" { } "mkdir $out; ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib")
+        (pkgs.runCommand "steamrun-lib" { } ''
+          mkdir $out;
+          ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib
+        '')
       ];
     };
     gnupg.agent = {
