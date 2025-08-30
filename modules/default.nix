@@ -19,14 +19,7 @@ with inputs;
     };
   };
   flake.homeModules = {
-    nix-wsl = {
-      imports = [
-        self.flakeModules.homeUtils
-        agenix.homeManagerModules.default
-        nix-index-database.homeModules.nix-index
-      ];
-    };
-    apfel = {
+    default = {
       imports = [
         self.flakeModules.homeUtils
         agenix.homeManagerModules.default

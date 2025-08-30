@@ -26,9 +26,9 @@ in
   ];
 
   nixosConfig = {
-    userinfo.enable = true;
-    nixconf.enable = true;
     fonts.enable = true;
+    nixconf.enable = true;
+    userinfo.enable = true;
   };
 
   home-manager = {
@@ -37,7 +37,7 @@ in
     users.${username} = {
       imports = [
         ./home.nix
-        inputs.self.homeModules.apfel
+        inputs.self.homeModules.default
       ];
     };
   };

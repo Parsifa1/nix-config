@@ -5,12 +5,12 @@ with inputs;
     # utils
     nixpkgs.imports = [ ./nixpkgs.nix ];
     homeUtils.imports = [
-      ./username.nix
+      ./utils.nix
       self.configModules.home
     ];
     nixUtils.imports = [
+      ./utils.nix
       ./nixpkgs.nix
-      ./username.nix
       self.configModules.nixos
     ];
   };

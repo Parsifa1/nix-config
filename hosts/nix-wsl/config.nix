@@ -41,7 +41,7 @@ in
     users.${username} = {
       imports = [
         ./home.nix
-        inputs.self.homeModules.nix-wsl
+        inputs.self.homeModules.default
       ];
     };
   };

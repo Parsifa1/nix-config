@@ -17,7 +17,7 @@
       controlPersist = "no";
     };
     includes = [
-      "includes/${config.age.secrets.ssh-config.name}"
+      "includes/${config.age.secrets.sshconfig.name}"
     ];
   };
 }
