@@ -1,6 +1,5 @@
 { lib, ... }:
 let
-
   # utility variable:
   username = "parsifa1";
   # utility function:
