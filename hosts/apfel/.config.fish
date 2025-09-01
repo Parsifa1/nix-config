@@ -4,6 +4,11 @@ set -U fish_greeting
 # set homebrew
 eval "$(/opt/homebrew/bin/brew shellenv)"
 
+# set pnpm
+if not string match -q -- $PNPM_HOME $PATH
+ set -ga PATH "$PNPM_HOME"
+end
+
 # set ghostty integration
 if test "$TERM_PROGRAM" = ghostty
   if test -n "$GHOSTTY_RESOURCES_DIR"
