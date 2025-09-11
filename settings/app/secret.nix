@@ -5,7 +5,7 @@
     github = ".github.key";
     wakatime = rec {
       name = ".wakatime.cfg";
-      path = "$HOME/${name}";
+      path = "$HOME/.local/share/wakatime/${name}";
     };
     sshconfig = rec {
       name = "ssh-config-agenix";
