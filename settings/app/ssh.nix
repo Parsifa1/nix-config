@@ -16,8 +16,6 @@
       controlPath = "~/.ssh/master-%r@%n:%p";
       controlPersist = "no";
     };
-    includes = [
-      "includes/${config.age.secrets.sshconfig.name}"
-    ];
+    includes = [ config.age.secrets.sshconfig.path ];
   };
 }

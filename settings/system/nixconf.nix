@@ -5,9 +5,6 @@
   inputs,
   ...
 }:
-let
-  home = config.users.users.${config.username}.home;
-in
 {
   nix = {
     package = pkgs.nixVersions.latest;
@@ -40,10 +37,9 @@ in
         "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
       ];
     };
-    extraOptions = ''!include ${home}/.config/secret/.github.key'';
+    extraOptions = "!include ${config.age.secrets.github.path}";
     gc = {
       automatic = true;
-      # options = "--delete-older-than 1w";
     };
   };
   environment.etc."nix/inputs/nixpkgs".source = "${inputs.nixpkgs}";

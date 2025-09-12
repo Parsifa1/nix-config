@@ -13,6 +13,7 @@ in
 
   nixosConfig = {
     fonts.enable = true;
+    secret.enable = true;
     nixconf.enable = true;
     userinfo.enable = true;
   };
@@ -69,6 +70,7 @@ in
     ];
   };
 
+  age.identityPaths = [ "/Users/${username}/.ssh/id_ed25519" ];
   system = {
     startup.chime = false;
     stateVersion = 5;

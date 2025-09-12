@@ -28,6 +28,7 @@ let
     xmake
     git-credential-manager
     gh
+    xld
     nix-output-monitor
     ghostscript
     tectonic

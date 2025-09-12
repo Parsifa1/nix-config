@@ -30,9 +30,10 @@ in
   ];
 
   nixosConfig = {
-    userinfo.enable = true;
-    nixconf.enable = true;
     fonts.enable = true;
+    secret.enable = true;
+    nixconf.enable = true;
+    userinfo.enable = true;
   };
 
   home-manager = {
@@ -95,7 +96,7 @@ in
     };
   };
 
-  age.identityPaths = [ "$HOME/.ssh/id_rsa" ];
+  age.identityPaths = [ "/home/${username}/.ssh/id_rsa" ];
   security.sudo.wheelNeedsPassword = false;
   virtualisation = {
     docker.enable = true;

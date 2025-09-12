@@ -2,14 +2,10 @@
 {
   age = config.genSecrets {
     gemini = ".gemini.key";
-    github = ".github.key";
+    sshconfig = "ssh-config-agenix";
     wakatime = rec {
       name = ".wakatime.cfg";
       path = "$HOME/.local/share/wakatime/${name}";
-    };
-    sshconfig = rec {
-      name = "ssh-config-agenix";
-      path = "$HOME/.ssh/includes/${name}";
     };
   };
 }

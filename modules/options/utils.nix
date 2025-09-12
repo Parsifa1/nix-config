@@ -1,4 +1,4 @@
-{ lib, ... }:
+{ config, lib, ... }:
 let
   # utility variable:
   username = "parsifa1";
@@ -16,18 +16,23 @@ let
     secrets = builtins.mapAttrs (
       ageName: fileName:
       let
-        config = if builtins.isString fileName then { name = fileName; } else fileName;
-        config' = config // {
-          file = config.file or ../../secrets/${ageName}.age;
-          path = config.path or "$HOME/.config/secret/${config.name}";
-          mode = config.mode or "400";
+        hmHpath = config.home.homeDirectory;
+        nixHpath = config.users.users.${config.username}.home;
+        homePath = if config ? home then hmHpath else nixHpath;
+        args = if builtins.isString fileName then { name = fileName; } else fileName;
+        args' = args // {
+          mode = args.mode or "400";
+          owner = args.owner or username;
+          file = args.file or ../../secrets/${ageName}.age;
+          path = args.path or (homePath + "/.config/secret/${args.name}");
         };
       in
-      {
-        name = config'.name;
-        path = config'.path;
-        file = config'.file;
-        mode = config'.mode;
+      (if config ? home then { } else { owner = args'.owner; })
+      // {
+        name = args'.name;
+        path = args'.path;
+        file = args'.file;
+        mode = args'.mode;
       }
     ) secretAttrs;
   };
