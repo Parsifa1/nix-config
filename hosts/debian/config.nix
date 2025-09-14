@@ -3,6 +3,7 @@
   nix = {
     package = pkgs.nixVersions.latest;
     settings = {
+      use-xdg-base-directories = true;
       experimental-features = [
         "nix-command"
         "flakes"

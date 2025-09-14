@@ -12,11 +12,10 @@ in
     inherit PATH;
     DISPLAY = ":0";
     EDITOR = "nvim";
-    NH_FLAKE = "$HOME/nix/";
     # GALLIUM_DRIVER = "d3d12";
     XDG_SESSION_TYPE = "wayland";
     WAYLAND_DISPLAY = "wayland-0";
-    PNPM_HOME = "$HOME/.local/share/pnpm";
+    NH_FLAKE = "$HOME/.config/nix";
     # MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:/run/opengl-driver/lib";
@@ -25,7 +24,7 @@ in
 
   };
   home.sessionPath = [
-    "$HOME/.cargo/bin"
+    "$CARGO_HOME/bin"
     "$HOME/.local/bin"
   ];
   programs.fish = {

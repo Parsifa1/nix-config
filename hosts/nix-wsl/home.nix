@@ -65,6 +65,7 @@ in
     };
   };
 
+  xdg.enable = true;
   home = {
     packages = packages;
     username = config.username;
@@ -72,6 +73,9 @@ in
   };
 
   gtk = {
+    gtk2 = {
+      configLocation = "${config.home.homeDirectory}/.config/gtk-2.0/gtkrc";
+    };
     enable = true;
     theme = {
       name = "WhiteSur-Dark";
@@ -96,6 +100,7 @@ in
     };
   };
 
+  programs.man.generateCaches = false;
   programs.home-manager.enable = true;
   home.stateVersion = "24.05";
 

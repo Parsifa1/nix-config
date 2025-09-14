@@ -3,9 +3,9 @@
   home.sessionVariables = {
     EDITOR = "nvim";
     GPG_TTY = "$(tty)";
-    NH_FLAKE = "$HOME/nix";
-    PATH = "$PATH:$HOME/.cargo/bin";
+    NH_FLAKE = "$HOME/Desktop/nix";
     PNPM_HOME = "$HOME/.local/share/pnpm";
+    DOCKER_CONFIG = "$HOME/.config/docker";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
     FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
     FZF_DEFAULT_OPTS = "--height 40% --layout=reverse --color=bg+:,bg:,gutter:-1,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";

@@ -39,9 +39,12 @@ in
     knownUsers = [ username ];
   };
 
-  environment.variables.FONTCONFIG_FILE = "${pkgs.makeFontsConf {
-    fontDirectories = [ "/Library/Fonts" ];
-  }}";
+  environment.variables = {
+    FONTCONFIG_FILE = "${pkgs.makeFontsConf {
+      fontDirectories = [ "/Library/Fonts" ];
+    }}";
+    DOCKER_CONFIG = "$HOME/.config/docker";
+  };
 
   programs = {
     gnupg.agent.enable = true;

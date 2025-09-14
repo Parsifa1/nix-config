@@ -59,6 +59,7 @@ in
     };
   };
 
+  xdg.enable = true;
   home = {
     packages = packages;
     username = config.username;
@@ -69,6 +70,7 @@ in
     };
   };
 
+  programs.man.generateCaches = false;
   programs.home-manager.enable = true;
   home.stateVersion = "24.05"; # Please read the comment before changing.
 

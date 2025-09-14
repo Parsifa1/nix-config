@@ -98,6 +98,7 @@ in
 
   age.identityPaths = [ "/home/${username}/.ssh/id_rsa" ];
   security.sudo.wheelNeedsPassword = false;
+  environment.variables.DOCKER_CONFIG = "$HOME/.config/docker";
   virtualisation = {
     docker.enable = true;
     podman.enable = true;

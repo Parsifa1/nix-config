@@ -17,7 +17,7 @@ let
       ageName: fileName:
       let
         hmHpath = config.home.homeDirectory;
-        nixHpath = config.users.users.${config.username}.home;
+        nixHpath = config.users.users.${username}.home;
         homePath = if config ? home then hmHpath else nixHpath;
         args = if builtins.isString fileName then { name = fileName; } else fileName;
         args' = args // {

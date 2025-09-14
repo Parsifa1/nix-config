@@ -1,4 +1,4 @@
 { ... }:
 {
-  home.file.".clang-format".source = ./.clang-format;
+  xdg.configFile.".clang-format".source = ./.clang-format;
 }
