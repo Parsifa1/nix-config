@@ -7,10 +7,12 @@
 }:
 {
   nix = {
-    package = pkgs.nixVersions.latest;
+    # package = pkgs.nixVersions.latest;
+    package = pkgs.dtnix;
     channel.enable = false;
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
+      eval-cores = 2;
       nix-path = lib.mkForce "nixpkgs=/etc/nix/inputs/nixpkgs";
       trusted-users = [
         config.username

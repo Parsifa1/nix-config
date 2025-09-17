@@ -4,7 +4,7 @@ with inputs;
   flake.nixosModules = {
     nix-wsl = {
       imports = [
-        self.flakeModules.nixUtils
+        self.modules.nixUtils
         nixos-wsl.nixosModules.wsl
         agenix.nixosModules.default
         home-manager.nixosModules.home-manager
@@ -12,7 +12,7 @@ with inputs;
     };
     apfel = {
       imports = [
-        self.flakeModules.nixUtils
+        self.modules.nixUtils
         agenix.darwinModules.default
         home-manager.darwinModules.home-manager
       ];
@@ -21,15 +21,15 @@ with inputs;
   flake.homeModules = {
     default = {
       imports = [
-        self.flakeModules.homeUtils
+        self.modules.homeUtils
         agenix.homeManagerModules.default
         nix-index-database.homeModules.nix-index
       ];
     };
     debian = {
       imports = [
-        self.flakeModules.nixpkgs
-        self.flakeModules.homeUtils
+        self.modules.nixpkgs
+        self.modules.homeUtils
         agenix.homeManagerModules.default
       ];
     };
