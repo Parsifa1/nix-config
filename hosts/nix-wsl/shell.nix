@@ -12,6 +12,7 @@ in
     inherit PATH;
     DISPLAY = ":0";
     EDITOR = "nvim";
+    GIT_ASKPASS = "";
     # GALLIUM_DRIVER = "d3d12";
     XDG_SESSION_TYPE = "wayland";
     WAYLAND_DISPLAY = "wayland-0";

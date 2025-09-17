@@ -10,6 +10,7 @@ let
     eza
     bat
     yarn
+    colmena
     websocat
     fontconfig
     nh
