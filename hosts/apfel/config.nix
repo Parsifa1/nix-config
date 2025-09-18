@@ -8,9 +8,6 @@ let
   username = config.username;
 in
 {
-  #临时使用软件包
-  # environment.systemPackages = with pkgs; [ agenix ];
-
   nixosConfig = {
     fonts.enable = true;
     secret.enable = true;

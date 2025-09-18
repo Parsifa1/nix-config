@@ -29,7 +29,7 @@
       url = "github:lnl7/nix-darwin";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    # TODO: sops-nix: remove pr patch once merged
+    # FIXME: sops-nix: remove pr patch once merged
     # https://github.com/Mic92/sops-nix/pull/779
     sops-nix = {
       url = "github:Mic92/sops-nix/pull/779/merge";

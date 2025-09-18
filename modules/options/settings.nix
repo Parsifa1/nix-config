@@ -18,13 +18,12 @@ let
   # Module generators for Home-Manager packages
   mkPkgModule =
     name: moduleFunc:
-    { config, pkgs, ... }:
-    let
+    { osConfig, config, pkgs, ... }: let
       cfg = config.userPackages.${name}.enable;
     in
     {
       config = lib.mkIf cfg (moduleFunc {
-        inherit pkgs config lib;
+        inherit pkgs config osConfig lib;
       });
       options.userPackages.${name} = {
         enable = lib.mkEnableOption "${name}";
