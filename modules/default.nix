@@ -6,14 +6,16 @@ with inputs;
       imports = [
         self.flakeModules.nixUtils
         nixos-wsl.nixosModules.wsl
-        agenix.nixosModules.default
+        # agenix.nixosModules.default
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];
     };
     apfel = {
       imports = [
         self.flakeModules.nixUtils
-        agenix.darwinModules.default
+        # agenix.darwinModules.default
+        sops-nix.darwinModules.sops
         home-manager.darwinModules.home-manager
       ];
     };
@@ -22,7 +24,8 @@ with inputs;
     default = {
       imports = [
         self.flakeModules.homeUtils
-        agenix.homeManagerModules.default
+        # agenix.homeManagerModules.default
+        sops-nix.homeManagerModules.sops
         nix-index-database.homeModules.nix-index
       ];
     };
@@ -30,7 +33,8 @@ with inputs;
       imports = [
         self.flakeModules.nixpkgs
         self.flakeModules.homeUtils
-        agenix.homeManagerModules.default
+        sops-nix.homeManagerModules.sops
+        # agenix.homeManagerModules.default
       ];
     };
   };

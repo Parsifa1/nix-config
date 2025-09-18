@@ -26,7 +26,6 @@ in
     nix-init
     nix-output-monitor
     dconf
-    agenix
   ];
 
   nixosConfig = {
@@ -96,7 +95,6 @@ in
     };
   };
 
-  age.identityPaths = [ "/home/${username}/.ssh/id_rsa" ];
   security.sudo.wheelNeedsPassword = false;
   environment.variables.DOCKER_CONFIG = "$HOME/.config/docker";
   virtualisation = {
