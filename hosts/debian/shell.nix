@@ -1,6 +1,19 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+let
+  PATH = config.genPath [
+    "/home/parsifa1/.local/state/nix/profile/bin"
+    "/nix/var/nix/profiles/default/bin"
+    "/home/parsifa1/.local/bin"
+    "/home/parsifa1/.local/share/pnpm"
+    "/usr/local/bin"
+    "/usr/bin"
+    "/bin"
+    "/snap/bin"
+  ];
+in
 {
   home.sessionVariables = {
+    inherit PATH;
     EDITOR = "nvim";
     GPG_TTY = "$(tty)";
     NH_FLAKE = "$HOME/Desktop/nix";
@@ -18,7 +31,7 @@
     '';
     shellInitLast = ''
       if not string match -q -- $PNPM_HOME $PATH
-        set -gx PATH "$PNPM_HOME" $PATH
+         set -ga PATH "$PNPM_HOME"
       end
     '';
     binds."ctrl-s".command = "edit_command_buffer";
