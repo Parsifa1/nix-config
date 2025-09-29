@@ -1,7 +1,7 @@
 { inputs, ... }:
 with inputs;
 {
-  flake.flakeModules = {
+  flake.modules = {
     # utils
     nixpkgs.imports = [ ./nixpkgs.nix ];
     homeUtils.imports = [
