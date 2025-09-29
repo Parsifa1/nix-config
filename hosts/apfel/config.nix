@@ -8,9 +8,6 @@ let
   username = config.username;
 in
 {
-  #临时使用软件包
-  environment.systemPackages = with pkgs; [ agenix ];
-
   nixosConfig = {
     fonts.enable = true;
     secret.enable = true;
@@ -73,7 +70,6 @@ in
     ];
   };
 
-  age.identityPaths = [ "/Users/${username}/.ssh/id_ed25519" ];
   system = {
     startup.chime = false;
     stateVersion = 5;

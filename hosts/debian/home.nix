@@ -2,7 +2,6 @@
 {
   xdg.enable = true;
   home.homeDirectory = "/home/${config.username}";
-  home.sessionPath = [ "$HOME/.local/state/nix/profile/bin" ];
   home.username = config.username;
   programs.fish.enable = true;
   home.stateVersion = "24.11"; # Please read the comment before changing.
@@ -14,7 +13,6 @@
     nh
     eza
     delta
-    agenix
     ripgrep
     rclone
     dust

@@ -6,14 +6,14 @@ with inputs;
       imports = [
         self.modules.nixUtils
         nixos-wsl.nixosModules.wsl
-        agenix.nixosModules.default
+        sops-nix.nixosModules.sops
         home-manager.nixosModules.home-manager
       ];
     };
     apfel = {
       imports = [
         self.modules.nixUtils
-        agenix.darwinModules.default
+        sops-nix.darwinModules.sops
         home-manager.darwinModules.home-manager
       ];
     };
@@ -22,7 +22,7 @@ with inputs;
     default = {
       imports = [
         self.modules.homeUtils
-        agenix.homeManagerModules.default
+        sops-nix.homeManagerModules.sops
         nix-index-database.homeModules.nix-index
       ];
     };
@@ -30,7 +30,7 @@ with inputs;
       imports = [
         self.modules.nixpkgs
         self.modules.homeUtils
-        agenix.homeManagerModules.default
+        sops-nix.homeManagerModules.sops
       ];
     };
   };

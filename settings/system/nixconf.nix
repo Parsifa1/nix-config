@@ -39,7 +39,7 @@
         "yazi.cachix.org-1:Dcdz63NZKfvUCbDGngQDAZq6kOroIrFoyO064uvLh8k="
       ];
     };
-    extraOptions = "!include ${config.age.secrets.github.path}";
+    extraOptions = "!include ${config.sops.templates.nixconf-gh.path}";
     gc = {
       automatic = true;
     };

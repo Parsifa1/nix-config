@@ -4,7 +4,7 @@ let
   overlays = with inputs; [
     (final: prev: {
       nvim = prev.neovim;
-      agenix = inputs.agenix.packages.${system}.default;
+      # agenix = inputs.agenix.packages.${system}.default;
       dtnix = inputs.detnix.packages."${system}".default;
     })
     # my nur overlays
