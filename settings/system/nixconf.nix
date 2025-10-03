@@ -7,7 +7,7 @@
 }:
 {
   nix = {
-    package = pkgs.nixVersions.latest;
+    package = pkgs.lixPackageSets.latest.lix;
     channel.enable = false;
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {
