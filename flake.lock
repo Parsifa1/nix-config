@@ -278,6 +278,27 @@
         "type": "github"
       }
     },
+    "nh": {
+      "inputs": {
+        "nixpkgs": [
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1760010202,
+        "narHash": "sha256-0TpU42CqJWmww8mkqLVEgzDd/75ngkR+HLmzqVGMEJk=",
+        "owner": "nix-community",
+        "repo": "nh",
+        "rev": "574588a418847f55b72541d1e201390f2fa87d12",
+        "type": "github"
+      },
+      "original": {
+        "owner": "nix-community",
+        "ref": "pull/429/merge",
+        "repo": "nh",
+        "type": "github"
+      }
+    },
     "nix-index-database": {
       "inputs": {
         "nixpkgs": [
@@ -374,6 +395,7 @@
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
         "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "nh": "nh",
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",
         "nixpkgs": "nixpkgs_2",

@@ -8,6 +8,8 @@ let
     })
     # my nur overlays
     cloudtide.overlay
+    #nh nightly
+    nh.overlays.default
     # rust toolchain
     fenix.overlays.default
     # neovim-nightly

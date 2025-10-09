@@ -23,7 +23,7 @@ let
           "ctrl+shift+apostrophe=new_split:right"
           "ctrl+shift+semicolon=new_split:down"
         ];
-        theme = "dark:Everforest,light:GruvboxLightHard";
+        theme = "dark:Everforest,light:Gruvbox Light Hard";
       }
     else
       {
