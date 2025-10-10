@@ -9,7 +9,6 @@ let
         window-width = 154;
         window-padding-y = "1,1";
         macos-option-as-alt = true;
-        macos-titlebar-style = "tabs";
         macos-icon = "custom-style";
         macos-icon-ghost-color = "mistyrose";
         macos-titlebar-proxy-icon = "visible";
