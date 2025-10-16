@@ -8,7 +8,6 @@ let
     ripgrep
     eza
     bat
-    yarn
     nh
     helix
     xxd

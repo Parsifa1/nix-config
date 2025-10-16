@@ -3,8 +3,8 @@
   home.packages = with pkgs; [
     typescript
     nodejs_24
+    corepack
     eslint
-    pnpm
     bun
   ];
   home.sessionVariables = {

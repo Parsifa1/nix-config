@@ -9,7 +9,6 @@ let
     ripgrep
     eza
     bat
-    yarn
     colmena
     websocat
     fontconfig
