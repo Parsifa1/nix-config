@@ -34,6 +34,7 @@ let
     tectonic
     neovide
     gnupg
+    openssh
   ];
 in
 {
