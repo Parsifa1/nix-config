@@ -25,7 +25,7 @@ let
     silicon
     cloudtide.awrit
     zig
-    xmake
+    # xmake
     git-credential-manager
     gh
     xld

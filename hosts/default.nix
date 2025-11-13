@@ -14,7 +14,7 @@
       specialArgs = { inherit inputs system; };
       modules = [
         ./apfel/config.nix
-        self.nixosModules.apfel
+        self.darwinModules.apfel
       ];
     };
     homeConfigurations.parsifa1 = home-manager.lib.homeManagerConfiguration {
