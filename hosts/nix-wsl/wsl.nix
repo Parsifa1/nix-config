@@ -13,6 +13,7 @@ in
   environment.systemPackages = with pkgs; [
     (pkgs.writeShellScriptBin "powershell.exe" pwsh)
     (pkgs.writeShellScriptBin "nvidia-smi" "/run/opengl-driver/lib/nvidia-smi")
+    (pkgs.writeShellScriptBin "explorer" "/mnt/c/Windows/explorer.exe")
     cloudtide.win32yank
     wslu
   ];
