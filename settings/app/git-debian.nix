@@ -5,10 +5,12 @@ in
 {
   programs.git = {
     enable = true;
-    userName = "Parsifa1";
-    userEmail = "li.aldric@gmail.com";
-    package = pkgs.gitFull;
-    extraConfig = {
+    package = pkgs.git;
+    settings = {
+      user = {
+        name = "Parsifa1";
+        email = "li.aldric@gmail.com";
+      };
       credential.helper = if isDarwin then "osxkeychain" else "store";
       core.editor = "nvim";
       credential.credentialStore = "cache";

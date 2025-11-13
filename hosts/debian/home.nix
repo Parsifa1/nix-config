@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  server = true;
   xdg.enable = true;
   home.homeDirectory = "/home/${config.username}";
   home.username = config.username;
@@ -22,7 +23,7 @@
   userPackages = {
     atuin.enable = true;
     secret.enable = true;
-    git-debian.enable = true;
+    git.enable = true;
     tmux.enable = true;
     yazi.enable = true;
     lazygit.enable = true;

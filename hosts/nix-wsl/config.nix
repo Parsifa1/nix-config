@@ -17,7 +17,7 @@ in
     pinentry-gnome3
     gcc15
     zig
-    clang-tools_19
+    llvmPackages_19.clang-tools
     cmake
     gnumake
     openssh
