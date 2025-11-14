@@ -7,11 +7,11 @@
         ]
       },
       "locked": {
-        "lastModified": 1755685521,
-        "narHash": "sha256-2Tx4WqAhbbzCKJ9nR/wxrrT0m321XufVV/TZijzxow8=",
+        "lastModified": 1763022360,
+        "narHash": "sha256-Oyw4FdbDdk0eXp1QXGiZhZiTebuZ4gkmNnCN3i5lR8s=",
         "owner": "parsifa1",
         "repo": "cloudtix",
-        "rev": "ed8304a7e00cd4023cf8e8b6a5084cdce8fb71ab",
+        "rev": "458ea5913f197677d6102fe8c9adc6c17ba457d5",
         "type": "github"
       },
       "original": {
@@ -48,11 +48,11 @@
         "rust-analyzer-src": "rust-analyzer-src"
       },
       "locked": {
-        "lastModified": 1762929886,
-        "narHash": "sha256-TQZ3Ugb1FoHpTSc8KLrzN4njIZU4FemAMHyS4M3mt6s=",
+        "lastModified": 1763016383,
+        "narHash": "sha256-eYmo7FNvm3q08iROzwIi8i9dWuUbJJl3uLR3OLnSmdI=",
         "owner": "nix-community",
         "repo": "fenix",
-        "rev": "6998514dce2c365142a0a119a95ef95d89b84086",
+        "rev": "0fad5c0e5c531358e7174cd666af4608f08bc3ba",
         "type": "github"
       },
       "original": {
