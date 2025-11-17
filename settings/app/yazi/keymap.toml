@@ -132,7 +132,7 @@ keymap = [
 
     # Tabs
     { on = "t", run = "tab_create --current", desc = "Create a new tab with CWD" },
-    { on = "T", run = "plugin max-preview", desc = "Maximize or restore preview" },
+    { on = "T", run = "plugin toggle-pane max-preview", desc = "Maximize or restore preview" },
 
     { on = "1", run = "tab_switch 0", desc = "Switch to the first tab" },
     { on = "2", run = "tab_switch 1", desc = "Switch to the second tab" },

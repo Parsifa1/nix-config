@@ -26,6 +26,7 @@ let
     cloudtide.awrit
     zig
     # xmake
+    exiftool
     git-credential-manager
     gh
     xld
