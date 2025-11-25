@@ -1,5 +1,6 @@
 { config, pkgs, ... }:
 {
+  # mark this machine as a server to disable gpg signing in git
   server = true;
   xdg.enable = true;
   home.homeDirectory = "/home/${config.username}";

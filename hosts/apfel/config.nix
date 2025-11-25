@@ -65,6 +65,7 @@ in
       "applite"
       "alt-tab"
       "keycastr"
+      "hammerspoon"
       "linearmouse"
       "playcover-community"
     ];
@@ -74,7 +75,14 @@ in
     startup.chime = false;
     stateVersion = 5;
     primaryUser = "${username}";
-    defaults.dock.autohide = true;
+    defaults = {
+      dock.autohide = true;
+      CustomUserPreferences = {
+        "org.hammerspoon.Hammerspoon" = {
+          MJConfigFile = "~/.config/hammerspoon/init.lua";
+        };
+      };
+    };
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;

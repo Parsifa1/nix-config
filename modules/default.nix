@@ -10,7 +10,6 @@ with inputs;
     ];
   };
   flake.darwinModules.apfel = {
-    _class = "darwin";
     imports = [
       self.modules.nixUtils
       sops-nix.darwinModules.sops

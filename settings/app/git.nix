@@ -16,6 +16,7 @@ in
         if isDarwin then "osxkeychain" else "store --file $HOME/.config/git/credentials";
       core.editor = "nvim";
       credential.credentialStore = "cache";
+      # close gpgsign on server
       commit.gpgsign = !config.server;
     };
     ignores = [ ".DS_Store" ];
