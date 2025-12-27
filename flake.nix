@@ -35,9 +35,8 @@
       url = "github:Mic92/sops-nix/pull/779/merge";
       inputs.nixpkgs.follows = "nixpkgs";
     };
-    #FIXME: remove after https://github.com/nix-community/nh/pull/429 merged
     nh = {
-      url = "github:nix-community/nh/pull/429/merge";
+      url = "github:nix-community/nh";
       inputs.nixpkgs.follows = "nixpkgs";
     };
   };

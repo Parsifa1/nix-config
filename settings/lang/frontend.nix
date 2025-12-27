@@ -1,8 +1,8 @@
 { pkgs, ... }:
 {
   home.packages = with pkgs; [
+    nodejs_latest
     typescript
-    nodejs_24
     corepack
     eslint
     bun

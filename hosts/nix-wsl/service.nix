@@ -21,10 +21,10 @@
   ];
 
   systemd.services = {
-    nix-daemon.environment = {
-      https_proxy = "http://localhost:7890";
-      http_proxy = "http://localhost:7890";
-    };
+    # nix-daemon.environment = {
+    #   https_proxy = "http://localhost:7890";
+    #   http_proxy = "http://localhost:7890";
+    # };
     keep-alive = {
       enable = true;
       description = "keep wsl alive";
