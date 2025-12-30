@@ -4,7 +4,15 @@
     enable = true;
     settings = {
       notARepository = "skip";
-      gui.nerdFontsVersion = "3";
+      gui = {
+        nerdFontsVersion = "3";
+        customIcons.extensions = {
+          ".http" = {
+            icon = "󰌷";
+            color = "#f7a182";
+          };
+        };
+      };
       git.pagers = [
         {
           pager = "delta --dark --paging=never";
