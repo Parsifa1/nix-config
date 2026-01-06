@@ -3,6 +3,8 @@
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
     flake-parts.url = "github:hercules-ci/flake-parts";
     neovim-nightly-overlay.url = "github:nix-community/neovim-nightly-overlay";
+    # FIXME: clangd: switch to official flake once available
+    clangd.url = "github:NixOS/nixpkgs";
     # moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
     # yazi.url = "github:sxyazi/yazi";
     home-manager = {

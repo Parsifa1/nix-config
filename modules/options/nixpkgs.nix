@@ -4,6 +4,7 @@ let
   overlays = with inputs; [
     (final: prev: {
       nvim = prev.neovim;
+      clang-tools = inputs.clangd.legacyPackages.${system}.clang-tools;
       # agenix = inputs.agenix.packages.${system}.default;
     })
     # my nur overlays

@@ -1,5 +1,20 @@
 {
   "nodes": {
+    "clangd": {
+      "locked": {
+        "lastModified": 1767701095,
+        "narHash": "sha256-oLD2e/z2M1f+Sz3OLb5DOtbQswmXd/e/EWqOrtxN8Ks=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "5d979a270bc699956d6e2ac09bf569b56136333f",
+        "type": "github"
+      },
+      "original": {
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "type": "github"
+      }
+    },
     "cloudtide": {
       "inputs": {
         "nixpkgs": [
@@ -282,6 +297,7 @@
     },
     "root": {
       "inputs": {
+        "clangd": "clangd",
         "cloudtide": "cloudtide",
         "darwin": "darwin",
         "fenix": "fenix",
