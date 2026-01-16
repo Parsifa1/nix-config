@@ -27,11 +27,15 @@ tab_width    = 1
 border_symbol = " "
 border_style  = { fg = "#665c54" }
 
+
 # Highlighting
 # syntect_theme = "~/.config/yazi/Gruvbox-Dark.tmTheme"
 
 # : }}}
 
+[indicator]
+preview = { underline = false }
+hovered = { fg = "#282828", bg = "#83a598" }
 
 # : Status {{{
 

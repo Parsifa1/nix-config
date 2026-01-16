@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   packages = with pkgs; [
-    nixfmt-rfc-style
+    nixfmt
     nix-tree
     onefetch
     tokei
