@@ -12,7 +12,6 @@ in
   };
   sops = {
     defaultSopsFile = ../../secrets/secrets.yaml;
-    age.sshKeyFile = "${home}/.ssh/id_ed25519";
-    gnupg.sshKeyPaths = [ ];
+    age.sshKeyPaths = [ "${home}/.ssh/id_ed25519" ];
   };
 }
