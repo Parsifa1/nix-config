@@ -142,5 +142,26 @@ prepend_rules = [
 
 
 [icon]
-prepend_exts  = [{ name = "age", text = "󰦝", fg = "#ACBF87" }]
+prepend_exts = [{ name = "age", text = "󰦝", fg = "#ACBF87" }]
 prepend_files = [{ name = ".envrc", text = "", fg = "#cbe3b3" }]
+prepend_dirs = [
+    { name = ".config", text = "" },
+    { name = ".git", text = "" },
+    { name = ".github", text = "" },
+    { name = ".npm", text = "" },
+    { name = "Desktop", text = "" },
+    { name = "Development", text = "" },
+    { name = "Documents", text = "" },
+    { name = "Downloads", text = "" },
+    { name = "Library", text = "" },
+    { name = "Movies", text = "" },
+    { name = "Music", text = "" },
+    { name = "Pictures", text = "" },
+    { name = "Public", text = "" },
+    { name = "Videos", text = "" },
+]
+prepend_conds = [
+    { if = "dir", text = "" },
+    { if = "exec", text = "" },
+    { if = "!dir", text = "" },
+]
