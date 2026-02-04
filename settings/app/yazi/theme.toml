@@ -142,4 +142,5 @@ prepend_rules = [
 
 
 [icon]
-prepend_exts = [{ name = "age", text = "󰦝", fg = "#ACBF87" }]
+prepend_exts  = [{ name = "age", text = "󰦝", fg = "#ACBF87" }]
+prepend_files = [{ name = ".envrc", text = "", fg = "#cbe3b3" }]
