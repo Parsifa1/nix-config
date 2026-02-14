@@ -77,7 +77,25 @@
         RemainAfterExit = "yes";
       };
     };
-
+    nezha-agent = {
+      enable = true;
+      description = "nezha Agent";
+      wantedBy = [ "multi-user.target" ];
+      after = [ "network.target" ];
+      serviceConfig = {
+        Type = "simple";
+        WorkingDirectory = "/opt/nezha/agent";
+        ExecStart = "/opt/nezha/agent/nezha-agent -c /opt/nezha/agent/config.yml";
+        Restart = "always";
+        RestartSec = "30";
+        EnvironmentFile = "-/etc/sysconfig/nezha-agent";
+      };
+      unitConfig = {
+        ConditionFileIsExecutable = "/opt/nezha/agent/nezha-agent";
+        StartLimitIntervalSec = "5";
+        StartLimitBurst = "10";
+      };
+    };
   };
   i18n.inputMethod = {
     type = "fcitx5";
