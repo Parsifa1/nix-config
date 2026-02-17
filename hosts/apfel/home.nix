@@ -42,6 +42,7 @@ in
   userPackages = {
     atuin.enable = true;
     secret.enable = true;
+    claude.enable = true;
     direnv.enable = true;
     tmux.enable = true;
     git.enable = true;
@@ -68,7 +69,7 @@ in
     homeDirectory = "/Users/${config.username}";
     file = {
       ".gnupg/gpg-agent.conf".text =
-        ''pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac'';
+        "pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
     };
   };
 

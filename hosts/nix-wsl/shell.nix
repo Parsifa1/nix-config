@@ -18,7 +18,6 @@ in
     WAYLAND_DISPLAY = "wayland-0";
     NH_FLAKE = "$HOME/.config/nix";
     MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
-    CLAUDE_CONFIG_DIR = "$HOME/.config/claude";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:/run/opengl-driver/lib";
     FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
