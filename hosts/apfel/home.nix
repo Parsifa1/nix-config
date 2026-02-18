@@ -36,6 +36,8 @@ let
     neovide
     gnupg
     openssh
+    colima
+    docker
   ];
 in
 {
@@ -68,7 +70,7 @@ in
     username = config.username;
     homeDirectory = "/Users/${config.username}";
     file = {
-      ".gnupg/gpg-agent.conf".text =
+      "/.local/share/gnupg/gpg-agent.conf".text =
         "pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
     };
   };
