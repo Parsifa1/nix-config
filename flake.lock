@@ -98,7 +98,7 @@
     "flake-parts_2": {
       "inputs": {
         "nixpkgs-lib": [
-          "neovim-nightly-overlay",
+          "neovim-nightly",
           "nixpkgs"
         ]
       },
@@ -136,7 +136,7 @@
         "type": "github"
       }
     },
-    "neovim-nightly-overlay": {
+    "neovim-nightly": {
       "inputs": {
         "flake-parts": "flake-parts_2",
         "neovim-src": "neovim-src",
@@ -287,7 +287,7 @@
         "fenix": "fenix",
         "flake-parts": "flake-parts",
         "home-manager": "home-manager",
-        "neovim-nightly-overlay": "neovim-nightly-overlay",
+        "neovim-nightly": "neovim-nightly",
         "nh": "nh",
         "nix-index-database": "nix-index-database",
         "nixos-wsl": "nixos-wsl",

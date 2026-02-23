@@ -38,6 +38,7 @@ let
     openssh
     colima
     docker
+    docker-credential-helpers
   ];
 in
 {
