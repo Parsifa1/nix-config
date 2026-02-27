@@ -25,6 +25,7 @@ let
     typst
     pandoc
     exiftool
+    ssh-to-age
     adwaita-icon-theme
     git-credential-manager
     nix-output-monitor

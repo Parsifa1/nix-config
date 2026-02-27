@@ -30,6 +30,8 @@ let
     git-credential-manager
     gh
     xld
+    lazydocker
+    ssh-to-age
     nix-output-monitor
     ghostscript
     tectonic
