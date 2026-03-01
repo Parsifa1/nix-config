@@ -36,7 +36,6 @@ in
     '';
     binds."ctrl-s".command = "edit_command_buffer";
     shellAliases = {
-      y = "yy";
       v = "nvim";
       vi = "nvim";
       lg = "lazygit";

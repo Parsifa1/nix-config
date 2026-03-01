@@ -11,6 +11,7 @@ in
   programs.yazi = {
     enable = true;
     package = pkgs.yazi;
+    shellWrapperName = "y";
     enableFishIntegration = true;
     initLua = ./init.lua;
     settings = lib.importTOML ./yazi.toml;
