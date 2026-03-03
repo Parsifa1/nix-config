@@ -15,6 +15,7 @@ in
   home.sessionVariables = {
     inherit PATH;
     EDITOR = "nvim";
+    ZDOTDIR = "$HOME/.config/zsh";
     NH_FLAKE = "$HOME/.config/nix";
     GNUPGHOME = "$HOME/.local/share/gnupg";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
