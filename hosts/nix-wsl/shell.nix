@@ -17,6 +17,7 @@ in
     XDG_SESSION_TYPE = "wayland";
     WAYLAND_DISPLAY = "wayland-0";
     NH_FLAKE = "$HOME/.config/nix";
+    GNUPGHOME = "$HOME/.local/share/gnupg";
     MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:/run/opengl-driver/lib";
