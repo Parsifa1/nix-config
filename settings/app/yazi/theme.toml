@@ -150,7 +150,7 @@ prepend_dirs = [
     { name = ".github", text = "" },
     { name = ".npm", text = "" },
     { name = "Desktop", text = "" },
-    { name = "Development", text = "" },
+    { name = "Project", text = "" },
     { name = "Documents", text = "" },
     { name = "Downloads", text = "" },
     { name = "Library", text = "" },

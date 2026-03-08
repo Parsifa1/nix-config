@@ -41,6 +41,7 @@ in
         extraConfig = ''
           set -g @continuum-restore 'on'
           set -g @continuum-save-interval '60' # minutes
+          set -g @resurrect-dir '$HOME/.config/tmux/resurrect'
         '';
       }
       {
