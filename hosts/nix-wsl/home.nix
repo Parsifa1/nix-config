@@ -54,6 +54,7 @@ in
     zoxide.enable = true;
     ghostty.enable = true;
     fastfetch.enable = true;
+    syncthing.enable = true;
     lang = {
       rust.enable = true;
       clang.enable = true;
