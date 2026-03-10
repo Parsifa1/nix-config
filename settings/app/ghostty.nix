@@ -19,6 +19,7 @@ let
           "option+left=unbind"
           "option+right=unbind"
           "ctrl+v=paste_from_clipboard"
+          "ctrl+shift+v=text:\\x16"
           "command+q=text:\\x1b[113;3u" # send Alt + q with escape sequence
           "ctrl+shift+apostrophe=new_split:right"
           "ctrl+shift+semicolon=new_split:down"
@@ -35,6 +36,7 @@ let
         keybind = [
           "ctrl+enter=unbind"
           "ctrl+v=paste_from_clipboard"
+          "ctrl+shift+v=text:\\x16"
           "ctrl+shift+apostrophe=new_split:right"
           "ctrl+shift+semicolon=new_split:down"
         ];

@@ -1,4 +1,9 @@
-{ config, pkgs, ... }:
+{
+  lib,
+  config,
+  pkgs,
+  ...
+}:
 let
   PATH = config.genPath [
     "/run/wrappers/bin"
@@ -30,15 +35,8 @@ in
   ];
   programs.fish = {
     enable = true;
-    loginShellInit = ''
-      set -U fish_greeting
-    '';
-    shellInitLast = ''
-      if not string match -q -- $PNPM_HOME $PATH
-         set -ga PATH "$PNPM_HOME"
-      end
-    '';
     binds."ctrl-s".command = "edit_command_buffer";
+    shellInitLast = lib.readFile ./.config.fish;
     shellAliases = {
       v = "nvim";
       vi = "nvim";
