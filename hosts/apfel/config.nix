@@ -57,7 +57,10 @@ in
     };
     # `brew install`
     # TODO Feel free to add your favorite apps here.
-    brews = [ "llvm@20" ];
+    brews = [
+      "llvm@20"
+      "mole"
+    ];
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [

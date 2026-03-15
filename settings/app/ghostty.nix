@@ -8,12 +8,12 @@ let
         window-height = 38;
         window-width = 154;
         window-padding-y = "1,1";
+        macos-icon = "blueprint";
         macos-option-as-alt = true;
         macos-titlebar-style = "tabs";
-        macos-icon = "custom-style";
-        macos-icon-ghost-color = "mistyrose";
-        macos-titlebar-proxy-icon = "visible";
-        macos-icon-screen-color = "blue";
+        # macos-icon-ghost-color = "mistyrose";
+        # macos-titlebar-proxy-icon = "visible";
+        # macos-icon-screen-color = "blue";
         keybind = [
           "super+enter=unbind"
           "option+left=unbind"
