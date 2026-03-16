@@ -25,7 +25,7 @@
     atuin.enable = true;
     secret.enable = true;
     git.enable = true;
-    tmux.enable = true;
+    zellij.enable = true;
     yazi.enable = true;
     lazygit.enable = true;
     starship.enable = true;

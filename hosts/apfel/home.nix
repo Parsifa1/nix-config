@@ -49,7 +49,7 @@ in
     secret.enable = true;
     claude.enable = true;
     direnv.enable = true;
-    tmux.enable = true;
+    zellij.enable = true;
     git.enable = true;
     lazygit.enable = true;
     neovim.enable = true;
