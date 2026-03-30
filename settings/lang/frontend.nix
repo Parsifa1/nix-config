@@ -1,11 +1,15 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
+let
+  wrap = config.wrapWithNixLd;
+in
 {
   home.packages = with pkgs; [
     typescript
     nodejs_24
     corepack_24
     eslint
-    bun
+    (wrap "bun" "${pkgs.bun}/bin/bun")
+    (wrap "bunx" "${pkgs.bun}/bin/bunx")
   ];
   home.sessionVariables = {
     NODE_REPL_HISTORY = "$HOME/.local/share/node_repl_history";

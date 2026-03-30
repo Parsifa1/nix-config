@@ -1,5 +1,6 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 let
+  wrap = config.wrapWithNixLd;
   isDarwin = pkgs.stdenv.isDarwin;
   uvBuilder =
     name:
@@ -13,10 +14,7 @@ let
           stdenv.cc.cc
         ];
     };
-  python3_13 = pkgs.writeShellScriptBin "python" ''
-    export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
-    exec ${pkgs.python313}/bin/python "$@"
-  '';
+  python3_13 = wrap "python" "${pkgs.python313}/bin/python";
   uvFHS = uvBuilder "uv";
   uvxFHS = uvBuilder "uvx";
 in

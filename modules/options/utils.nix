@@ -1,4 +1,4 @@
-{ config, lib, ... }:
+{ config, lib, pkgs, ... }:
 let
   # utility variable:
   username = "parsifa1";
@@ -15,7 +15,11 @@ let
     ) utilsAttrs;
   };
   genPath = lib.concatStringsSep ":";
+  wrapWithNixLd = name: path: pkgs.writeShellScriptBin name ''
+    export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+    exec ${path} "$@"
+  '';
 in
 genUtils {
-  inherit genPath username homePath server;
+  inherit genPath username homePath server wrapWithNixLd;
 }
