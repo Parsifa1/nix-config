@@ -14,7 +14,7 @@ let
           stdenv.cc.cc
         ];
     };
-  python3_13 = wrap "python" "${pkgs.python313}/bin/python";
+  python3_13 = wrap pkgs.python313 "${pkgs.python313}/bin/python";
   uvFHS = uvBuilder "uv";
   uvxFHS = uvBuilder "uvx";
 in

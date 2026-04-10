@@ -1,4 +1,9 @@
-{ config, lib, pkgs, ... }:
+{
+  config,
+  lib,
+  pkgs,
+  ...
+}:
 let
   # utility variable:
   username = "parsifa1";
@@ -15,11 +20,22 @@ let
     ) utilsAttrs;
   };
   genPath = lib.concatStringsSep ":";
-  wrapWithNixLd = name: path: pkgs.writeShellScriptBin name ''
-    export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
-    exec ${path} "$@"
-  '';
+  wrapWithNixLd =
+    pkg: path:
+    if pkgs.stdenv.hostPlatform.isLinux then
+      pkgs.writeShellScriptBin (baseNameOf path) ''
+        export LD_LIBRARY_PATH=$NIX_LD_LIBRARY_PATH
+        exec ${path} "$@"
+      ''
+    else
+      pkg;
 in
 genUtils {
-  inherit genPath username homePath server wrapWithNixLd;
+  inherit
+    genPath
+    username
+    homePath
+    server
+    wrapWithNixLd
+    ;
 }

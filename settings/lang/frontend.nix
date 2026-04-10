@@ -1,6 +1,8 @@
 { config, pkgs, ... }:
 let
   wrap = config.wrapWithNixLd;
+  bun = wrap pkgs.bun "${pkgs.bun}/bin/bun";
+  bunx = wrap pkgs.bun "${pkgs.bun}/bin/bunx";
 in
 {
   home.packages = with pkgs; [
@@ -8,8 +10,8 @@ in
     nodejs_24
     corepack_24
     eslint
-    (wrap "bun" "${pkgs.bun}/bin/bun")
-    (wrap "bunx" "${pkgs.bun}/bin/bunx")
+    bun
+    bunx
   ];
   home.sessionVariables = {
     NODE_REPL_HISTORY = "$HOME/.local/share/node_repl_history";
