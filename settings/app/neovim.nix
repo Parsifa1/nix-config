@@ -2,8 +2,9 @@
 {
   programs.neovim = {
     enable = true;
-    withRuby = true;
+    withRuby = false;
     withPython3 = true;
+    sideloadInitLua = true;
     extraPackages = with pkgs; [ imagemagick ];
   };
   home.packages = with pkgs; [
