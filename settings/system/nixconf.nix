@@ -1,13 +1,13 @@
 {
   lib,
-  pkgs,
+  # pkgs,
   config,
   inputs,
   ...
 }:
 {
   nix = {
-    package = pkgs.lixPackageSets.latest.lix;
+    # package = pkgs.lixPackageSets.latest.lix;
     channel.enable = false;
     registry.nixpkgs.flake = inputs.nixpkgs;
     settings = {

@@ -2,6 +2,8 @@
 {
   programs.neovim = {
     enable = true;
+    withRuby = true;
+    withPython3 = true;
     extraPackages = with pkgs; [ imagemagick ];
   };
   home.packages = with pkgs; [

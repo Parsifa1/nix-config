@@ -15,7 +15,7 @@ in
     (pkgs.writeShellScriptBin "nvidia-smi" "/run/opengl-driver/lib/nvidia-smi")
     (pkgs.writeShellScriptBin "explorer" "/mnt/c/Windows/explorer.exe")
     cloudtide.win32yank
-    wslu
+    # wslu
   ];
 
   networking.hostName = "nixos";
