@@ -1,7 +1,7 @@
 set -U fish_greeting
 
 if not string match -q -- $PNPM_HOME $PATH
-   set -ga PATH "$PNPM_HOME"
+   set -ga PATH "$PNPM_HOME/bin"
 end
 
 # set neovim mason

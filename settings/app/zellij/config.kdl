@@ -19,6 +19,8 @@ locked {
     normal {
         bind "esc" { SwitchToMode "locked"; }
         bind "d" { Detach; }
+        bind "[" { GoToPreviousTab; }
+        bind "]" { GoToNextTab; }
     }
 
 

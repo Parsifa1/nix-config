@@ -6,7 +6,7 @@ eval "$(/opt/homebrew/bin/brew shellenv)"
 
 # set pnpm
 if not string match -q -- $PNPM_HOME $PATH
- set -ga PATH "$PNPM_HOME"
+ set -ga PATH "$PNPM_HOME/bin"
 end
 
 # set neovim mason
