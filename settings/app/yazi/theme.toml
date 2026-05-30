@@ -3,30 +3,24 @@
 # : Manager {{{
 
 [mgr]
-cwd = { fg = "#83a598" }
-
+cwd             = { fg = "#83a598" }
 # Hovered
 hovered         = { fg = "#282828", bg = "#83a598" }
 preview_hovered = { underline = false }
-
 # Find
-find_keyword  = { fg = "#b8bb26", italic = true }
-find_position = { fg = "#fe8019", bg = "reset", italic = true }
-
+find_keyword    = { fg = "#b8bb26", italic = true }
+find_position   = { fg = "#fe8019", bg = "reset", italic = true }
 # Marker
 marker_selected = { fg = "#b8bb26", bg = "#b8bb26" }
 marker_copied   = { fg = "#b8bb26", bg = "#b8bb26" }
 marker_cut      = { fg = "#fb4934", bg = "#fb4934" }
-
 # Tab
-tab_active   = { fg = "#282828", bg = "#504945" }
-tab_inactive = { fg = "#a89984", bg = "#3c3836" }
-tab_width    = 1
-
+tab_active      = { fg = "#282828", bg = "#504945" }
+tab_inactive    = { fg = "#a89984", bg = "#3c3836" }
+tab_width       = 1
 # Border
-border_symbol = " "
-border_style  = { fg = "#665c54" }
-
+border_symbol   = " "
+border_style    = { fg = "#665c54" }
 
 # Highlighting
 # syntect_theme = "~/.config/yazi/Gruvbox-Dark.tmTheme"
@@ -43,26 +37,22 @@ hovered = { fg = "#282828", bg = "#83a598" }
 separator_open  = ""
 separator_close = ""
 separator_style = { fg = "#3c3836", bg = "#3c3836" }
-
 # Mode
-mode_normal = { fg = "#282828", bg = "#A89984", bold = true }
-mode_select = { fg = "#282828", bg = "#b8bb26", bold = true }
-mode_unset  = { fg = "#282828", bg = "#d3869b", bold = true }
-
+mode_normal     = { fg = "#282828", bg = "#A89984", bold = true }
+mode_select     = { fg = "#282828", bg = "#b8bb26", bold = true }
+mode_unset      = { fg = "#282828", bg = "#d3869b", bold = true }
 # Progress
 progress_label  = { fg = "#ebdbb2", bold = true }
 progress_normal = { fg = "#504945", bg = "#3c3836" }
 progress_error  = { fg = "#fb4934", bg = "#3c3836" }
-
 # Permissions
-permissions_t = { fg = "#504945" }
-permissions_r = { fg = "#b8bb26" }
-permissions_w = { fg = "#fb4934" }
-permissions_x = { fg = "#b8bb26" }
-permissions_s = { fg = "#665c54" }
+permissions_t   = { fg = "#504945" }
+permissions_r   = { fg = "#b8bb26" }
+permissions_w   = { fg = "#fb4934" }
+permissions_x   = { fg = "#b8bb26" }
+permissions_s   = { fg = "#665c54" }
 
 # : }}}
-
 
 # : Input {{{
 
@@ -74,7 +64,6 @@ selected = { reversed = true }
 
 # : }}}
 
-
 # : Select {{{
 
 [select]
@@ -84,7 +73,6 @@ inactive = {}
 
 # : }}}
 
-
 # : Tasks {{{
 
 [tasks]
@@ -93,7 +81,6 @@ title   = {}
 hovered = { underline = true }
 
 # : }}}
-
 
 # : Which {{{
 
@@ -106,7 +93,6 @@ separator       = "  "
 separator_style = { fg = "#504945" }
 
 # : }}}
-
 
 # : Help {{{
 
@@ -121,47 +107,43 @@ footer  = { fg = "#3c3836", bg = "#a89984" }
 # : File-specific styles {{{
 
 [filetype]
-
 prepend_rules = [
-    # Images
-    { mime = "image/*", fg = "#94e2d5" },
-
-    # Videos
-    { mime = "video/*", fg = "#f9e2af" },
-    { mime = "audio/*", fg = "#f9e2af" },
-
-    # Archives
-    { mime = "application/zip", fg = "#f5c2e7" },
-    { mime = "application/gzip", fg = "#f5c2e7" },
-    { mime = "application/x-tar", fg = "#f5c2e7" },
-    { mime = "application/x-bzip", fg = "#f5c2e7" },
-    { mime = "application/x-bzip2", fg = "#f5c2e7" },
-    { mime = "application/x-7z-compressed", fg = "#f5c2e7" },
-    { mime = "application/x-rar", fg = "#f5c2e7" },
+  # Images
+  { mime = "image/*", fg = "#94e2d5" },
+  # Videos
+  { mime = "video/*", fg = "#f9e2af" },
+  { mime = "audio/*", fg = "#f9e2af" },
+  # Archives
+  { mime = "application/zip", fg = "#f5c2e7" },
+  { mime = "application/gzip", fg = "#f5c2e7" },
+  { mime = "application/x-tar", fg = "#f5c2e7" },
+  { mime = "application/x-bzip", fg = "#f5c2e7" },
+  { mime = "application/x-bzip2", fg = "#f5c2e7" },
+  { mime = "application/x-7z-compressed", fg = "#f5c2e7" },
+  { mime = "application/x-rar", fg = "#f5c2e7" },
 ]
-
 
 [icon]
-prepend_exts = [{ name = "age", text = "󰦝", fg = "#ACBF87" }]
+prepend_exts  = [{ name = "age", text = "󰦝", fg = "#ACBF87" }]
 prepend_files = [{ name = ".envrc", text = "", fg = "#cbe3b3" }]
-prepend_dirs = [
-    { name = ".config", text = "" },
-    { name = ".git", text = "" },
-    { name = ".github", text = "" },
-    { name = ".npm", text = "" },
-    { name = "Desktop", text = "" },
-    { name = "Project", text = "" },
-    { name = "Documents", text = "" },
-    { name = "Downloads", text = "" },
-    { name = "Library", text = "" },
-    { name = "Movies", text = "" },
-    { name = "Music", text = "" },
-    { name = "Pictures", text = "" },
-    { name = "Public", text = "" },
-    { name = "Videos", text = "" },
+prepend_dirs  = [
+  { name = ".config", text = "" },
+  { name = ".git", text = "" },
+  { name = ".github", text = "" },
+  { name = ".npm", text = "" },
+  { name = "Desktop", text = "" },
+  { name = "Project", text = "" },
+  { name = "Documents", text = "" },
+  { name = "Downloads", text = "" },
+  { name = "Library", text = "" },
+  { name = "Movies", text = "" },
+  { name = "Music", text = "" },
+  { name = "Pictures", text = "" },
+  { name = "Public", text = "" },
+  { name = "Videos", text = "" },
 ]
 prepend_conds = [
-    { if = "dir", text = "" },
-    { if = "exec", text = "" },
-    { if = "!dir", text = "" },
+  { if = "dir", text = "" },
+  { if = "exec", text = "" },
+  { if = "!dir", text = "" },
 ]

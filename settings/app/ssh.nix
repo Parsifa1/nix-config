@@ -4,7 +4,7 @@
     enable = true;
     enableDefaultConfig = false;
     # default ssh config
-    matchBlocks."*" = {
+    settings."*" = {
       forwardAgent = false;
       addKeysToAgent = "no";
       compression = false;

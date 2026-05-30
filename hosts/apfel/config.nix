@@ -51,9 +51,11 @@ in
   homebrew = {
     enable = true;
     onActivation = {
-      autoUpdate = false;
-      # 'zap': uninstalls all formulae(and related files) not listed here.
+      autoUpdate = true;
       cleanup = "zap";
+      extraEnv = {
+        HOMEBREW_ASK = "1";
+      };
     };
     # `brew install`
     # TODO Feel free to add your favorite apps here.
