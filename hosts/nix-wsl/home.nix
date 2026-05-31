@@ -40,7 +40,7 @@ in
   userPackages = {
     fhs.enable = true;
     atuin.enable = true;
-    claude.enable = true;
+    agent.enable = true;
     secret.enable = true;
     direnv.enable = true;
     git.enable = true;
