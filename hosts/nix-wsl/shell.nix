@@ -22,7 +22,7 @@ in
     XDG_SESSION_TYPE = "wayland";
     WAYLAND_DISPLAY = "wayland-0";
     NH_FLAKE = "$HOME/.config/nix";
-    CUDA_CACHE_PATH="$HOME/.cache/nv";
+    CUDA_CACHE_PATH = "$HOME/.cache/nv";
     GNUPGHOME = "$HOME/.local/share/gnupg";
     MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
@@ -36,8 +36,11 @@ in
   ];
   programs.fish = {
     enable = true;
-    binds."ctrl-s".command = "edit_command_buffer";
     shellInitLast = lib.readFile ./.config.fish;
+    binds."ctrl-s".command = "edit_command_buffer";
+    shellInit = ''
+      export GITHUB_ACCESS_TOKEN="$(cat ${config.sops.secrets.github-token.path})"
+    '';
     shellAliases = {
       v = "nvim";
       vi = "nvim";

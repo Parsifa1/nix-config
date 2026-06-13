@@ -7,7 +7,7 @@ in
   sops.templates.nixconf-gh = {
     owner = config.username;
     content = ''
-      access-tokens = ${config.sops.placeholder.github-token}
+      access-tokens = github.com=${config.sops.placeholder.github-token}
     '';
   };
   sops = {
