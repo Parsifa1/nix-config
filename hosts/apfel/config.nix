@@ -66,6 +66,7 @@ in
     # `brew install --cask`
     # TODO Feel free to add your favorite apps here.
     casks = [
+      "thaw"
       "stats"
       "applite"
       "alt-tab"
