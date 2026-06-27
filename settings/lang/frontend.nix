@@ -7,8 +7,8 @@ in
 {
   home.packages = with pkgs; [
     typescript
-    nodejs_24
-    corepack_24
+    nodejs_26
+    corepack
     eslint
     bun
     bunx
@@ -19,5 +19,6 @@ in
     NPM_CONFIG_PREFIX = "$HOME/.local/share/npm";
     PNPM_HOME = "$HOME/.local/share/pnpm";
     npm_config_cache = "$HOME/.cache/npm";
+    NODE_OPTIONS = "--no-warnings";
   };
 }
