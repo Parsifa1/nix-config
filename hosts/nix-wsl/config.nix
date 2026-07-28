@@ -76,12 +76,16 @@ in
     nix-ld = {
       enable = true;
       libraries = with pkgs; [
-        nss
-        nspr
-        (pkgs.runCommand "steamrun-lib" { } ''
-          mkdir $out;
-          ln -s ${pkgs.steam-run.fhsenv}/usr/lib64 $out/lib
-        '')
+        (
+          let
+            fhs = buildFHSEnv {
+              name = "nix-ld-lib";
+              multiPkgs = appimageTools.defaultFhsEnvArgs.multiPkgs;
+              runScript = "true";
+            };
+          in
+          runCommand "nix-ld-lib" { } "mkdir $out; ln -s ${fhs.passthru.fhsenv}/usr/lib64 $out/lib"
+        )
       ];
     };
     gnupg.agent = {
