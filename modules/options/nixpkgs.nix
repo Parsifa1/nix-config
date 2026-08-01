@@ -7,10 +7,10 @@ let
     })
     # my nur overlays
     cloudtide.overlay
-    #nh nightly
-    nh.overlays.default
     # rust toolchain
     fenix.overlays.default
+    #nh nightly
+    # nh.overlays.default
     # neovim-nightly
     # neovim-nightly.overlays.default
     # mbt toolchain

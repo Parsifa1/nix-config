@@ -9,7 +9,7 @@ let
     "/run/wrappers/bin"
     "/etc/profiles/per-user/parsifa1/bin"
     "/run/current-system/sw/bin"
-    "bin"
+    "/bin"
   ];
 in
 {
