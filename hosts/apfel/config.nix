@@ -54,7 +54,7 @@ in
       autoUpdate = true;
       cleanup = "zap";
       extraEnv = {
-        HOMEBREW_ASK = "1";
+        XDG_CONFIG_HOME = "/Users/${username}/.config";
       };
     };
     # `brew install`
@@ -68,12 +68,9 @@ in
     casks = [
       "thaw"
       "stats"
-      "applite"
       "alt-tab"
       "keycastr"
-      "hammerspoon"
       "linearmouse"
-      "playcover-community"
     ];
   };
 
