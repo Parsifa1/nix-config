@@ -5,8 +5,8 @@ let
     if isDarwin then
       {
         font-size = 18.5;
-        window-height = 38;
-        window-width = 154;
+        window-height = 39;
+        window-width = 155;
         window-padding-y = "1,1";
         macos-icon = "blueprint";
         macos-option-as-alt = true;
