@@ -30,9 +30,6 @@ in
     enable = true;
     shellInitLast = lib.readFile ./.config.fish;
     binds."ctrl-s".command = "edit_command_buffer";
-    shellInit = ''
-      export GITHUB_ACCESS_TOKEN="$(cat ${config.sops.secrets.github-token.path})"
-    '';
     shellAliases = {
       v = "nvim";
       vi = "nvim";
