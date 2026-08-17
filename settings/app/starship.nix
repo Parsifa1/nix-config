@@ -15,12 +15,12 @@ in
     settings = {
       aws.disabled = true;
       gcloud.disabled = true;
-      # hostname.disabled = true;
+      hostname.disabled = true;
       directory.read_only = mkIf (!config.server) "";
       username.disabled = true;
       custom.fhs = mkIf (!isDarwin) {
         command = "echo 🐧";
-        when = "test -n '$FHS'";
+        when = "test -n \"$FHS\"";
       };
     };
   };
