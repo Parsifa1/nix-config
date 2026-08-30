@@ -10,7 +10,7 @@ in
 {
   programs.yazi = {
     enable = true;
-    package = pkgs.yazi;
+    package = lib.mkDefault pkgs.yazi;
     shellWrapperName = "y";
     enableFishIntegration = true;
     initLua = ./init.lua;

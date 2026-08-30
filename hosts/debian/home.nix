@@ -5,6 +5,18 @@
   xdg.enable = true;
   home.homeDirectory = "/home/${config.username}";
   home.username = config.username;
+  programs.yazi.package = pkgs.yazi.override {
+    optionalDeps = with pkgs; [
+      jq
+      poppler-utils
+      _7zz
+      fd
+      ripgrep
+      fzf
+      zoxide
+      resvg
+    ];
+  };
   programs.fish.enable = true;
   home.stateVersion = "24.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
