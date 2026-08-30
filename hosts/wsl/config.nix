@@ -86,6 +86,7 @@ in
           in
           runCommand "nix-ld-lib" { } "mkdir $out; ln -s ${fhs.passthru.fhsenv}/usr/lib64 $out/lib"
         )
+        icu
       ];
     };
     gnupg.agent = {
@@ -100,7 +101,6 @@ in
   };
 
   security.sudo.wheelNeedsPassword = false;
-  environment.variables.DOCKER_CONFIG = "$HOME/.config/docker";
   virtualisation = {
     docker.enable = true;
     podman.enable = true;

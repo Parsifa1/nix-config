@@ -29,8 +29,8 @@ in
   users = {
     users.${username} = {
       uid = 501;
-      shell = pkgs.fish;
       name = username;
+      shell = pkgs.fish;
       home = "/Users/${username}";
     };
     knownUsers = [ username ];
@@ -40,7 +40,16 @@ in
     FONTCONFIG_FILE = "${pkgs.makeFontsConf {
       fontDirectories = [ "/Library/Fonts" ];
     }}";
-    DOCKER_CONFIG = "$HOME/.config/docker";
+  };
+
+  services.openssh = {
+    enable = true;
+    extraConfig = ''
+      ClientAliveInterval 60
+      ClientAliveCountMax 3
+      PasswordAuthentication no
+      KbdInteractiveAuthentication no
+    '';
   };
 
   programs = {
@@ -89,6 +98,5 @@ in
   };
 
   security.pam.services.sudo_local.touchIdAuth = true;
-
   imports = [ ./service.nix ];
 }

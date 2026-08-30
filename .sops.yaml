@@ -4,12 +4,12 @@
 # for a more complex example.
 keys:
   - &apfel age1uyg73jl64msxu5x7rmed0japawg22z7qqdye5xj9a7tx2vaqpdnqe3jdmx
-  - &nix-wsl age1y8n4p9de897fepp6cxk0jtz7jynkmexgyhgyjtwmsvkuu09mk56qfyzsr7
+  - &wsl age1y8n4p9de897fepp6cxk0jtz7jynkmexgyhgyjtwmsvkuu09mk56qfyzsr7
   - &debian age1955ta5htsxpmpwa2j64gznev5hh4tnz8v5asnz6q2mjlxjkzt4hs6sgyyf
 creation_rules:
   - path_regex: secrets/[^/]+\.(yaml|json|env|ini)$
     key_groups:
       - age:
           - *apfel
-          - *nix-wsl
+          - *wsl
           - *debian

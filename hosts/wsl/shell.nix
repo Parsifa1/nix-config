@@ -23,6 +23,7 @@ in
     WAYLAND_DISPLAY = "wayland-0";
     NH_FLAKE = "$HOME/.config/nix";
     CUDA_CACHE_PATH = "$HOME/.cache/nv";
+    DOCKER_CONFIG = "$HOME/.config/docker";
     GNUPGHOME = "$HOME/.local/share/gnupg";
     MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
