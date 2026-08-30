@@ -100,11 +100,20 @@ in
     };
   };
 
-  security.sudo.wheelNeedsPassword = false;
+  networking.hosts = {
+    "127.0.1.1" = [
+      "nixos"
+      "cloudtide"
+    ];
+    "192.168.193.31" = [ "apfel" ];
+  };
+
   virtualisation = {
     docker.enable = true;
     podman.enable = true;
   };
+
+  security.sudo.wheelNeedsPassword = false;
   system.stateVersion = "23.11";
 
   imports = [

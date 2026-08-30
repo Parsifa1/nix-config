@@ -8,7 +8,10 @@ in
     defaultUser = config.username;
     startMenuLaunchers = true;
     useWindowsDriver = true;
-    wslConf.interop.appendWindowsPath = false;
+    wslConf = {
+      interop.appendWindowsPath = false;
+      network.generateHosts = false;
+    };
   };
   environment.systemPackages = with pkgs; [
     (pkgs.writeShellScriptBin "powershell.exe" pwsh)
