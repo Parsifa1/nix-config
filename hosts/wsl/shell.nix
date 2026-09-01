@@ -23,10 +23,10 @@ in
     WAYLAND_DISPLAY = "wayland-0";
     NH_FLAKE = "$HOME/.config/nix";
     CUDA_CACHE_PATH = "$HOME/.cache/nv";
-    DOCKER_CONFIG = "$HOME/.config/docker";
     GNUPGHOME = "$HOME/.local/share/gnupg";
     MESA_D3D12_DEFAULT_ADAPTER_NAME = "Nvidia";
     WAKATIME_HOME = "$HOME/.local/share/wakatime";
+    DOCKER_HOST = "unix:///run/user/1000/podman/podman.sock";
     LD_LIBRARY_PATH = "$LD_LIBRARY_PATH:/run/opengl-driver/lib";
     FZF_DEFAULT_COMMAND = "fd -H -I -E '{.astro,.git,.kube,.idea,.vscode,.sass-cache,node_modules,build,.vscode-server,.virtualenvs,target}' --type f --strip-cwd-prefix";
     FZF_DEFAULT_OPTS = "--height 40% --gutter ' ' --layout=reverse --color=bg+:,bg:,spinner:#f5e0dc,hl:#f38ba8 --color=fg:#cdd6f4,header:#f38ba8,info:#cba6f7,pointer:#f5e0dc --color=marker:#f5e0dc,fg+:#cdd6f4,prompt:#cba6f7,hl+:#f38ba8";

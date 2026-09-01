@@ -3,7 +3,7 @@ let
   # nixpkgs overlays
   overlays = with inputs; [
     (final: prev: {
-      nvim = prev.neovim;
+      nixfmt-rs = nixfmt-rs.packages.${system}.default;
     })
     # my nur overlays
     cloudtide.overlay

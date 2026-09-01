@@ -13,6 +13,6 @@
     tree-sitter
     lua51Packages.lua
     luajitPackages.luarocks
-    (pkgs.writeShellScriptBin "v" "exec -a $0 ${pkgs.neovim}/bin/nvim $@")
+    (writeShellScriptBin "v" "exec -a $0 ${neovim}/bin/nvim $@")
   ];
 }

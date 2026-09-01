@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   packages = with pkgs; [
-    nixfmt
+    nixfmt-rs
     nix-tree
     onefetch
     tokei
@@ -16,6 +16,7 @@ let
     delta
     fzf
     fd
+    jq
     which
     tree
     btop

@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   packages = with pkgs; [
-    nixfmt
+    nixfmt-rs
     # fastfetch
     onefetch
     tokei
@@ -13,6 +13,7 @@ let
     xxd
     fzf
     fd
+    jq
     silicon
     which
     tree

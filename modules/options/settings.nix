@@ -18,6 +18,7 @@ let
   # Module generators for Home-Manager packages
   mkPkgModule =
     name: moduleFunc:
+    /*nixfmt:disable*/
     { osConfig, config, pkgs, ... }: let
       cfg = config.userPackages.${name}.enable;
     in
@@ -29,6 +30,7 @@ let
         enable = lib.mkEnableOption "${name}";
       };
     };
+    /*nixfmt:disable*/
 
   mkLangModule =
     name: moduleFunc:

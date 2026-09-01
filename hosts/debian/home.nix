@@ -3,24 +3,12 @@
   # mark this machine as a server to disable gpg signing in git
   server = true;
   xdg.enable = true;
-  home.homeDirectory = "/home/${config.username}";
-  home.username = config.username;
-  programs.yazi.package = pkgs.yazi.override {
-    optionalDeps = with pkgs; [
-      jq
-      poppler-utils
-      _7zz
-      fd
-      ripgrep
-      fzf
-      zoxide
-      resvg
-    ];
-  };
   programs.fish.enable = true;
+  home.username = config.username;
+  home.homeDirectory = "/home/${config.username}";
   home.stateVersion = "24.11"; # Please read the comment before changing.
   home.packages = with pkgs; [
-    nixfmt
+    nixfmt-rs
     lazydocker
     fastfetch
     fzf
@@ -30,7 +18,7 @@
     ripgrep
     rclone
     dust
-    nvim
+    neovim
     nodejs_22
   ];
   userPackages = {

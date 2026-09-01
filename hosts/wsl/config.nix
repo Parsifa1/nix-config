@@ -10,22 +10,23 @@ in
 {
   environment.systemPackages = with pkgs; [
     gh
-    delta
+    zig
     wget
     curl
+    delta
     gnupg
-    pinentry-gnome3
     gcc15
-    zig
-    clang-tools
     cmake
+    dconf
+    unzip
     gnumake
     openssh
     websocat
-    unzip
     nix-init
+    e2fsprogs
+    clang-tools
+    pinentry-gnome3
     nix-output-monitor
-    dconf
   ];
 
   nixosConfig = {
@@ -52,11 +53,7 @@ in
       shell = pkgs.fish;
       isNormalUser = true;
       hashedPassword = "$y$j9T$fdy82j7goIaaecK3SEUKE0$JqPx5WkZ0OMRbXVB/d2dQIA/c7dSV3BXUAV7vlBcVOA";
-      extraGroups = [
-        "networkmanager"
-        "docker"
-        "wheel"
-      ];
+      extraGroups = [ "wheel" ];
     };
   };
 
@@ -109,8 +106,10 @@ in
   };
 
   virtualisation = {
-    docker.enable = true;
-    podman.enable = true;
+    podman = {
+      enable = true;
+      dockerCompat = true;
+    };
   };
 
   security.sudo.wheelNeedsPassword = false;

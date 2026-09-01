@@ -1,16 +1,29 @@
-{ lib, pkgs, ... }:
+{ config, pkgs, ... }:
 let
+  inherit (pkgs) lib;
   exifaudio = pkgs.fetchFromGitHub {
     owner = "Sonico98";
     repo = "exifaudio.yazi";
     rev = "4506f9d";
     sha256 = "sha256-RWCqWBpbmU3sh/A+LBJPXL/AY292blKb/zZXGvIA5/o=";
   };
+  yaziCompact = pkgs.yazi.override {
+    optionalDeps = with pkgs; [
+      jq
+      poppler-utils
+      _7zz
+      fd
+      ripgrep
+      fzf
+      zoxide
+      resvg
+    ];
+  };
 in
 {
   programs.yazi = {
     enable = true;
-    package = lib.mkDefault pkgs.yazi;
+    package = lib.mkDefault (if config.server then yaziCompact else pkgs.yazi);
     shellWrapperName = "y";
     enableFishIntegration = true;
     initLua = ./init.lua;
