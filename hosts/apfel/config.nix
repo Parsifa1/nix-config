@@ -77,7 +77,6 @@ in
     casks = [
       "thaw"
       "stats"
-      "alt-tab"
       "keycastr"
       "linearmouse"
     ];
