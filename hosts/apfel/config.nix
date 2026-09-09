@@ -41,6 +41,7 @@ in
       fontDirectories = [ "/Library/Fonts" ];
     }}";
   };
+  launchd.user.envVariables.PI_CONFIG_DIR = ".config/omp";
 
   services.openssh = {
     enable = true;
