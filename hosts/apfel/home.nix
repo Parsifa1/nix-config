@@ -24,7 +24,7 @@ let
     duf
     comma
     silicon
-    cloudtide.awrit
+    # cloudtide.awrit
     zig
     # xmake
     exiftool

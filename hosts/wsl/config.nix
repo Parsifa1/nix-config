@@ -83,6 +83,7 @@ in
           in
           runCommand "nix-ld-lib" { } "mkdir $out; ln -s ${fhs.passthru.fhsenv}/usr/lib64 $out/lib"
         )
+        gtk3
         icu
       ];
     };
