@@ -19,6 +19,6 @@ in
     NPM_CONFIG_PREFIX = "$HOME/.local/share/npm";
     PNPM_HOME = "$HOME/.local/share/pnpm";
     npm_config_cache = "$HOME/.cache/npm";
-    NODE_OPTIONS = "--no-warnings";
+    NODE_OPTIONS = "--no-warnings --dns-result-order=ipv4first";
   };
 }

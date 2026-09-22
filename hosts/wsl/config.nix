@@ -99,7 +99,7 @@ in
   };
 
   networking.hosts = {
-    "127.0.1.1" = [
+    "127.0.0.1" = [
       "nixos"
       "cloudtide"
     ];
