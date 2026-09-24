@@ -1,4 +1,4 @@
-{ config, pkgs, ... }:
+{ cfg, pkgs, ... }:
 let
   inherit (pkgs) lib;
   exifaudio = pkgs.fetchFromGitHub {
@@ -23,7 +23,7 @@ in
 {
   programs.yazi = {
     enable = true;
-    package = lib.mkDefault (if config.server then yaziCompact else pkgs.yazi);
+    package = lib.mkDefault (if cfg.compact or false then yaziCompact else pkgs.yazi);
     shellWrapperName = "y";
     enableFishIntegration = true;
     initLua = ./init.lua;

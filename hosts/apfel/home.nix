@@ -51,7 +51,10 @@ in
     agent.enable = true;
     direnv.enable = true;
     zellij.enable = true;
-    git.enable = true;
+    git = {
+      enable = true;
+      credentialHelper = "osxkeychain";
+    };
     lazygit.enable = true;
     neovim.enable = true;
     ssh.enable = true;

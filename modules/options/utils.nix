@@ -7,7 +7,6 @@
 let
   # utility variable:
   username = "parsifa1";
-  server = false;
   homePath = if config ? home then config.home.homeDirectory else config.users.users.${username}.home;
   # utility function:
   genUtils = utilsAttrs: {
@@ -35,7 +34,6 @@ genUtils {
     genPath
     username
     homePath
-    server
     wrapWithNixLd
     ;
 }

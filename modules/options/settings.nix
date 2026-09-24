@@ -15,53 +15,68 @@ let
     builtins.readDir configPath
   );
 
-  # Module generators for Home-Manager packages
+  # Module generators. moduleFunc's return attrset IS the config.
+  # cfg is the freeform userPackages.<name> attrset — modules read
+  # parameters per-key as `cfg.<param> or <default>` (per-key select
+  # avoids eval recursion; don't enumerate cfg's keys).
   mkPkgModule =
-    name: moduleFunc:
     /*nixfmt:disable*/
-    { osConfig, config, pkgs, ... }: let
-      cfg = config.userPackages.${name}.enable;
+    name: moduleFunc:
+    { osConfig, config, pkgs, ... }:
+    let
+      cfg = config.userPackages.${name};
     in
     {
-      config = lib.mkIf cfg (moduleFunc {
-        inherit pkgs config osConfig lib;
-      });
-      options.userPackages.${name} = {
-        enable = lib.mkEnableOption "${name}";
+      options.userPackages.${name} = lib.mkOption {
+        type = lib.types.submodule {
+          freeformType = lib.types.anything;
+          options.enable = lib.mkEnableOption "${name}";
+        };
+        default = { };
       };
+      config = lib.mkIf cfg.enable (moduleFunc {
+        inherit pkgs config osConfig lib cfg;
+      });
     };
-    /*nixfmt:disable*/
-
   mkLangModule =
     name: moduleFunc:
     { config, pkgs, ... }:
     let
-      cfg = config.userPackages.lang.${name}.enable;
+      cfg = config.userPackages.lang.${name};
     in
     {
-      config = lib.mkIf cfg (moduleFunc {
-        inherit pkgs lib config;
-      });
-      options.userPackages.lang.${name} = {
-        enable = lib.mkEnableOption "${name}";
+      options.userPackages.lang.${name} = lib.mkOption {
+        type = lib.types.submodule {
+          freeformType = lib.types.anything;
+          options.enable = lib.mkEnableOption "${name}";
+        };
+        default = { };
       };
+      config = lib.mkIf cfg.enable (moduleFunc {
+        inherit pkgs lib config cfg;
+      });
     };
+    /*nixfmt:enable*/
 
   # Module generators for NixOS system config
   mkConfigModule =
     name: moduleFunc:
     args@{ config, pkgs, ... }:
     let
-      cfg = config.nixosConfig.${name}.enable;
+      cfg = config.nixosConfig.${name};
     in
     {
-      config = lib.mkIf cfg (moduleFunc {
-        inherit config pkgs;
+      options.nixosConfig.${name} = lib.mkOption {
+        type = lib.types.submodule {
+          freeformType = lib.types.anything;
+          options.enable = lib.mkEnableOption "${name}";
+        };
+        default = { };
+      };
+      config = lib.mkIf cfg.enable (moduleFunc {
+        inherit config pkgs cfg;
         inherit (args) inputs lib;
       });
-      options.nixosConfig.${name} = {
-        enable = lib.mkEnableOption "${name}";
-      };
     };
 
   # Generate all individual modules

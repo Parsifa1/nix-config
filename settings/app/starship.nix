@@ -1,6 +1,6 @@
 {
+  cfg,
   pkgs,
-  config,
   ...
 }:
 let
@@ -16,7 +16,7 @@ in
       gcloud.disabled = true;
       username.disabled = true;
       hostname.detect_env_vars = [ "!WEZTERM_REMOTE_PANE" ];
-      directory.read_only = mkIf (!config.server) "";
+      directory.read_only = mkIf (cfg.hideReadOnly or true) "";
       custom.fhs = mkIf (!isDarwin) {
         command = "echo 🐧";
         when = "test -n \"$FHS\"";

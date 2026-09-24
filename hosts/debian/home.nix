@@ -1,7 +1,5 @@
 { config, pkgs, ... }:
 {
-  # mark this machine as a server to disable gpg signing in git
-  server = true;
   xdg.enable = true;
   programs.fish.enable = true;
   home.username = config.username;
@@ -24,12 +22,18 @@
   userPackages = {
     atuin.enable = true;
     secret.enable = true;
-    git.enable = true;
     zellij.enable = true;
-    yazi.enable = true;
     lazygit.enable = true;
     starship.enable = true;
     zoxide.enable = true;
+    git = {
+      enable = true;
+      gpgSign = false;
+    };
+    yazi = {
+      enable = true;
+      compact = true;
+    };
     lang = {
       rust.enable = true;
     };
