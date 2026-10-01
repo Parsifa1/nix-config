@@ -5,7 +5,7 @@
 }:
 let
   inherit (pkgs.lib) mkIf;
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
 in
 {
   programs.starship = {

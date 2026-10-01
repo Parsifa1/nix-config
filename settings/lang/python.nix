@@ -1,7 +1,7 @@
 { config, pkgs, ... }:
 let
   wrap = config.wrapWithNixLd;
-  isDarwin = pkgs.stdenv.isDarwin;
+  isDarwin = pkgs.stdenv.hostPlatform.isDarwin;
   uvBuilder =
     name:
     pkgs.buildFHSEnv {

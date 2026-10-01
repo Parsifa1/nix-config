@@ -1,6 +1,6 @@
 { pkgs, ... }:
 let
-  inherit (pkgs.stdenv) isDarwin;
+  inherit (pkgs.stdenv.hostPlatform) isDarwin;
   special =
     if isDarwin then
       {
