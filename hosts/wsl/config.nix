@@ -17,6 +17,7 @@ in
     gnupg
     gcc15
     cmake
+    ninja
     dconf
     unzip
     gnumake

@@ -26,6 +26,8 @@ let
     silicon
     # cloudtide.awrit
     zig
+    cmake
+    ninja
     # xmake
     exiftool
     git-credential-manager
