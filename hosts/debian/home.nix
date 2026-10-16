@@ -22,11 +22,12 @@
   userPackages = {
     atuin.enable = true;
     secret.enable = true;
-    git.enable = true;
     # zellij.enable = true;
-    yazi.enable = true;
     lazygit.enable = true;
-    starship.enable = true;
+    starship = {
+      enable = true;
+      hideReadOnly = false;
+    };
     zoxide.enable = true;
     git = {
       enable = true;

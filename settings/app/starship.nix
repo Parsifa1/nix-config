@@ -15,7 +15,10 @@ in
       aws.disabled = true;
       gcloud.disabled = true;
       username.disabled = true;
-      hostname.detect_env_vars = [ "!WEZTERM_REMOTE_PANE" ];
+      hostname.detect_env_vars = [
+        "!WEZTERM_REMOTE_PANE"
+        "!HERDR_ENV"
+      ];
       directory.read_only = mkIf (cfg.hideReadOnly or true) "";
       custom.fhs = mkIf (!isDarwin) {
         command = "echo 🐧";
