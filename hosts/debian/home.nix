@@ -17,12 +17,14 @@
     rclone
     dust
     neovim
-    nodejs_22
+    nodejs_24
   ];
   userPackages = {
     atuin.enable = true;
     secret.enable = true;
-    zellij.enable = true;
+    git.enable = true;
+    # zellij.enable = true;
+    yazi.enable = true;
     lazygit.enable = true;
     starship.enable = true;
     zoxide.enable = true;
