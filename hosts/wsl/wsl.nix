@@ -1,6 +1,6 @@
 { config, pkgs, ... }:
 let
-  pwsh = "exec -a $0 /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe $@";
+  pwsh = ''exec -a $0 /mnt/c/Windows/System32/WindowsPowerShell/v1.0/powershell.exe "$@"'';
 in
 {
   wsl = {

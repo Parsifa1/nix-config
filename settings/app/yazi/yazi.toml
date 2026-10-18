@@ -18,7 +18,7 @@ ueberzug_offset = [0, 0, 0, 0]
 ueberzug_scale  = 1
 
 [opener]
-edit = [{ run = 'nvim "$@"', block = true }]
+edit = [{ run = 'nvim %s', block = true }]
 
 [plugin]
 prepend_previewers = [{ mime = "audio/*", run = "exifaudio" }]
