@@ -65,6 +65,7 @@ in
     ghostty.enable = true;
     zoxide.enable = true;
     fastfetch.enable = true;
+    herdr.enable = true;
     lang = {
       rust.enable = true;
       clang.enable = true;

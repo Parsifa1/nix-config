@@ -56,6 +56,7 @@ in
     ghostty.enable = true;
     fastfetch.enable = true;
     syncthing.enable = true;
+    herdr.enable = true;
     lang = {
       rust.enable = true;
       clang.enable = true;
