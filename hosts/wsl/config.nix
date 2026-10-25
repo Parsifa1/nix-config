@@ -25,6 +25,7 @@ in
     websocat
     nix-init
     e2fsprogs
+    bubblewrap
     clang-tools
     pinentry-gnome3
     nix-output-monitor
@@ -96,6 +97,10 @@ in
         allow-preset-passphrase = "";
         no-allow-external-cache = "";
       };
+    };
+    fuse = {
+      enable = true;
+      userAllowOther = true;
     };
   };
 

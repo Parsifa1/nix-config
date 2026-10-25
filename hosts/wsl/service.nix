@@ -30,7 +30,7 @@
       description = "keep wsl alive";
       wantedBy = [ "multi-user.target" ];
       serviceConfig = {
-        ExecStart = "/mnt/c/Windows/System32/waitfor.exe MakeDistroAlive";
+        ExecStart = "/mnt/c/Windows/System32/waitfor.exe keepAlive";
       };
     };
 
