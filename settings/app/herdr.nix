@@ -29,16 +29,17 @@
 
       ui = {
         accent = "#a7c080";
+        pane_gaps = false;
         host_cursor = "native";
+        pane_scrollbars = false;
+        pane_outer_borders = false;
+        prompt_new_tab_name = false;
         agent_panel_sort = "priority";
         status_indicators = "symbols";
-        pane_outer_borders = false;
-        pane_gaps = false;
-        pane_scrollbars = false;
         /*nixfmt:disable*/
         sidebar.agents.rows = [
-          [ "state_icon" { token = "workspace"; bold = true; } "tab" ]
           [ "machine" "agent" ]
+          [ "state_icon" { token = "workspace"; bold = true; } "tab" ]
         ];
         sidebar.spaces.rows = [
           [ "state_icon" "workspace" ]
