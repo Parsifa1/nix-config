@@ -13,6 +13,7 @@ in
     zig
     wget
     curl
+    mosh
     delta
     gnupg
     gcc15

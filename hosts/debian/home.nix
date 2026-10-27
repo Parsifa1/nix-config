@@ -12,6 +12,7 @@
     fzf
     nh
     eza
+    mosh
     delta
     ripgrep
     rclone

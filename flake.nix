@@ -23,7 +23,6 @@
     };
     cloudtide = {
       url = "github:parsifa1/cloudtix";
-      inputs.nixpkgs.follows = "nixpkgs";
     };
     darwin = {
       url = "github:lnl7/nix-darwin";

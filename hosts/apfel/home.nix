@@ -24,18 +24,15 @@ let
     duf
     comma
     silicon
-    # cloudtide.awrit
     zig
     cmake
     ninja
-    # xmake
+    mosh
     exiftool
-    git-credential-manager
     gh
     xld
     lazydocker
     ssh-to-age
-    nix-output-monitor
     ghostscript
     tectonic
     neovide
@@ -43,6 +40,8 @@ let
     openssh
     colima
     docker
+    nix-output-monitor
+    git-credential-manager
     docker-credential-helpers
   ];
 in

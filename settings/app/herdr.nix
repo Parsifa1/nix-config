@@ -1,8 +1,6 @@
 { ... }: {
   programs.herdr = {
     enable = true;
-    package = null;
-    # mutableSettings = true;
     settings = {
       onboarding = false;
       theme.custom = {
@@ -26,7 +24,6 @@
         teal = "#83c092";
         peach = "#e69875";
       };
-
       ui = {
         accent = "#a7c080";
         pane_gaps = false;
@@ -38,8 +35,8 @@
         status_indicators = "symbols";
         /*nixfmt:disable*/
         sidebar.agents.rows = [
-          [ "machine" "agent" ]
           [ "state_icon" { token = "workspace"; bold = true; } "tab" ]
+          [ "machine" "agent" ]
         ];
         sidebar.spaces.rows = [
           [ "state_icon" "workspace" ]
