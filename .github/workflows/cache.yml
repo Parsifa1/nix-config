@@ -44,14 +44,30 @@ jobs:
             flake = builtins.getFlake "$PWD";
             system = builtins.currentSystem;
             lib = flake.inputs.nixpkgs.lib;
-
-            nixos = lib.filterAttrs (_: cfg: cfg.pkgs.stdenv.hostPlatform.system == system) (flake.nixosConfigurations or { });
-            darwin = lib.filterAttrs (_: cfg: cfg.pkgs.stdenv.hostPlatform.system == system) (flake.darwinConfigurations or { });
-            home = lib.filterAttrs (_: cfg: cfg.pkgs.stdenv.hostPlatform.system == system) (flake.homeConfigurations or { });
+            isDarwin = lib.hasSuffix "-darwin" system;
           in
-          lib.mapAttrs (_: cfg: cfg.config.system.build.toplevel) nixos
-          // lib.mapAttrs (_: cfg: cfg.system) darwin
-          // lib.mapAttrs (_: cfg: cfg.activationPackage) home
+          if isDarwin then
+            (lib.concatMapAttrs (name: cfg:
+              lib.optionalAttrs (cfg.pkgs.stdenv.hostPlatform.system == system) {
+                "darwin-\${name}" = cfg.system;
+              }
+            ) (flake.darwinConfigurations or { }))
+            // (lib.concatMapAttrs (name: cfg:
+              lib.optionalAttrs (cfg.pkgs.stdenv.hostPlatform.system == system) {
+                "home-\${name}" = cfg.activationPackage;
+              }
+            ) (flake.homeConfigurations or { }))
+          else
+            (lib.concatMapAttrs (name: cfg:
+              lib.optionalAttrs (cfg.pkgs.stdenv.hostPlatform.system == system) {
+                "nixos-\${name}" = cfg.config.system.build.toplevel;
+              }
+            ) (flake.nixosConfigurations or { }))
+            // (lib.concatMapAttrs (name: cfg:
+              lib.optionalAttrs (cfg.pkgs.stdenv.hostPlatform.system == system) {
+                "home-\${name}" = cfg.activationPackage;
+              }
+            ) (flake.homeConfigurations or { }))
           EOF
 
           nix run nixpkgs#nix-fast-build -- \
