@@ -2,14 +2,15 @@
   "nodes": {
     "cloudtide": {
       "inputs": {
+        "herdr": "herdr",
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1793093648,
-        "narHash": "sha256-aZ82J5h3f/OjJWe3/q3CC9qiDcvNSAOYftQpLwByakM=",
+        "lastModified": 1793103392,
+        "narHash": "sha256-+hNsPh/5WzCWN0piQeFmGz0r49vLcGuzDysTs0mLSYw=",
         "owner": "parsifa1",
         "repo": "cloudtix",
-        "rev": "e25600ed5690d5a402859a55385dbb35a038c48e",
+        "rev": "103830b7452fd1899ac8371ff2b73e684bd69f15",
         "type": "github"
       },
       "original": {
@@ -111,6 +112,29 @@
       "original": {
         "owner": "hercules-ci",
         "repo": "flake-parts",
+        "type": "github"
+      }
+    },
+    "herdr": {
+      "inputs": {
+        "nixpkgs": [
+          "cloudtide",
+          "nixpkgs"
+        ],
+        "rust-overlay": "rust-overlay"
+      },
+      "locked": {
+        "lastModified": 1793092890,
+        "narHash": "sha256-aLETB8AtMONJ4s5XZ1Pj7mAcgbt+5RuafmcnyaJ+3ik=",
+        "owner": "Parsifa1",
+        "repo": "herdr",
+        "rev": "38e7765af7e840182e72789c2245470c3a6dbce4",
+        "type": "github"
+      },
+      "original": {
+        "owner": "Parsifa1",
+        "ref": "feat/quic-endpoint",
+        "repo": "herdr",
         "type": "github"
       }
     },
@@ -232,15 +256,18 @@
     },
     "nixpkgs": {
       "locked": {
-        "lastModified": 1790652569,
-        "narHash": "sha256-k8Fu4c9Z+4Nh7mUr0cfw++ITQiyEhlWxoJBOkI3tOcQ=",
-        "rev": "b6c8664de9b6cc07fe5666a29f91884ba81197c4",
-        "type": "tarball",
-        "url": "https://releases.nixos.org/nixpkgs/nixpkgs-26.11pre1082290.b6c8664de9b6/nixexprs.tar.zst"
+        "lastModified": 1792842277,
+        "narHash": "sha256-pGPnZGi8y9d76xNeracniXO3dsYVROEmMkMc8jD0Ihc=",
+        "owner": "NixOS",
+        "repo": "nixpkgs",
+        "rev": "d3b13ad75cc492690728f9307e443dec9ef9a20e",
+        "type": "github"
       },
       "original": {
-        "id": "nixpkgs",
-        "type": "indirect"
+        "owner": "NixOS",
+        "ref": "nixpkgs-unstable",
+        "repo": "nixpkgs",
+        "type": "github"
       }
     },
     "nixpkgs-lib": {
@@ -351,6 +378,28 @@
         "owner": "rust-lang",
         "ref": "nightly",
         "repo": "rust-analyzer",
+        "type": "github"
+      }
+    },
+    "rust-overlay": {
+      "inputs": {
+        "nixpkgs": [
+          "cloudtide",
+          "herdr",
+          "nixpkgs"
+        ]
+      },
+      "locked": {
+        "lastModified": 1783577481,
+        "narHash": "sha256-EWMxOWrJ031f8f/lrcEmhTRs4npw1/5N3Hcjin846c8=",
+        "owner": "oxalica",
+        "repo": "rust-overlay",
+        "rev": "4cdea398dc491b082dccdce0fad1ed0b75fa3394",
+        "type": "github"
+      },
+      "original": {
+        "owner": "oxalica",
+        "repo": "rust-overlay",
         "type": "github"
       }
     },
