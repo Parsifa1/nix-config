@@ -38,9 +38,9 @@ jobs:
 
       - name: Fast Build and Cache Systems via nix-fast-build
         run: |
-          cat << 'EOF' > /tmp/ci.nix
+          cat << EOF > /tmp/ci.nix
           let
-            flake = builtins.getFlake (toString ./.);
+            flake = builtins.getFlake "$PWD";
             system = builtins.currentSystem;
             lib = flake.inputs.nixpkgs.lib;
 
