@@ -8,8 +8,8 @@ in
     settings =
       let
         logo = pkgs.fetchurl {
-          url = "https://github.com/sn0wm1x.png";
-          hash = "sha256-EWa1d+wrKDjFrg2r48djq/y9u4DuziYOXODmE28waA0=";
+          url = "https://raw.githubusercontent.com/Parsifa1/graph/ff2af7ef2372ccdd829b8ef3f48eea4869d6828f/nix.png";
+          hash = "sha256-7gAf++UN5o7+aP8jLno46zaEtni7vwNBrxD1pDkcA3A=";
         };
       in
       {
