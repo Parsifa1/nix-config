@@ -1,0 +1,61 @@
+name: "Build and Cache Systems"
+
+on:
+  push:
+    branches:
+      - master
+      - main
+  workflow_dispatch:
+
+jobs:
+  build:
+    name: ${{ matrix.name }}
+    strategy:
+      matrix:
+        include:
+          - name: linux
+            runner: ubuntu-latest
+          - name: darwin
+            runner: macos-latest
+    runs-on: ${{ matrix.runner }}
+    steps:
+      - name: Checkout repository
+        uses: actions/checkout@v4
+
+      - name: Install Nix
+        uses: cachix/install-nix-action@v30
+        with:
+          extra_nix_config: |
+            experimental-features = nix-command flakes
+            access-tokens = github.com=${{ secrets.GITHUB_TOKEN }}
+
+      - name: Setup Cachix
+        uses: cachix/cachix-action@v15
+        with:
+          name: cloudtide
+          authToken: "${{ secrets.CACHIX_AUTH_TOKEN }}"
+          signingKey: "${{ secrets.CACHIX_SIGNING_KEY }}"
+
+      - name: Fast Build and Cache Systems via nix-fast-build
+        run: |
+          cat << 'EOF' > /tmp/ci.nix
+          let
+            flake = builtins.getFlake (toString ./.);
+            system = builtins.currentSystem;
+            lib = flake.inputs.nixpkgs.lib;
+
+            nixos = lib.filterAttrs (_: cfg: cfg.pkgs.stdenv.hostPlatform.system == system) (flake.nixosConfigurations or { });
+            darwin = lib.filterAttrs (_: cfg: cfg.pkgs.stdenv.hostPlatform.system == system) (flake.darwinConfigurations or { });
+            home = lib.filterAttrs (_: cfg: cfg.pkgs.stdenv.hostPlatform.system == system) (flake.homeConfigurations or { });
+          in
+          lib.mapAttrs (_: cfg: cfg.config.system.build.toplevel) nixos
+          // lib.mapAttrs (_: cfg: cfg.system) darwin
+          // lib.mapAttrs (_: cfg: cfg.activationPackage) home
+          EOF
+
+          nix run nixpkgs#nix-fast-build -- \
+            --file /tmp/ci.nix \
+            --skip-cached \
+            --cachix-cache cloudtide \
+            --push-build-closure \
+            --no-nom
