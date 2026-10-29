@@ -1,9 +1,4 @@
-{
-  lib,
-  config,
-  pkgs,
-  ...
-}:
+{ lib, config, ... }:
 let
   PATH = config.genPath [
     "/run/wrappers/bin"
@@ -53,5 +48,4 @@ in
       vf = "set -l file (fzf --preview 'bat --style=numbers --color=always --line-range :500 {}'); and test -n \"\$file\"; and vi \"\$file\"";
     };
   };
-  home.packages = with pkgs; [ just ];
 }

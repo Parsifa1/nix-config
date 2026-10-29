@@ -15,6 +15,7 @@ let
     fd
     jq
     silicon
+    just
     which
     tree
     btop

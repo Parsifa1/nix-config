@@ -10,12 +10,8 @@ let
     cloudtide.overlay
     # rust toolchain
     fenix.overlays.default
-    #nh nightly
-    # nh.overlays.default
-    # neovim-nightly
-    # neovim-nightly.overlays.default
-    # mbt toolchain
-    # moonbit-overlay.overlays.default
+    # herdr
+    herdr.overlays.default
   ];
 in
 {
