@@ -21,6 +21,5 @@ in
     cloudtide.win32yank
     cloudtide.wslu
   ];
-
   networking.hostName = "wsl";
 }

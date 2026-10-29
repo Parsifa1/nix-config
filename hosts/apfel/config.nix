@@ -96,7 +96,7 @@ in
       };
     };
   };
-
+  networking.hostName = "apfel";
   security.pam.services.sudo_local.touchIdAuth = true;
   imports = [ ./service.nix ];
 }
