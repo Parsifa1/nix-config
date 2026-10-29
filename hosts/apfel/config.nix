@@ -80,6 +80,7 @@ in
       "stats"
       "keycastr"
       "linearmouse"
+      "gpg-suite-pinentry"
     ];
   };
 
@@ -89,11 +90,6 @@ in
     primaryUser = "${username}";
     defaults = {
       dock.autohide = true;
-      CustomUserPreferences = {
-        "org.hammerspoon.Hammerspoon" = {
-          MJConfigFile = "~/.config/hammerspoon/init.lua";
-        };
-      };
     };
   };
   networking.hostName = "apfel";

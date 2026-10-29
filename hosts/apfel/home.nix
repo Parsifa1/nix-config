@@ -81,7 +81,7 @@ in
     homeDirectory = "/Users/${config.username}";
     file = {
       "/.local/share/gnupg/gpg-agent.conf".text =
-        "pinentry-program ${pkgs.pinentry_mac}/Applications/pinentry-mac.app/Contents/MacOS/pinentry-mac";
+        "pinentry-program /usr/local/MacGPG2/libexec/pinentry-mac.app/Contents/MacOS/pinentry-mac";
     };
   };
 
