@@ -22,5 +22,5 @@ in
     cloudtide.wslu
   ];
 
-  networking.hostName = "nixos";
+  networking.hostName = "wsl";
 }

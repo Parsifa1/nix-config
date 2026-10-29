@@ -1,17 +1,17 @@
-{ pkgs, ... }:
+{ config, pkgs, ... }:
 {
-  # launchd.daemons = {
-  #   qsign = {
-  #     command = "${pkgs.cloudtide.qsign}/bin/unidbg-fetch-qsign --basePath=${pkgs.cloudtide.qsign}/txlib/9.0.25";
-  #     path = [
-  #       "${pkgs.openjdk}/bin"
-  #       "/usr/bin"
-  #     ];
-  #     serviceConfig = {
-  #       EnvironmentVariables.JAVA_HOME = "${pkgs.openjdk}";
-  #       KeepAlive = true;
-  #       RunAtLoad = true;
-  #     };
-  #   };
-  # };
+  launchd.daemons.beszel-agent = {
+    script = ''
+      set -a
+      source "${config.sops.templates."beszel.env".path}"
+      set +a
+      exec ${pkgs.beszel}/bin/beszel-agent
+    '';
+    serviceConfig = {
+      KeepAlive = true;
+      RunAtLoad = true;
+      StandardOutPath = "/var/log/beszel-agent.log";
+      StandardErrorPath = "/var/log/beszel-agent.log";
+    };
+  };
 }

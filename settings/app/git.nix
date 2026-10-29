@@ -17,8 +17,4 @@
     };
     ignores = [ ".DS_Store" ];
   };
-  # programs.fish.shellInit = ''
-  #   export GITHUB_ACCESS_TOKEN="$(cat ${config.sops.secrets.github-token.path})"
-  #   export GITHUB_TOKEN="$(cat ${config.sops.secrets.github-token.path})"
-  # '';
 }

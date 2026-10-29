@@ -1,20 +1,22 @@
 { config, ... }:
 let
   home = config.homePath;
+  secret = "beszel-${host}";
+  host = config.networking.hostName;
 in
 {
   sops.secrets = {
     github-token = { };
     beszel-key = { };
-    beszel-token = { };
     beszel-url = { };
+    ${secret} = { };
   };
   sops.templates."beszel.env" = {
     mode = "0444";
     content = ''
       PORT=45876
+      TOKEN="${config.sops.placeholder.${secret}}"
       KEY="${config.sops.placeholder.beszel-key}"
-      TOKEN="${config.sops.placeholder.beszel-token}"
       HUB_URL="${config.sops.placeholder.beszel-url}"
     '';
   };
