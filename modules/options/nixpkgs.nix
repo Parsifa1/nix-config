@@ -10,8 +10,6 @@ let
     cloudtide.overlay
     # rust toolchain
     fenix.overlays.default
-    # herdr
-    herdr.overlays.default
   ];
 in
 {
