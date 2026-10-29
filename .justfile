@@ -32,7 +32,6 @@ home:
 # Update herdr flake input and switch
 update-herdr:
     nix flake update herdr
-    @just switch
 
 # Commit and sync nix-config
 update:
