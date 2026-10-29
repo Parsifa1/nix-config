@@ -9,7 +9,7 @@ let
     eza
     bat
     nh
-    helix
+    sops
     xxd
     fzf
     fd

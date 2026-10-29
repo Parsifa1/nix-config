@@ -14,6 +14,7 @@ let
     fontconfig
     nh
     delta
+    sops
     fzf
     fd
     jq
