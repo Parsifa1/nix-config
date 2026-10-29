@@ -4,7 +4,7 @@
     flake-parts.url = "github:hercules-ci/flake-parts";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     nixfmt-rs.url = "github:Mic92/nixfmt-rs";
-    # moonbit-overlay.url = "github:jetjinser/moonbit-overlay";
+    herdr.url = "github:Parsifa1/herdr/feat/quic-endpoint";
     home-manager = {
       url = "github:nix-community/home-manager";
       inputs.nixpkgs.follows = "nixpkgs";
@@ -19,10 +19,6 @@
     };
     fenix = {
       url = "github:nix-community/fenix";
-      inputs.nixpkgs.follows = "nixpkgs";
-    };
-    herdr = {
-      url = "github:Parsifa1/herdr/feat/quic-endpoint";
       inputs.nixpkgs.follows = "nixpkgs";
     };
     cloudtide = {
