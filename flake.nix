@@ -21,6 +21,10 @@
       url = "github:nix-community/fenix";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+    herdr = {
+      url = "github:Parsifa1/herdr/feat/quic-endpoint";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
     cloudtide = {
       url = "github:parsifa1/cloudtix";
     };
