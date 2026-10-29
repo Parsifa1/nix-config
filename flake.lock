@@ -6,11 +6,11 @@
         "nixpkgs": "nixpkgs"
       },
       "locked": {
-        "lastModified": 1793265876,
-        "narHash": "sha256-DfHGcaosqm016OOG+LdPYqXDuIsQ1zmy1k8msoGXPz0=",
+        "lastModified": 1793271461,
+        "narHash": "sha256-hhMg8Wo1IrtgAAtpLLSWk3GzEfwChibNz9qfHndRhIs=",
         "owner": "parsifa1",
         "repo": "cloudtix",
-        "rev": "488a8a602b952450c85b1045d79939dd3fbb281e",
+        "rev": "46e9b9ed1eaaee203275943383f3fa7ae68b3d4b",
         "type": "github"
       },
       "original": {
@@ -124,11 +124,11 @@
         "rust-overlay": "rust-overlay"
       },
       "locked": {
-        "lastModified": 1793264957,
-        "narHash": "sha256-SjM6mwrl5Go2os1GC9RxSZMSvSGOIGRMUkEoZMUPxx0=",
+        "lastModified": 1793271448,
+        "narHash": "sha256-Bq8JGPC73nEa6QfxgUZjOFs56/9KUMGRYDn1iArEU+g=",
         "owner": "Parsifa1",
         "repo": "herdr",
-        "rev": "c6588a55a12a844619e6a46bce2d36c671eacc0b",
+        "rev": "87aa765ae9a991179d7845255d438a26357e1c1d",
         "type": "github"
       },
       "original": {
