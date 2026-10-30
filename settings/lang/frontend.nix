@@ -6,9 +6,9 @@ let
 in
 {
   home.packages = with pkgs; [
+    (corepack.override { nodejs-slim = nodejs-slim_26; })
     typescript
     nodejs_26
-    corepack
     eslint
     bun
     bunx
