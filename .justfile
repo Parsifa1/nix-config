@@ -29,6 +29,10 @@ darwin:
 home:
     nh home switch
 
+# nh clean
+clean:
+    nh clean all --no-gcroots
+
 # Update herdr flake input and switch
 update-herdr:
     nix flake update herdr
