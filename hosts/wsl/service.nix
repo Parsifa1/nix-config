@@ -6,6 +6,14 @@
       openFirewall = true;
       environmentFile = config.sops.templates."beszel.env".path;
     };
+    cloudflared = {
+      enable = true;
+      tunnels."58198be8-b31e-4405-9908-81f85fb972a4" = {
+        credentialsFile = "/home/parsifa1/.config/cloudflared/58198be8-b31e-4405-9908-81f85fb972a4.json";
+        ingress."hr.cloudti.de".service = "http://localhost:7317";
+        default = "http_status:404";
+      };
+    };
     xserver = {
       enable = true;
       displayManager.lightdm.enable = false;
