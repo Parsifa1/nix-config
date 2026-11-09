@@ -13,7 +13,6 @@
       hashKnownHosts = false;
       userKnownHostsFile = "~/.ssh/known_hosts";
       controlMaster = "no";
-      controlPath = "~/.ssh/master-%r@%n:%p";
       controlPersist = "no";
     };
     includes = [ config.sops.secrets.sshconfig.path ];
