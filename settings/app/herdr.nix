@@ -56,7 +56,7 @@
       experimental.kitty_graphics = true;
       remote = {
         quic_port_range = "5060-5061";
-        bridge_idle_timeout_seconds = -1;
+        # bridge_idle_timeout_seconds = -1;
       };
     };
   };
