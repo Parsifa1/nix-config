@@ -1,7 +1,8 @@
-{ config, ... }:
+{ cfg, config, ... }:
 {
   programs.ssh = {
     enable = true;
+    package = cfg.package or null;
     enableDefaultConfig = false;
     # default ssh config
     settings."*" = {

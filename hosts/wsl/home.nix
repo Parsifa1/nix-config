@@ -50,7 +50,10 @@ in
     lazygit.enable = true;
     neovim.enable = true;
     emacs.enable = true;
-    ssh.enable = true;
+    ssh = {
+      enable = true;
+      package = pkgs.openssh;
+    };
     starship.enable = true;
     yazi.enable = true;
     zoxide.enable = true;

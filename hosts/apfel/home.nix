@@ -39,7 +39,6 @@ let
     tectonic
     neovide
     gnupg
-    openssh
     colima
     docker
     nix-output-monitor
