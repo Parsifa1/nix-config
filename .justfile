@@ -39,4 +39,5 @@ update-herdr:
 
 # Commit and sync nix-config
 update:
+    nix flake update
     git commit -a -m "update: flake" && git push && git pull
