@@ -1,6 +1,11 @@
-{ ... }: {
+{ pkgs, lib, cfg, ... }:
+let
+  installLocal = cfg.installLocal or false;
+in
+{
   programs.herdr = {
     enable = true;
+    package = lib.mkIf installLocal null;
     settings = {
       onboarding = false;
       theme.custom = {
@@ -59,5 +64,13 @@
         # bridge_idle_timeout_seconds = -1;
       };
     };
+  };
+
+  home.activation.herdrStableCopy = lib.mkIf installLocal {
+    after = [ "writeBoundary" ];
+    before = [ ];
+    data = ''
+      run install -m 0755 ${pkgs.herdr}/bin/herdr "$HOME/.local/bin/herdr"
+    '';
   };
 }
