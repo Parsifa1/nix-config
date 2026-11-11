@@ -6,7 +6,9 @@
         set -a
         source "${config.sops.templates."beszel.env".path}"
         set +a
-        exec ${pkgs.beszel}/bin/beszel-agent
+        # TODO: enable checks again once beszel ships the fix for the darwin unix-socket
+        # path overflow (https://github.com/henrygd/beszel/issues/2730).
+        exec ${(pkgs.beszel.overrideAttrs { doCheck = false; })}/bin/beszel-agent
       '';
       serviceConfig = {
         KeepAlive = true;
