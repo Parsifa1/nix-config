@@ -1,5 +1,6 @@
-{ pkgs, lib, cfg, ... }:
+{ pkgs, cfg, ... }:
 let
+  lib = pkgs.lib;
   installLocal = cfg.installLocal or false;
 in
 {
@@ -59,18 +60,13 @@ in
         switch_workspace = "prefix+alt+1..9";
       };
       experimental.kitty_graphics = true;
-      remote = {
-        quic_port_range = "5060-5061";
-        # bridge_idle_timeout_seconds = -1;
-      };
+      remote.quic_port_range = "5060-5061";
     };
   };
 
   home.activation.herdrStableCopy = lib.mkIf installLocal {
-    after = [ "writeBoundary" ];
     before = [ ];
-    data = ''
-      run install -m 0755 ${pkgs.herdr}/bin/herdr "$HOME/.local/bin/herdr"
-    '';
+    after = [ "writeBoundary" ];
+    data = "run install -m 0755 ${pkgs.herdr}/bin/herdr \"$HOME/.local/bin/herdr\"";
   };
 }
