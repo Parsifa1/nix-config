@@ -4,6 +4,7 @@ with inputs;
   flake.nixosModules.wsl = {
     imports = [
       self.modules.nixUtils
+      rex.nixosModules.default
       nixos-wsl.nixosModules.wsl
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
