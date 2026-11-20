@@ -4,7 +4,6 @@ with inputs;
   flake.nixosModules.wsl = {
     imports = [
       self.modules.nixUtils
-      rex.nixosModules.default
       nixos-wsl.nixosModules.wsl
       sops-nix.nixosModules.sops
       home-manager.nixosModules.home-manager
@@ -23,6 +22,7 @@ with inputs;
         self.modules.homeUtils
         sops-nix.homeManagerModules.sops
         nix-index-database.homeModules.nix-index
+        rex.homeManagerModules.default
       ];
     };
     debian = {

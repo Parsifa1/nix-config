@@ -1,7 +1,6 @@
 { config, ... }:
 {
   services = {
-    rex.enable = true;
     beszel.agent = {
       enable = true;
       openFirewall = true;

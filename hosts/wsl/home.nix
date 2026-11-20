@@ -60,6 +60,7 @@ in
     ghostty.enable = true;
     fastfetch.enable = true;
     syncthing.enable = true;
+    rex.enable = true;
     herdr.enable = true;
     lang = {
       rust.enable = true;
