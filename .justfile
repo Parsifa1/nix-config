@@ -33,10 +33,6 @@ home:
 clean:
     nh clean all --no-gcroots
 
-# Update herdr flake input and switch
-update-herdr:
-    nix flake update herdr
-
 # Commit and sync nix-config
 update:
     nix flake update

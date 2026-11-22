@@ -3,7 +3,6 @@
     nixfmt-rs.url = "github:Mic92/nixfmt-rs";
     flake-parts.url = "github:hercules-ci/flake-parts";
     nixpkgs.url = "github:nixos/nixpkgs/nixpkgs-unstable";
-    herdr.url = "github:Parsifa1/herdr/feat/quic-endpoint";
     rex.url = "https://pkgs.superlogical.com/rex/nix/snapshot.tar.gz";
     neovim-nightly.url = "github:nix-community/neovim-nightly-overlay";
     home-manager = {

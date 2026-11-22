@@ -17,7 +17,6 @@ in
       username.disabled = true;
       hostname.detect_env_vars = [
         "!WEZTERM_REMOTE_PANE"
-        "!HERDR_ENV"
       ];
       directory.read_only = mkIf (cfg.hideReadOnly or true) "";
       custom.fhs = mkIf (!isDarwin) {

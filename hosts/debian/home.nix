@@ -38,7 +38,6 @@
       enable = true;
       compact = true;
     };
-    herdr.enable = true;
     lang = {
       rust.enable = true;
     };

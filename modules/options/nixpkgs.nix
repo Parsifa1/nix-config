@@ -4,7 +4,6 @@ let
   overlays = with inputs; [
     (final: prev: {
       nixfmt-rs = nixfmt-rs.packages.${system}.default;
-      herdr = herdr.packages.${system}.herdr;
     })
     # my nur overlays
     cloudtide.overlay
