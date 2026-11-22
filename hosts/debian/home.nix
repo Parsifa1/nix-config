@@ -42,7 +42,6 @@
       rust.enable = true;
     };
   };
-  services.rex.enable = true;
   programs.man.generateCaches = false;
   programs.home-manager.enable = true;
 }

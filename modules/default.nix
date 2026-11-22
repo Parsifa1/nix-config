@@ -30,7 +30,6 @@ with inputs;
         self.modules.nixpkgs
         self.modules.homeUtils
         sops-nix.homeManagerModules.sops
-        rex.homeManagerModules.default
       ];
     };
   };
