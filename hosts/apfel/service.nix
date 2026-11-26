@@ -6,9 +6,10 @@
         set -a
         source "${config.sops.templates."beszel.env".path}"
         set +a
+        export PATH="${pkgs.smartmontools}/bin:$PATH"
         # TODO: enable checks again once beszel ships the fix for the darwin unix-socket
         # path overflow (https://github.com/henrygd/beszel/issues/2730).
-        exec ${(pkgs.beszel.overrideAttrs { doCheck = false; })}/bin/beszel-agent
+        exec ${pkgs.beszel}/bin/beszel-agent
       '';
       serviceConfig = {
         KeepAlive = true;
