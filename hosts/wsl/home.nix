@@ -60,7 +60,6 @@ in
     ghostty.enable = true;
     fastfetch.enable = true;
     syncthing.enable = true;
-    rex.enable = true;
     lang = {
       rust.enable = true;
       clang.enable = true;
@@ -71,6 +70,12 @@ in
       latex.enable = true;
       # moonbit.enable = true;
     };
+  };
+
+  services.rex = {
+    enable = true;
+    extraListen = [ "http://192.168.193.156:7297" ];
+    allowAnonymous = true;
   };
 
   xdg.enable = true;

@@ -22,7 +22,6 @@ with inputs;
         self.modules.homeUtils
         sops-nix.homeManagerModules.sops
         nix-index-database.homeModules.nix-index
-        rex.homeManagerModules.default
       ];
     };
     debian = {

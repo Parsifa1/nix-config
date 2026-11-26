@@ -46,6 +46,7 @@ in
       imports = [
         ./home.nix
         inputs.self.homeModules.default
+        inputs.rex.homeManagerModules.default
       ];
     };
   };
